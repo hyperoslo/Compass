@@ -1,0 +1,14 @@
+PODS:
+  - Compass (0.1.0)
+
+DEPENDENCIES:
+  - Compass (from `../../`)
+
+EXTERNAL SOURCES:
+  Compass:
+    :path: "../../"
+
+SPEC CHECKSUMS:
+  Compass: e01188a61ec071d122ca607202a21eb9b52ea0b9
+
+COCOAPODS: 0.39.0.beta.4
