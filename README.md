@@ -89,17 +89,18 @@ struct NavigationHandler {
       }
   }
   
-   static func routePostLogin(route: String, arguments: [String: String], navigationController: UINavigationController) {
-    let currentController = navigationController.topViewController
+   static func routePostLogin(route: String, arguments: [String: String], 
+    navigationController: UINavigationController) {
+      let currentController = navigationController.topViewController
       switch route {
         case "profile:{username}":
-          let profileController = profileController(title: arguments["{username}"])
-          navigationController?.pushViewController(profileController, 
-            animated: true)
-        case "logout":
-          AppDelegate.logout()
-        default: break
-      }
+        let profileController = profileController(title: arguments["{username}"])
+        navigationController?.pushViewController(profileController, 
+          animated: true)
+      case "logout":
+        AppDelegate.logout()
+      default: break
+    }
    }
 }
 ```
