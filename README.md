@@ -8,7 +8,7 @@
 Compass helps you setup a central navigation system for your application.
 This has many benefits, one of them being that controllers can now be
 decoupled, meaning that the list that presents the detail no longer knows 
-about what its presenting. Controllers become agnostic and view stay 
+about what its presenting. Controllers become agnostic and views stay 
 stupid. The user experience stays the same but the logic and separation of
 concerns become clearer. The outcome is that your application will become 
 more modular by default. Anything could potentially be displayed from 
