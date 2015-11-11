@@ -24,7 +24,7 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>no.hyper.CompassExample</string>
+			<string>no.hyper.Compass</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>compass</string>
