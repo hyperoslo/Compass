@@ -16,8 +16,12 @@ anywhere but do tread safe, with great power comes great responsibility.
 
 ## Setup
 
-1. First you need to register a URL scheme for your application
-2. Now you need to configure Compass to use that URL scheme, a good place
+#### Step 1
+First you need to register a URL scheme for your application
+<img src="https://raw.githubusercontent.com/hyperoslo/Compass/update/readme/Images/setup-url-scheme.png"> 
+
+#### Step 2
+Now you need to configure Compass to use that URL scheme, a good place
 to do this is in your `AppDelegate`
 ```swift
 func application(application: UIApplication, 
@@ -26,7 +30,8 @@ func application(application: UIApplication,
     return true
 }
 ```
-3. Configure your application routes
+#### Step 3
+Configure your application routes
 ```swift
 func application(application: UIApplication, 
   didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -35,7 +40,8 @@ func application(application: UIApplication,
     return true
 }
 ```
-4. Setup your application to response to the URLs, this can be done in the `AppDelegate` but its up to you to find a more suitable place for it depending on the size of your implementation.
+#### Step 4
+Setup your application to response to the URLs, this can be done in the `AppDelegate` but its up to you to find a more suitable place for it depending on the size of your implementation.
 ```swift
 func application(app: UIApplication, 
   openURL url: NSURL, 
