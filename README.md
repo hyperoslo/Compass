@@ -79,7 +79,6 @@ import Compass
 struct NavigationHandler {
   static func routePreLogin(route: String, arguments: [String: String], 
     navigationController: UINavigationController) {
-      let currentController = navigationController.topViewController
       switch route {
         case "forgotpassword:{username}":
           let forgotPasswordController = ForgotPasswordController(title: arguments["{username}"])
@@ -91,10 +90,9 @@ struct NavigationHandler {
   
   static func routePostLogin(route: String, arguments: [String: String], 
     navigationController: UINavigationController) {
-      let currentController = navigationController.topViewController
       switch route {
       case "profile:{username}":
-        let profileController = profileController(title: arguments["{username}"])
+        let profileController = ProfileController(title: arguments["{username}"])
         navigationController?.pushViewController(profileController, 
           animated: true)
       case "logout":
