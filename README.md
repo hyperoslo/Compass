@@ -44,10 +44,12 @@ func application(app: UIApplication,
       switch route {
         case "profile:{username}":
           let profileController = profileController(title: arguments["{username}"])
-          self.navigationController?.pushViewController(profileController, animated: true)
+          self.navigationController?.pushViewController(profileController, 
+            animated: true)
         case "login:{username}":
           let loginController = LoginController(title: arguments["{username}"])
-          self.navigationController?.pushViewController(loginController, animated: true)
+          self.navigationController?.pushViewController(loginController, 
+            animated: true)
         case "logout":
           logout()
         default: break
