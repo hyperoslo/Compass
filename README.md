@@ -1,4 +1,4 @@
-![Compass logo](https://raw.githubusercontent.com/hyperoslo/Compass/update/readme/Images/logo_v1.png)
+![Compass logo](https://raw.githubusercontent.com/hyperoslo/Compass/master/Images/logo_v1.png)
 
 [![CI Status](http://img.shields.io/travis/hyperoslo/Compass.svg?style=flat)](https://travis-ci.org/hyperoslo/Compass)
 [![Version](https://img.shields.io/cocoapods/v/Compass.svg?style=flat)](http://cocoadocs.org/docsets/Compass)
@@ -18,7 +18,7 @@ anywhere, but remember, with great power comes great responsibility.
 
 #### Step 1
 First you need to register a URL scheme for your application
-<img src="https://raw.githubusercontent.com/hyperoslo/Compass/update/readme/Images/setup-url-scheme.png"> 
+<img src="https://raw.githubusercontent.com/hyperoslo/Compass/master/Images/setup-url-scheme.png"> 
 
 #### Step 2
 Now you need to configure Compass to use that URL scheme, a good place
@@ -73,33 +73,30 @@ Preferably you would add your own global function that you use for internal navi
 ##### Tip 1. NavigationHandler.swift
 You could have multiple handlers depending on if a user is logged in or not.
 ```swift
-import UIKit
-import Compass
-
 struct NavigationHandler {
-  static func routePreLogin(route: String, arguments: [String: String], 
+  static func routePreLogin(route: String, arguments: [String: String],
     navigationController: UINavigationController) {
       switch route {
-        case "forgotpassword:{username}":
-          let forgotPasswordController = ForgotPasswordController(title: arguments["{username}"])
-          navigationController?.pushViewController(loginController, 
-            animated: true)
-        default: break
+      case "forgotpassword:{username}":
+        let forgotPasswordController = ForgotPasswordController(title: arguments["{username}"])
+        navigationController?.pushViewController(loginController,
+          animated: true)
+      default: break
       }
   }
-  
-  static func routePostLogin(route: String, arguments: [String: String], 
+
+  static func routePostLogin(route: String, arguments: [String: String],
     navigationController: UINavigationController) {
       switch route {
       case "profile:{username}":
         let profileController = ProfileController(title: arguments["{username}"])
-        navigationController?.pushViewController(profileController, 
+        navigationController?.pushViewController(profileController,
           animated: true)
       case "logout":
         AppDelegate.logout()
       default: break
-    }
-   }
+      }
+  }
 }
 ```
 
