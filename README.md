@@ -68,7 +68,7 @@ Setting it up this way would mean that
 you could open any view from a push notification depending on the contents of the payload.
 Preferably you would add your own global function that you use for internal navigation.
 
-#### Compass life hacks
+## Compass life hacks
 
 ##### Tip 1. NavigationHandler.swift
 You could have multiple handlers depending on if a user is logged in or not.
