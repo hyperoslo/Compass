@@ -64,6 +64,59 @@ func application(app: UIApplication,
 }
 ```
 
+Setting it up this way would mean that
+you could open any view from a push notification depending on the contents of the payload.
+Preferably you would add your own global function that you use for internal navigation.
+
+#### Compass life hacks
+
+##### Tip 1. NavigationHandler.swift
+You could have multiple handlers depending on if a user is logged in or not.
+```swift
+import UIKit
+import Compass
+
+struct NavigationHandler {
+  static func routePreLogin(route: String, arguments: [String: String], navigationController: UINavigationController) {
+    let currentController = navigationController.topViewController
+    switch route {
+        case "forgotpassword:{username}":
+          let forgotPasswordController = ForgotPasswordController(title: arguments["{username}"])
+          navigationController?.pushViewController(loginController, 
+            animated: true)
+        default: break
+      }
+  }
+  
+   static func routePostLogin(route: String, arguments: [String: String], navigationController: UINavigationController) {
+    let currentController = navigationController.topViewController
+    switch route {
+        case "profile:{username}":
+          let profileController = profileController(title: arguments["{username}"])
+          navigationController?.pushViewController(profileController, 
+            animated: true)
+        case "logout":
+          AppDelegate.logout()
+        default: break
+      }
+   }
+}
+```
+
+##### Tip 2. Compass.swift
+Add your own global function to easily navigate internally
+``` swift
+import Compass
+
+public func navigate(urn: String) {
+  let stringURL = "\(Compass.scheme)\(urn)"
+  guard let appDelegate = UIApplication.sharedApplication().delegate as? ApplicationDelegate,
+    url = NSURL(string: stringURL) else { return }
+
+  appDelegate.handleURL(url)
+}
+```
+
 ## Installation
 
 **Compass** is available through [CocoaPods](http://cocoapods.org). To install
