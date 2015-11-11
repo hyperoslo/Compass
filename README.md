@@ -1,4 +1,4 @@
-# Compass
+![Compass logo](https://raw.githubusercontent.com/hyperoslo/Compass/update/readme/Images/logo_v1.png)
 
 [![CI Status](http://img.shields.io/travis/hyperoslo/Compass.svg?style=flat)](https://travis-ci.org/hyperoslo/Compass)
 [![Version](https://img.shields.io/cocoapods/v/Compass.svg?style=flat)](http://cocoadocs.org/docsets/Compass)
