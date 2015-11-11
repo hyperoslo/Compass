@@ -89,11 +89,11 @@ struct NavigationHandler {
       }
   }
   
-   static func routePostLogin(route: String, arguments: [String: String], 
+  static func routePostLogin(route: String, arguments: [String: String], 
     navigationController: UINavigationController) {
       let currentController = navigationController.topViewController
       switch route {
-        case "profile:{username}":
+      case "profile:{username}":
         let profileController = profileController(title: arguments["{username}"])
         navigationController?.pushViewController(profileController, 
           animated: true)
