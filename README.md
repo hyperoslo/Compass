@@ -41,7 +41,7 @@ func application(application: UIApplication,
 }
 ```
 #### Step 4
-Setup your application to response to the URLs, this can be done in the `AppDelegate` but its up to you to find a more suitable place for it depending on the size of your implementation.
+Set up your application to respond to the URLs, this can be done in the `AppDelegate` but its up to you to find a more suitable place for it depending on the size of your implementation.
 ```swift
 func application(app: UIApplication, 
   openURL url: NSURL, 
