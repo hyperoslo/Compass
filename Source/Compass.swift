@@ -3,6 +3,7 @@ import UIKit
 public struct Compass {
 
   private static var internalScheme = ""
+
   public static var scheme: String {
     set { Compass.internalScheme = newValue }
     get { return "\(Compass.internalScheme)://" }
@@ -10,7 +11,9 @@ public struct Compass {
 
   public static var routes = [String]()
 
-  public static func parse(url: NSURL, completion: (route: String, arguments: [String : String]) -> Void) -> Bool {
+  public typealias ParseCompletion = (route: String, arguments: [String : String]) -> Void
+
+  public static func parse(url: NSURL, completion: ParseCompletion) -> Bool {
     let query = url.absoluteString.substringFromIndex(scheme.endIndex)
 
     for route in routes.sort({ $0 < $1 }) {
