@@ -42,5 +42,4 @@ class TestCompass: XCTestCase {
       XCTAssert(arguments.isEmpty)
     }
   }
-
 }
