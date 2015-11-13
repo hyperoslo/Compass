@@ -14,6 +14,7 @@ public struct Compass {
   public typealias ParseCompletion = (route: String, arguments: [String : String]) -> Void
 
   public static func parse(url: NSURL, completion: ParseCompletion) -> Bool {
+    var result = false
     let query = url.absoluteString.substringFromIndex(scheme.endIndex)
 
     for route in routes.sort({ $0 < $1 }) {
@@ -22,7 +23,7 @@ public struct Compass {
         .map(String.init))
         .first else { continue }
 
-      if (query.hasPrefix(prefix) || prefix.hasPrefix(query)) {
+      if query.hasPrefix(prefix) || prefix.hasPrefix(query) {
         let queryString = query.stringByReplacingOccurrencesOfString(prefix, withString: "")
         let queryArguments = paths(queryString)
         let routeArguments = paths(route).filter { $0.containsString("{") }
@@ -35,16 +36,20 @@ public struct Compass {
               ? queryArguments[index] : nil
           }
           completion(route: route, arguments: arguments)
-          return true
+
+          result = true
+          break
         }
       }
     }
-    return false
+
+    return result
   }
 
   public static func navigate(urn: String, scheme: String = Compass.scheme) {
     let stringURL = "\(scheme)\(urn)"
     guard let url = NSURL(string: stringURL) else { return }
+    
     UIApplication.sharedApplication().openURL(url)
   }
 
