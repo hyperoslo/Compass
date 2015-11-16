@@ -127,6 +127,10 @@ pod 'Compass'
 
 Hyper Interaktiv AS, ios@hyper.no
 
+## Credits
+
+The idea behind Compass came from [John Sundell](https://github.com/JohnSundell)'s tech talk "*Components & View Models in the Cloud - how Spotify builds native, dynamic UIs*"
+
 ## License
 
 **Compass** is available under the MIT license. See the LICENSE file for more info.
