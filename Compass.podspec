@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "Compass"
-  s.summary          = "A short description of Compass."
+  s.summary          = "Compass helps you setup a central navigation system for your iOS application."
   s.version          = "1.0.0"
   s.homepage         = "https://github.com/hyperoslo/Compass"
   s.license          = 'MIT'
