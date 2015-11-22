@@ -23,7 +23,7 @@ class TestCompass: XCTestCase {
     let url = NSURL(string: "compassTests://profile:testUser")!
     Compass.parse(url) { route, arguments in
       XCTAssertEqual("profile:{user}", route)
-      XCTAssertEqual(arguments["{user}"], "testUser")
+      XCTAssertEqual(arguments["user"], "testUser")
     }
   }
 
