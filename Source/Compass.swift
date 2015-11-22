@@ -32,7 +32,7 @@ public struct Compass {
 
         if queryArguments.count == routeArguments.count {
           for (index, key) in routeArguments.enumerate() {
-            arguments[key] = index <= queryArguments.count && "\(query):" != prefix
+            arguments[String(key.characters.dropFirst().dropLast())] = index <= queryArguments.count && "\(query):" != prefix
               ? queryArguments[index] : nil
           }
           completion(route: route, arguments: arguments)
