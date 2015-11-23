@@ -1,5 +1,5 @@
 PODS:
-  - Compass (0.1.0)
+  - Compass (1.1.0)
 
 DEPENDENCIES:
   - Compass (from `../../`)
@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: "../../"
 
 SPEC CHECKSUMS:
-  Compass: e01188a61ec071d122ca607202a21eb9b52ea0b9
+  Compass: 884465fe6cd5f809a4e6640f7933de31331e0d38
 
 COCOAPODS: 0.39.0

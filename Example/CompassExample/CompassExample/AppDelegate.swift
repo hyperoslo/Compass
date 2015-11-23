@@ -31,12 +31,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       if route == "profile:{username}" {
         let profileController = UIViewController()
         profileController.view.backgroundColor = UIColor.whiteColor()
-        profileController.title = arguments["{username}"]
+        profileController.title = arguments["username"]
         self.navigationController?.pushViewController(profileController, animated: true)
       } else if route == "login:{username}" {
         let loginController = LoginController()
-        loginController.title = arguments["{username}"]
-        let username = arguments["{username}"]
+        loginController.title = arguments["username"]
+        let username = arguments["username"]
         loginController.titleLabel.text = "\(loginController.titleLabel.text!) \(username!)"
         loginController.titleLabel.sizeToFit()
         self.navigationController?.pushViewController(loginController, animated: true)
