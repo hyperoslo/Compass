@@ -5,7 +5,7 @@ class TestCompass: XCTestCase {
 
   override func setUp() {
     Compass.scheme = "compassTests"
-    Compass.routes = ["profile:{user}", "login"]
+    Compass.routes = ["profile:{user}", "login", "callback"]
   }
 
   func testScheme() {
@@ -14,7 +14,7 @@ class TestCompass: XCTestCase {
 
   func testRoutes() {
     XCTAssert(!Compass.routes.isEmpty)
-    XCTAssert(Compass.routes.count == 2)
+    XCTAssert(Compass.routes.count == 3)
     XCTAssertEqual(Compass.routes[0], "profile:{user}")
     XCTAssertEqual(Compass.routes[1], "login")
   }
@@ -36,10 +36,32 @@ class TestCompass: XCTestCase {
   }
 
   func testParseWithoutArguments() {
-    let url = NSURL(string: "compassTest://login")!
+    let url = NSURL(string: "compassTests://login")!
     Compass.parse(url) { route, arguments in
       XCTAssertEqual("login", route)
       XCTAssert(arguments.isEmpty)
+    }
+  }
+
+  func testParseRegularURLWithFragments() {
+    let url = NSURL(string: "compassTests://callback/#access_token=IjvcgrkQk1p7TyJxKa26rzM1wBMFZW6XoHK4t5Gkt1xQLTN8l7ppR0H3EZXpoP0uLAN49oCDqTHsvnEV&token_type=Bearer&expires_in=3600")!
+    Compass.parse(url) { route, arguments in
+      XCTAssertEqual(route, "callback")
+      XCTAssertEqual(arguments.count, 3)
+      XCTAssertEqual(arguments["access_token"], "IjvcgrkQk1p7TyJxKa26rzM1wBMFZW6XoHK4t5Gkt1xQLTN8l7ppR0H3EZXpoP0uLAN49oCDqTHsvnEV")
+      XCTAssertEqual(arguments["expires_in"], "3600")
+      XCTAssertEqual(arguments["token_type"], "Bearer")
+    }
+  }
+
+  func testParseRegularURLWithQuery() {
+    let url = NSURL(string: "compassTests://callback/?access_token=Yo0OMrVZbRWNmgA6BT99hyuTUTNRGvqEEAQyeN1eslclzhFD0M8AidB4Z7Vs2NU8WoSNW0vYb961O38l&token_type=Bearer&expires_in=3600")!
+    Compass.parse(url) { route, arguments in
+      XCTAssertEqual(route, "callback")
+      XCTAssertEqual(arguments.count, 3)
+      XCTAssertEqual(arguments["access_token"], "Yo0OMrVZbRWNmgA6BT99hyuTUTNRGvqEEAQyeN1eslclzhFD0M8AidB4Z7Vs2NU8WoSNW0vYb961O38l")
+      XCTAssertEqual(arguments["expires_in"], "3600")
+      XCTAssertEqual(arguments["token_type"], "Bearer")
     }
   }
 }
