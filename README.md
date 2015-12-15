@@ -1,29 +1,30 @@
 ![Compass logo](https://raw.githubusercontent.com/hyperoslo/Compass/master/Images/logo_v1.png)
 
 [![Version](https://img.shields.io/cocoapods/v/Compass.svg?style=flat)](http://cocoadocs.org/docsets/Compass)
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/cocoapods/l/Compass.svg?style=flat)](http://cocoadocs.org/docsets/Compass)
 [![Platform](https://img.shields.io/cocoapods/p/Compass.svg?style=flat)](http://cocoadocs.org/docsets/Compass)
 
 Compass helps you setup a central navigation system for your application.
 This has many benefits, one of them being that controllers can now be
-decoupled, meaning that the list that presents the detail no longer knows 
-about what its presenting. Controllers become agnostic and views stay 
+decoupled, meaning that the list that presents the detail no longer knows
+about what its presenting. Controllers become agnostic and views stay
 stupid. The user experience stays the same but the logic and separation of
-concerns become clearer. The outcome is that your application will become 
-more modular by default. Anything could potentially be presented from 
+concerns become clearer. The outcome is that your application will become
+more modular by default. Anything could potentially be presented from
 anywhere, but remember, with great power comes great responsibility.
 
 ## Setup
 
 #### Step 1
 First you need to register a URL scheme for your application
-<img src="https://raw.githubusercontent.com/hyperoslo/Compass/master/Images/setup-url-scheme.png"> 
+<img src="https://raw.githubusercontent.com/hyperoslo/Compass/master/Images/setup-url-scheme.png">
 
 #### Step 2
 Now you need to configure Compass to use that URL scheme, a good place
 to do this is in your `AppDelegate`
 ```swift
-func application(application: UIApplication, 
+func application(application: UIApplication,
   didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     Compass.scheme = "compass"
     return true
@@ -32,7 +33,7 @@ func application(application: UIApplication,
 #### Step 3
 Configure your application routes
 ```swift
-func application(application: UIApplication, 
+func application(application: UIApplication,
   didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     Compass.scheme = "compass"
     Compass.routes = ["profile:{username}", "login:{username}", "logout"]
@@ -42,18 +43,18 @@ func application(application: UIApplication,
 #### Step 4
 Set up your application to respond to the URLs, this can be done in the `AppDelegate` but its up to you to find a more suitable place for it depending on the size of your implementation.
 ```swift
-func application(app: UIApplication, 
-  openURL url: NSURL, 
+func application(app: UIApplication,
+  openURL url: NSURL,
   options: [String : AnyObject]) -> Bool {
     return Compass.parse(url) { route, arguments in
       switch route {
         case "profile:{username}":
           let profileController = profileController(title: arguments["{username}"])
-          self.navigationController?.pushViewController(profileController, 
+          self.navigationController?.pushViewController(profileController,
             animated: true)
         case "login:{username}":
           let loginController = LoginController(title: arguments["{username}"])
-          self.navigationController?.pushViewController(loginController, 
+          self.navigationController?.pushViewController(loginController,
             animated: true)
         case "logout":
           logout()
