@@ -24,7 +24,7 @@
 
 /* Begin PBXFileReference section */
 		D5DC59591C200D55003BD79B /* Compass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Compass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D5DC59631C200D55003BD79B /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5DC59631C200D55003BD79B /* Compass-iOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Compass-iOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5DC59741C200DEC003BD79B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5DC59751C200DEC003BD79B /* TestCompass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCompass.swift; sourceTree = "<group>"; };
 		D5DC59771C200DEC003BD79B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,7 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				D5DC59591C200D55003BD79B /* Compass.framework */,
-				D5DC59631C200D55003BD79B /* Tests.xctest */,
+				D5DC59631C200D55003BD79B /* Compass-iOS-Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,9 +107,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		D5DC59581C200D55003BD79B /* Compass iOS */ = {
+		D5DC59581C200D55003BD79B /* Compass-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D5DC596D1C200D55003BD79B /* Build configuration list for PBXNativeTarget "Compass iOS" */;
+			buildConfigurationList = D5DC596D1C200D55003BD79B /* Build configuration list for PBXNativeTarget "Compass-iOS" */;
 			buildPhases = (
 				D5DC59541C200D55003BD79B /* Sources */,
 				D5DC59551C200D55003BD79B /* Frameworks */,
@@ -120,14 +120,14 @@
 			);
 			dependencies = (
 			);
-			name = "Compass iOS";
+			name = "Compass-iOS";
 			productName = Compass;
 			productReference = D5DC59591C200D55003BD79B /* Compass.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		D5DC59621C200D55003BD79B /* Tests */ = {
+		D5DC59621C200D55003BD79B /* Compass-iOS-Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D5DC59701C200D55003BD79B /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildConfigurationList = D5DC59701C200D55003BD79B /* Build configuration list for PBXNativeTarget "Compass-iOS-Tests" */;
 			buildPhases = (
 				D5DC595F1C200D55003BD79B /* Sources */,
 				D5DC59601C200D55003BD79B /* Frameworks */,
@@ -138,9 +138,9 @@
 			dependencies = (
 				D5DC59661C200D55003BD79B /* PBXTargetDependency */,
 			);
-			name = Tests;
+			name = "Compass-iOS-Tests";
 			productName = CompassTests;
-			productReference = D5DC59631C200D55003BD79B /* Tests.xctest */;
+			productReference = D5DC59631C200D55003BD79B /* Compass-iOS-Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -173,8 +173,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D5DC59581C200D55003BD79B /* Compass iOS */,
-				D5DC59621C200D55003BD79B /* Tests */,
+				D5DC59581C200D55003BD79B /* Compass-iOS */,
+				D5DC59621C200D55003BD79B /* Compass-iOS-Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -218,7 +218,7 @@
 /* Begin PBXTargetDependency section */
 		D5DC59661C200D55003BD79B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D5DC59581C200D55003BD79B /* Compass iOS */;
+			target = D5DC59581C200D55003BD79B /* Compass-iOS */;
 			targetProxy = D5DC59651C200D55003BD79B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -379,7 +379,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D5DC596D1C200D55003BD79B /* Build configuration list for PBXNativeTarget "Compass iOS" */ = {
+		D5DC596D1C200D55003BD79B /* Build configuration list for PBXNativeTarget "Compass-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D5DC596E1C200D55003BD79B /* Debug */,
@@ -388,7 +388,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D5DC59701C200D55003BD79B /* Build configuration list for PBXNativeTarget "Tests" */ = {
+		D5DC59701C200D55003BD79B /* Build configuration list for PBXNativeTarget "Compass-iOS-Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D5DC59711C200D55003BD79B /* Debug */,
