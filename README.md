@@ -123,6 +123,13 @@ it, simply add the following line to your Podfile:
 pod 'Compass'
 ```
 
+**Compass** is also available through [Carthage](https://github.com/Carthage/Carthage).
+To install just write into your Cartfile:
+
+```ruby
+github "hyperoslo/Compass"
+```
+
 ## Author
 
 Hyper Interaktiv AS, ios@hyper.no
