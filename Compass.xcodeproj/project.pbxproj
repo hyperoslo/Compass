@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D5DC59641C200D55003BD79B /* Compass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DC59591C200D55003BD79B /* Compass.framework */; };
 		D5DC597B1C200DF1003BD79B /* TestCompass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DC59751C200DEC003BD79B /* TestCompass.swift */; };
+		D5DC597E1C200EC7003BD79B /* Compass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DC597D1C200EC7003BD79B /* Compass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +28,7 @@
 		D5DC59741C200DEC003BD79B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5DC59751C200DEC003BD79B /* TestCompass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCompass.swift; sourceTree = "<group>"; };
 		D5DC59771C200DEC003BD79B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5DC597D1C200EC7003BD79B /* Compass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 		D5DC594F1C200D55003BD79B = {
 			isa = PBXGroup;
 			children = (
+				D5DC597C1C200EC7003BD79B /* Source */,
 				D5DC59731C200DEC003BD79B /* Tests */,
 				D5DC59761C200DEC003BD79B /* SupportFiles */,
 				D5DC595A1C200D55003BD79B /* Products */,
@@ -81,6 +84,14 @@
 				D5DC59771C200DEC003BD79B /* Info.plist */,
 			);
 			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		D5DC597C1C200EC7003BD79B /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				D5DC597D1C200EC7003BD79B /* Compass.swift */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5DC597E1C200EC7003BD79B /* Compass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
