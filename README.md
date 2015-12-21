@@ -20,6 +20,8 @@ anywhere, but remember, with great power comes great responsibility.
 First you need to register a URL scheme for your application
 <img src="https://raw.githubusercontent.com/hyperoslo/Compass/master/Images/setup-url-scheme.png">
 
+[![CI Status](http://img.shields.io/travis/hyperoslo/Compass.svg?style=flat)](https://travis-ci.org/hyperoslo/Compass)
+
 #### Step 2
 Now you need to configure Compass to use that URL scheme, a good place
 to do this is in your `AppDelegate`
