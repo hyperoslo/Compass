@@ -17,7 +17,8 @@ public struct Compass {
     var result = false
     let query = url.absoluteString.substringFromIndex(scheme.endIndex)
 
-    guard !query.containsString("/") else { return parseAsURL(url, completion: completion) }
+    guard !query.containsString("/?") || !query.containsString("/#")
+      else { return parseAsURL(url, completion: completion) }
 
     for route in routes.sort({ $0 < $1 }) {
       guard let prefix = (route.characters
