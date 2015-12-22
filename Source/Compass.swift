@@ -17,7 +17,7 @@ public struct Compass {
     var result = false
     let query = url.absoluteString.substringFromIndex(scheme.endIndex)
 
-    guard !query.containsString("/?") || !query.containsString("/#")
+    guard !(query.containsString("/?") || query.containsString("/#"))
       else { return parseAsURL(url, completion: completion) }
 
     for route in routes.sort({ $0 < $1 }) {
@@ -26,7 +26,7 @@ public struct Compass {
         .map(String.init))
         .first else { continue }
 
-      if query.hasPrefix(prefix) && prefix.hasPrefix(query) {
+      if query.hasPrefix(prefix) || prefix.hasPrefix(query) {
         let queryString = query.stringByReplacingOccurrencesOfString(prefix, withString: "")
         let queryArguments = splitString(queryString, delimiter: ":")
         let routeArguments = splitString(route, delimiter: ":").filter { $0.containsString("{") }
