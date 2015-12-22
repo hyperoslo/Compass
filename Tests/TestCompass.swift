@@ -107,5 +107,7 @@ class TestCompass: XCTestCase {
 
       expectation.fulfill()
     }
+
+    self.waitForExpectationsWithTimeout(4.0, handler:nil)
   }
 }
