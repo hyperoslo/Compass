@@ -26,7 +26,7 @@ public struct Compass {
         .map(String.init))
         .first else { continue }
 
-      if query.hasPrefix(prefix) && prefix.hasPrefix(query) {
+      if query.hasPrefix(prefix) || prefix.hasPrefix(query) {
         let queryString = query.stringByReplacingOccurrencesOfString(prefix, withString: "")
         let queryArguments = splitString(queryString, delimiter: ":")
         let routeArguments = splitString(route, delimiter: ":").filter { $0.containsString("{") }
