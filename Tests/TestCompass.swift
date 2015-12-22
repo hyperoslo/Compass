@@ -6,7 +6,7 @@ class TestCompass: XCTestCase {
 
   override func setUp() {
     Compass.scheme = "compassTests"
-    Compass.routes = ["profile:{user}", "login", "callback"]
+    Compass.routes = ["profile:{user}", "login", "callback", "user:list:{userId}:{kind}"]
   }
 
   func testScheme() {
@@ -15,7 +15,7 @@ class TestCompass: XCTestCase {
 
   func testRoutes() {
     XCTAssert(!Compass.routes.isEmpty)
-    XCTAssert(Compass.routes.count == 3)
+    XCTAssert(Compass.routes.count == 4)
     XCTAssertEqual(Compass.routes[0], "profile:{user}")
     XCTAssertEqual(Compass.routes[1], "login")
   }
