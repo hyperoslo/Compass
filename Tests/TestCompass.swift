@@ -26,8 +26,8 @@ class TestCompass: XCTestCase {
 
     Compass.parse(url) { route, arguments in
       XCTAssertEqual("profile:{user}", route)
-      XCTAssertEqual(arguments["user"], "testUdssser")
-      
+      XCTAssertEqual(arguments["user"], "testUser")
+
       expectation.fulfill()
     }
 
