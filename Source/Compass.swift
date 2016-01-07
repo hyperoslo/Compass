@@ -22,15 +22,11 @@ public struct Compass {
       else { return parseAsURL(url, completion: completion) }
 
     for route in routes.sort({ $0 < $1 }) {
-      guard let prefix = (route.characters
-        .split { $0 == "{" }
-        .map(String.init))
-        .first else { continue }
+      guard let prefix = route.split("{").first else { continue }
 
       if query.hasPrefix(prefix) || prefix.hasPrefix(query) {
-        let queryString = query.stringByReplacingOccurrencesOfString(prefix, withString: "")
-        let queryArguments = splitString(queryString, delimiter: ":")
-        let routeArguments = splitString(route, delimiter: ":").filter { $0.containsString("{") }
+        let queryArguments = query.replace(prefix, with: "").split(":")
+        let routeArguments = route.split(":").filter { $0.containsString("{") }
 
         var arguments = [String : String]()
 
@@ -56,8 +52,8 @@ public struct Compass {
     var arguments = [String : String]()
 
     [url.fragment, url.query].forEach {
-      splitString($0, delimiter: "&").forEach {
-        let pair = splitString($0, delimiter: "=")
+      $0?.split("&").forEach {
+        let pair = $0.split("=")
         arguments[pair[0]] = pair[1]
       }
     }
@@ -72,16 +68,6 @@ public struct Compass {
     guard let url = NSURL(string: stringURL) else { return }
 
     UIApplication.sharedApplication().openURL(url)
-  }
-
-  // MARK: - Private Helpers
-
-  private static func splitString(string: String?, delimiter: Character) -> [String] {
-    guard let string = string else { return [] }
-
-    return string.characters
-      .split { $0 == delimiter }
-      .map(String.init)
   }
 }
 
