@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31FFBFCB4C8F85ACBCB3142E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC0D16AE828E5A8EFA3A24E5 /* Pods.framework */; };
 		D5DC59641C200D55003BD79B /* Compass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DC59591C200D55003BD79B /* Compass.framework */; };
 		D5DC597B1C200DF1003BD79B /* TestCompass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DC59751C200DEC003BD79B /* TestCompass.swift */; };
 		D5DC597E1C200EC7003BD79B /* Compass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DC597D1C200EC7003BD79B /* Compass.swift */; };
@@ -23,12 +24,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		070B550F0873C0255ECE4E60 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		98885A93D2290DA2602FA099 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D5DC59591C200D55003BD79B /* Compass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Compass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5DC59631C200D55003BD79B /* Compass-iOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Compass-iOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5DC59741C200DEC003BD79B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5DC59751C200DEC003BD79B /* TestCompass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCompass.swift; sourceTree = "<group>"; };
 		D5DC59771C200DEC003BD79B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5DC597D1C200EC7003BD79B /* Compass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compass.swift; sourceTree = "<group>"; };
+		FC0D16AE828E5A8EFA3A24E5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31FFBFCB4C8F85ACBCB3142E /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +55,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5BD1EA93DC85FD8BF27F2B48 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FC0D16AE828E5A8EFA3A24E5 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		988AA7B34A57BD52EA36BBA4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				98885A93D2290DA2602FA099 /* Pods.debug.xcconfig */,
+				070B550F0873C0255ECE4E60 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D5DC594F1C200D55003BD79B = {
 			isa = PBXGroup;
 			children = (
@@ -57,6 +79,8 @@
 				D5DC59731C200DEC003BD79B /* Tests */,
 				D5DC59761C200DEC003BD79B /* SupportFiles */,
 				D5DC595A1C200D55003BD79B /* Products */,
+				988AA7B34A57BD52EA36BBA4 /* Pods */,
+				5BD1EA93DC85FD8BF27F2B48 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,10 +135,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D5DC596D1C200D55003BD79B /* Build configuration list for PBXNativeTarget "Compass-iOS" */;
 			buildPhases = (
+				01878B3846A641D627BC0083 /* Check Pods Manifest.lock */,
 				D5DC59541C200D55003BD79B /* Sources */,
 				D5DC59551C200D55003BD79B /* Frameworks */,
 				D5DC59561C200D55003BD79B /* Headers */,
 				D5DC59571C200D55003BD79B /* Resources */,
+				ED886227CAC3FF769E032AED /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -195,6 +221,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		01878B3846A641D627BC0083 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		ED886227CAC3FF769E032AED /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D5DC59541C200D55003BD79B /* Sources */ = {
@@ -315,6 +374,7 @@
 		};
 		D5DC596E1C200D55003BD79B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98885A93D2290DA2602FA099 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -332,6 +392,7 @@
 		};
 		D5DC596F1C200D55003BD79B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 070B550F0873C0255ECE4E60 /* Pods.release.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
