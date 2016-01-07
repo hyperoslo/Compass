@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D5DC59581C200D55003BD79B"
+               BlueprintIdentifier = "BDB693161C3EA91B00A5FB86"
                BuildableName = "Compass.framework"
-               BlueprintName = "Compass-iOS"
+               BlueprintName = "Compass-Mac"
                ReferencedContainer = "container:Compass.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -56,9 +56,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D5DC59581C200D55003BD79B"
+            BlueprintIdentifier = "BDB693161C3EA91B00A5FB86"
             BuildableName = "Compass.framework"
-            BlueprintName = "Compass-iOS"
+            BlueprintName = "Compass-Mac"
             ReferencedContainer = "container:Compass.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -78,9 +78,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D5DC59581C200D55003BD79B"
+            BlueprintIdentifier = "BDB693161C3EA91B00A5FB86"
             BuildableName = "Compass.framework"
-            BlueprintName = "Compass-iOS"
+            BlueprintName = "Compass-Mac"
             ReferencedContainer = "container:Compass.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -96,9 +96,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D5DC59581C200D55003BD79B"
+            BlueprintIdentifier = "BDB693161C3EA91B00A5FB86"
             BuildableName = "Compass.framework"
-            BlueprintName = "Compass-iOS"
+            BlueprintName = "Compass-Mac"
             ReferencedContainer = "container:Compass.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

@@ -1,8 +1,16 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-platform :ios, '8.0'
-
 use_frameworks!
 inhibit_all_warnings!
 
-pod 'Sugar'
+target "Compass-Mac" do
+  pod 'Sugar'
+end
+
+target "Compass-Tests" do
+  pod 'Sugar'
+end
+
+target "Compass-iOS" do
+  pod 'Sugar'
+end
