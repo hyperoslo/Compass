@@ -1,0 +1,10 @@
+PODS:
+  - Sugar (1.0.0)
+
+DEPENDENCIES:
+  - Sugar
+
+SPEC CHECKSUMS:
+  Sugar: 7191a36d6b567d65ba4ac7c67b1684ca0554fec5
+
+COCOAPODS: 0.39.0
