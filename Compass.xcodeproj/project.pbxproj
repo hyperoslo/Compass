@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		29D63F38FD6F26B4B277A816 /* Pods_Compass_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 674D4E862B7708F22872E7B7 /* Pods_Compass_iOS.framework */; };
-		31FFBFCB4C8F85ACBCB3142E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC0D16AE828E5A8EFA3A24E5 /* Pods.framework */; };
 		671430A6B3BBF31B0FD980F1 /* Pods_Compass_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C314244CA9185D4AB1FCDB98 /* Pods_Compass_Tests.framework */; };
 		76825CF143AC38B331378E2E /* Pods_Compass_Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8073E59E2BA0B1C083FC88AA /* Pods_Compass_Mac.framework */; };
 		BDB693111C3EA90C00A5FB86 /* TestCompass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB6930F1C3EA90C00A5FB86 /* TestCompass.swift */; };
@@ -68,7 +67,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31FFBFCB4C8F85ACBCB3142E /* Pods.framework in Frameworks */,
 				29D63F38FD6F26B4B277A816 /* Pods_Compass_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
