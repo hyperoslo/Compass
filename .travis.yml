@@ -6,6 +6,6 @@ before_install:
 - brew update
 - if brew outdated | grep -qx xctool; then brew upgrade xctool; fi
 
-script: 
-- xctool clean build -project Compass.xcodeproj -scheme Compass-iOS -sdk iphonesimulator
-- xctool test -project Compass.xcodeproj -scheme Compass-iOS -sdk iphonesimulator
+script:
+- xctool clean build -workspace Compass.xcworkspace -scheme Compass-iOS -sdk iphonesimulator
+- xctool test -workspace Compass.xcworkspace -scheme Compass-iOS -sdk iphonesimulator
