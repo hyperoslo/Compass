@@ -64,8 +64,7 @@ public struct Compass {
   }
 
   public static func navigate(urn: String, scheme: String = Compass.scheme) {
-    let stringURL = "\(scheme)\(urn)"
-    guard let url = NSURL(string: stringURL) else { return }
+    guard let url = NSURL(string: "\(scheme)\(urn)") else { return }
 
     UIApplication.sharedApplication().openURL(url)
   }
