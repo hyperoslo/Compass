@@ -9,3 +9,5 @@ before_install:
 script:
 - xctool clean build -workspace Compass.xcworkspace -scheme Compass-iOS -sdk iphonesimulator
 - xctool test -workspace Compass.xcworkspace -scheme Compass-iOS -sdk iphonesimulator
+- xctool clean build -workspace Compass.xcworkspace -scheme Compass-Mac -sdk macosx
+- xctool test -workspace Compass.xcworkspace -scheme Compass-Mac -sdk macosx
