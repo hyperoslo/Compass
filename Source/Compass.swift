@@ -1,4 +1,4 @@
-import UIKit
+import Foundation
 import Sugar
 
 public struct Compass {
