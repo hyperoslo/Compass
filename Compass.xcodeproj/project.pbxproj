@@ -17,10 +17,6 @@
 		BDF7B4171C3FF51800576737 /* Sugar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDF7B4161C3FF51800576737 /* Sugar.framework */; };
 		D5B2E8AA1C3A780C00C0327D /* Compass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B2E89F1C3A780C00C0327D /* Compass.framework */; };
 		D5C6294A1C3A7FAA007F7B7C /* Compass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C629401C3A7FAA007F7B7C /* Compass.framework */; };
-		D5C629771C3A878E007F7B7C /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C629751C3A878E007F7B7C /* Quick.framework */; };
-		D5C629781C3A878E007F7B7C /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C629761C3A878E007F7B7C /* Nimble.framework */; };
-		D5C6297B1C3A879F007F7B7C /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C629791C3A879F007F7B7C /* Quick.framework */; };
-		D5C6297C1C3A879F007F7B7C /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C6297A1C3A879F007F7B7C /* Nimble.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,10 +47,6 @@
 		D5B2E8A91C3A780C00C0327D /* Compass-iOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Compass-iOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C629401C3A7FAA007F7B7C /* Compass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Compass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C629491C3A7FAA007F7B7C /* Compass-Mac-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Compass-Mac-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D5C629751C3A878E007F7B7C /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
-		D5C629761C3A878E007F7B7C /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
-		D5C629791C3A879F007F7B7C /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
-		D5C6297A1C3A879F007F7B7C /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
 		D5C6298B1C3A8BBD007F7B7C /* Info-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
 		D5C6298C1C3A8BBD007F7B7C /* Info-Mac.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-Mac.plist"; sourceTree = "<group>"; };
 		D5C629901C3A8BDA007F7B7C /* Info-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
@@ -74,8 +66,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5C629771C3A878E007F7B7C /* Quick.framework in Frameworks */,
-				D5C629781C3A878E007F7B7C /* Nimble.framework in Frameworks */,
 				D5B2E8AA1C3A780C00C0327D /* Compass.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,8 +82,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5C6297B1C3A879F007F7B7C /* Quick.framework in Frameworks */,
-				D5C6297C1C3A879F007F7B7C /* Nimble.framework in Frameworks */,
 				D5C6294A1C3A7FAA007F7B7C /* Compass.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,10 +94,6 @@
 			children = (
 				BDF7B4161C3FF51800576737 /* Sugar.framework */,
 				BDF7B4141C3FF51100576737 /* Sugar.framework */,
-				D5C629791C3A879F007F7B7C /* Quick.framework */,
-				D5C6297A1C3A879F007F7B7C /* Nimble.framework */,
-				D5C629751C3A878E007F7B7C /* Quick.framework */,
-				D5C629761C3A878E007F7B7C /* Nimble.framework */,
 				D5C629691C3A809D007F7B7C /* Sources */,
 				D5C6295C1C3A800E007F7B7C /* Compass */,
 				D5C6298F1C3A8BDA007F7B7C /* CompassTests */,
