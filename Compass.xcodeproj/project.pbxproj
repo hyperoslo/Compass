@@ -7,97 +7,199 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D5DC59641C200D55003BD79B /* Compass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DC59591C200D55003BD79B /* Compass.framework */; };
-		D5DC597B1C200DF1003BD79B /* TestCompass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DC59751C200DEC003BD79B /* TestCompass.swift */; };
-		D5DC597E1C200EC7003BD79B /* Compass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DC597D1C200EC7003BD79B /* Compass.swift */; };
+		BDF7B4091C3FF40300576737 /* Compass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF7B4081C3FF40300576737 /* Compass.swift */; };
+		BDF7B40A1C3FF40300576737 /* Compass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF7B4081C3FF40300576737 /* Compass.swift */; };
+		BDF7B40C1C3FF40A00576737 /* Compass+Navigate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF7B40B1C3FF40A00576737 /* Compass+Navigate.swift */; };
+		BDF7B40E1C3FF41500576737 /* Compass+Navigate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF7B40D1C3FF41500576737 /* Compass+Navigate.swift */; };
+		BDF7B4101C3FF43F00576737 /* TestCompass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF7B40F1C3FF43F00576737 /* TestCompass.swift */; };
+		BDF7B4111C3FF43F00576737 /* TestCompass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF7B40F1C3FF43F00576737 /* TestCompass.swift */; };
+		BDF7B4151C3FF51100576737 /* Sugar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDF7B4141C3FF51100576737 /* Sugar.framework */; };
+		BDF7B4171C3FF51800576737 /* Sugar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDF7B4161C3FF51800576737 /* Sugar.framework */; };
+		D5B2E8AA1C3A780C00C0327D /* Compass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B2E89F1C3A780C00C0327D /* Compass.framework */; };
+		D5C6294A1C3A7FAA007F7B7C /* Compass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C629401C3A7FAA007F7B7C /* Compass.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D5DC59651C200D55003BD79B /* PBXContainerItemProxy */ = {
+		D5B2E8AB1C3A780C00C0327D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D5DC59501C200D55003BD79B /* Project object */;
+			containerPortal = D5B2E8961C3A780C00C0327D /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D5DC59581C200D55003BD79B;
+			remoteGlobalIDString = D5B2E89E1C3A780C00C0327D;
 			remoteInfo = Compass;
+		};
+		D5C6294B1C3A7FAA007F7B7C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5B2E8961C3A780C00C0327D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D5C6293F1C3A7FAA007F7B7C;
+			remoteInfo = "Compass-Mac";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D5DC59591C200D55003BD79B /* Compass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Compass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D5DC59631C200D55003BD79B /* Compass-iOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Compass-iOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D5DC59741C200DEC003BD79B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D5DC59751C200DEC003BD79B /* TestCompass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCompass.swift; sourceTree = "<group>"; };
-		D5DC59771C200DEC003BD79B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D5DC597D1C200EC7003BD79B /* Compass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compass.swift; sourceTree = "<group>"; };
+		BDF7B4081C3FF40300576737 /* Compass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compass.swift; sourceTree = "<group>"; };
+		BDF7B40B1C3FF40A00576737 /* Compass+Navigate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Compass+Navigate.swift"; sourceTree = "<group>"; };
+		BDF7B40D1C3FF41500576737 /* Compass+Navigate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Compass+Navigate.swift"; sourceTree = "<group>"; };
+		BDF7B40F1C3FF43F00576737 /* TestCompass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCompass.swift; sourceTree = "<group>"; };
+		BDF7B4141C3FF51100576737 /* Sugar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sugar.framework; path = Carthage/Build/Mac/Sugar.framework; sourceTree = "<group>"; };
+		BDF7B4161C3FF51800576737 /* Sugar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sugar.framework; path = Carthage/Build/iOS/Sugar.framework; sourceTree = "<group>"; };
+		D5B2E89F1C3A780C00C0327D /* Compass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Compass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5B2E8A91C3A780C00C0327D /* Compass-iOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Compass-iOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5C629401C3A7FAA007F7B7C /* Compass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Compass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5C629491C3A7FAA007F7B7C /* Compass-Mac-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Compass-Mac-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5C6298B1C3A8BBD007F7B7C /* Info-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
+		D5C6298C1C3A8BBD007F7B7C /* Info-Mac.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-Mac.plist"; sourceTree = "<group>"; };
+		D5C629901C3A8BDA007F7B7C /* Info-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
+		D5C629911C3A8BDA007F7B7C /* Info-Mac.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-Mac.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D5DC59551C200D55003BD79B /* Frameworks */ = {
+		D5B2E89B1C3A780C00C0327D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDF7B4171C3FF51800576737 /* Sugar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D5DC59601C200D55003BD79B /* Frameworks */ = {
+		D5B2E8A61C3A780C00C0327D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5DC59641C200D55003BD79B /* Compass.framework in Frameworks */,
+				D5B2E8AA1C3A780C00C0327D /* Compass.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5C6293C1C3A7FAA007F7B7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDF7B4151C3FF51100576737 /* Sugar.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5C629461C3A7FAA007F7B7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5C6294A1C3A7FAA007F7B7C /* Compass.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D5DC594F1C200D55003BD79B = {
+		D5B2E8951C3A780C00C0327D = {
 			isa = PBXGroup;
 			children = (
-				D5DC597C1C200EC7003BD79B /* Source */,
-				D5DC59731C200DEC003BD79B /* Tests */,
-				D5DC59761C200DEC003BD79B /* SupportFiles */,
-				D5DC595A1C200D55003BD79B /* Products */,
+				BDF7B4161C3FF51800576737 /* Sugar.framework */,
+				BDF7B4141C3FF51100576737 /* Sugar.framework */,
+				D5C629691C3A809D007F7B7C /* Sources */,
+				D5C6295C1C3A800E007F7B7C /* Compass */,
+				D5C6298F1C3A8BDA007F7B7C /* CompassTests */,
+				D5B2E8A01C3A780C00C0327D /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		D5DC595A1C200D55003BD79B /* Products */ = {
+		D5B2E8A01C3A780C00C0327D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D5DC59591C200D55003BD79B /* Compass.framework */,
-				D5DC59631C200D55003BD79B /* Compass-iOS-Tests.xctest */,
+				D5B2E89F1C3A780C00C0327D /* Compass.framework */,
+				D5B2E8A91C3A780C00C0327D /* Compass-iOS-Tests.xctest */,
+				D5C629401C3A7FAA007F7B7C /* Compass.framework */,
+				D5C629491C3A7FAA007F7B7C /* Compass-Mac-Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D5DC59731C200DEC003BD79B /* Tests */ = {
+		D5C6295C1C3A800E007F7B7C /* Compass */ = {
 			isa = PBXGroup;
 			children = (
-				D5DC59741C200DEC003BD79B /* Info.plist */,
-				D5DC59751C200DEC003BD79B /* TestCompass.swift */,
+				D5C6298B1C3A8BBD007F7B7C /* Info-iOS.plist */,
+				D5C6298C1C3A8BBD007F7B7C /* Info-Mac.plist */,
 			);
-			path = Tests;
+			path = Compass;
 			sourceTree = "<group>";
 		};
-		D5DC59761C200DEC003BD79B /* SupportFiles */ = {
+		D5C629691C3A809D007F7B7C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				D5DC59771C200DEC003BD79B /* Info.plist */,
+				D5C6296A1C3A809D007F7B7C /* iOS */,
+				D5C6296C1C3A809D007F7B7C /* Mac */,
+				D5C6296E1C3A809D007F7B7C /* Shared */,
 			);
-			path = SupportFiles;
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		D5DC597C1C200EC7003BD79B /* Source */ = {
+		D5C6296A1C3A809D007F7B7C /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				D5DC597D1C200EC7003BD79B /* Compass.swift */,
+				BDF7B40D1C3FF41500576737 /* Compass+Navigate.swift */,
 			);
-			path = Source;
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		D5C6296C1C3A809D007F7B7C /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+				BDF7B40B1C3FF40A00576737 /* Compass+Navigate.swift */,
+			);
+			path = Mac;
+			sourceTree = "<group>";
+		};
+		D5C6296E1C3A809D007F7B7C /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				BDF7B4081C3FF40300576737 /* Compass.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		D5C6298F1C3A8BDA007F7B7C /* CompassTests */ = {
+			isa = PBXGroup;
+			children = (
+				D5C629901C3A8BDA007F7B7C /* Info-iOS.plist */,
+				D5C629911C3A8BDA007F7B7C /* Info-Mac.plist */,
+				D5C629921C3A8BDA007F7B7C /* iOS */,
+				D5C629941C3A8BDA007F7B7C /* Mac */,
+				D5C629961C3A8BDA007F7B7C /* Shared */,
+			);
+			path = CompassTests;
+			sourceTree = "<group>";
+		};
+		D5C629921C3A8BDA007F7B7C /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		D5C629941C3A8BDA007F7B7C /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mac;
+			sourceTree = "<group>";
+		};
+		D5C629961C3A8BDA007F7B7C /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				BDF7B40F1C3FF43F00576737 /* TestCompass.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		D5DC59561C200D55003BD79B /* Headers */ = {
+		D5B2E89C1C3A780C00C0327D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5C6293D1C3A7FAA007F7B7C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -107,14 +209,14 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		D5DC59581C200D55003BD79B /* Compass-iOS */ = {
+		D5B2E89E1C3A780C00C0327D /* Compass-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D5DC596D1C200D55003BD79B /* Build configuration list for PBXNativeTarget "Compass-iOS" */;
+			buildConfigurationList = D5B2E8B31C3A780C00C0327D /* Build configuration list for PBXNativeTarget "Compass-iOS" */;
 			buildPhases = (
-				D5DC59541C200D55003BD79B /* Sources */,
-				D5DC59551C200D55003BD79B /* Frameworks */,
-				D5DC59561C200D55003BD79B /* Headers */,
-				D5DC59571C200D55003BD79B /* Resources */,
+				D5B2E89A1C3A780C00C0327D /* Sources */,
+				D5B2E89B1C3A780C00C0327D /* Frameworks */,
+				D5B2E89C1C3A780C00C0327D /* Headers */,
+				D5B2E89D1C3A780C00C0327D /* Resources */,
 			);
 			buildRules = (
 			);
@@ -122,72 +224,132 @@
 			);
 			name = "Compass-iOS";
 			productName = Compass;
-			productReference = D5DC59591C200D55003BD79B /* Compass.framework */;
+			productReference = D5B2E89F1C3A780C00C0327D /* Compass.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		D5DC59621C200D55003BD79B /* Compass-iOS-Tests */ = {
+		D5B2E8A81C3A780C00C0327D /* Compass-iOS-Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D5DC59701C200D55003BD79B /* Build configuration list for PBXNativeTarget "Compass-iOS-Tests" */;
+			buildConfigurationList = D5B2E8B61C3A780C00C0327D /* Build configuration list for PBXNativeTarget "Compass-iOS-Tests" */;
 			buildPhases = (
-				D5DC595F1C200D55003BD79B /* Sources */,
-				D5DC59601C200D55003BD79B /* Frameworks */,
-				D5DC59611C200D55003BD79B /* Resources */,
+				D5B2E8A51C3A780C00C0327D /* Sources */,
+				D5B2E8A61C3A780C00C0327D /* Frameworks */,
+				D5B2E8A71C3A780C00C0327D /* Resources */,
+				D5C629731C3A86E3007F7B7C /* Copy frameworks with Carthage */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D5DC59661C200D55003BD79B /* PBXTargetDependency */,
+				D5B2E8AC1C3A780C00C0327D /* PBXTargetDependency */,
 			);
 			name = "Compass-iOS-Tests";
 			productName = CompassTests;
-			productReference = D5DC59631C200D55003BD79B /* Compass-iOS-Tests.xctest */;
+			productReference = D5B2E8A91C3A780C00C0327D /* Compass-iOS-Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D5C6293F1C3A7FAA007F7B7C /* Compass-Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5C629511C3A7FAA007F7B7C /* Build configuration list for PBXNativeTarget "Compass-Mac" */;
+			buildPhases = (
+				D5C6293B1C3A7FAA007F7B7C /* Sources */,
+				D5C6293C1C3A7FAA007F7B7C /* Frameworks */,
+				D5C6293D1C3A7FAA007F7B7C /* Headers */,
+				D5C6293E1C3A7FAA007F7B7C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Compass-Mac";
+			productName = "Compass-Mac";
+			productReference = D5C629401C3A7FAA007F7B7C /* Compass.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D5C629481C3A7FAA007F7B7C /* Compass-Mac-Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5C629541C3A7FAA007F7B7C /* Build configuration list for PBXNativeTarget "Compass-Mac-Tests" */;
+			buildPhases = (
+				D5C629451C3A7FAA007F7B7C /* Sources */,
+				D5C629461C3A7FAA007F7B7C /* Frameworks */,
+				D5C629471C3A7FAA007F7B7C /* Resources */,
+				D5C629741C3A8717007F7B7C /* Copy frameworks with Carthage */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D5C6294C1C3A7FAA007F7B7C /* PBXTargetDependency */,
+			);
+			name = "Compass-Mac-Tests";
+			productName = "Compass-MacTests";
+			productReference = D5C629491C3A7FAA007F7B7C /* Compass-Mac-Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D5DC59501C200D55003BD79B /* Project object */ = {
+		D5B2E8961C3A780C00C0327D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Hyper Interaktiv AS";
 				TargetAttributes = {
-					D5DC59581C200D55003BD79B = {
+					D5B2E89E1C3A780C00C0327D = {
 						CreatedOnToolsVersion = 7.2;
 					};
-					D5DC59621C200D55003BD79B = {
+					D5B2E8A81C3A780C00C0327D = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					D5C6293F1C3A7FAA007F7B7C = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					D5C629481C3A7FAA007F7B7C = {
 						CreatedOnToolsVersion = 7.2;
 					};
 				};
 			};
-			buildConfigurationList = D5DC59531C200D55003BD79B /* Build configuration list for PBXProject "Compass" */;
+			buildConfigurationList = D5B2E8991C3A780C00C0327D /* Build configuration list for PBXProject "Compass" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = D5DC594F1C200D55003BD79B;
-			productRefGroup = D5DC595A1C200D55003BD79B /* Products */;
+			mainGroup = D5B2E8951C3A780C00C0327D;
+			productRefGroup = D5B2E8A01C3A780C00C0327D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D5DC59581C200D55003BD79B /* Compass-iOS */,
-				D5DC59621C200D55003BD79B /* Compass-iOS-Tests */,
+				D5B2E89E1C3A780C00C0327D /* Compass-iOS */,
+				D5C6293F1C3A7FAA007F7B7C /* Compass-Mac */,
+				D5B2E8A81C3A780C00C0327D /* Compass-iOS-Tests */,
+				D5C629481C3A7FAA007F7B7C /* Compass-Mac-Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D5DC59571C200D55003BD79B /* Resources */ = {
+		D5B2E89D1C3A780C00C0327D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D5DC59611C200D55003BD79B /* Resources */ = {
+		D5B2E8A71C3A780C00C0327D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5C6293E1C3A7FAA007F7B7C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5C629471C3A7FAA007F7B7C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -196,35 +358,91 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D5C629731C3A86E3007F7B7C /* Copy frameworks with Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Sugar.framework",
+			);
+			name = "Copy frameworks with Carthage";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		D5C629741C3A8717007F7B7C /* Copy frameworks with Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/Sugar.framework",
+			);
+			name = "Copy frameworks with Carthage";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		D5DC59541C200D55003BD79B /* Sources */ = {
+		D5B2E89A1C3A780C00C0327D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5DC597E1C200EC7003BD79B /* Compass.swift in Sources */,
+				BDF7B4091C3FF40300576737 /* Compass.swift in Sources */,
+				BDF7B40E1C3FF41500576737 /* Compass+Navigate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D5DC595F1C200D55003BD79B /* Sources */ = {
+		D5B2E8A51C3A780C00C0327D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5DC597B1C200DF1003BD79B /* TestCompass.swift in Sources */,
+				BDF7B4101C3FF43F00576737 /* TestCompass.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5C6293B1C3A7FAA007F7B7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDF7B40A1C3FF40300576737 /* Compass.swift in Sources */,
+				BDF7B40C1C3FF40A00576737 /* Compass+Navigate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5C629451C3A7FAA007F7B7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDF7B4111C3FF43F00576737 /* TestCompass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D5DC59661C200D55003BD79B /* PBXTargetDependency */ = {
+		D5B2E8AC1C3A780C00C0327D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D5DC59581C200D55003BD79B /* Compass-iOS */;
-			targetProxy = D5DC59651C200D55003BD79B /* PBXContainerItemProxy */;
+			target = D5B2E89E1C3A780C00C0327D /* Compass-iOS */;
+			targetProxy = D5B2E8AB1C3A780C00C0327D /* PBXContainerItemProxy */;
+		};
+		D5C6294C1C3A7FAA007F7B7C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D5C6293F1C3A7FAA007F7B7C /* Compass-Mac */;
+			targetProxy = D5C6294B1C3A7FAA007F7B7C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		D5DC596B1C200D55003BD79B /* Debug */ = {
+		D5B2E8B11C3A780C00C0327D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -262,6 +480,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -272,7 +491,7 @@
 			};
 			name = Debug;
 		};
-		D5DC596C1C200D55003BD79B /* Release */ = {
+		D5B2E8B21C3A780C00C0327D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -304,6 +523,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -313,91 +533,220 @@
 			};
 			name = Release;
 		};
-		D5DC596E1C200D55003BD79B /* Debug */ = {
+		D5B2E8B41C3A780C00C0327D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/SupportFiles/Info.plist";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Compass/Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = no.hyper.Compass;
+				PRODUCT_BUNDLE_IDENTIFIER = "no.hyper.Compass-iOS";
 				PRODUCT_NAME = Compass;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		D5DC596F1C200D55003BD79B /* Release */ = {
+		D5B2E8B51C3A780C00C0327D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/SupportFiles/Info.plist";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Compass/Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = no.hyper.Compass;
+				PRODUCT_BUNDLE_IDENTIFIER = "no.hyper.Compass-iOS";
 				PRODUCT_NAME = Compass;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
-		D5DC59711C200D55003BD79B /* Debug */ = {
+		D5B2E8B71C3A780C00C0327D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = "$(SRCROOT)/Tests/Info.plist";
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/CompassTests/Info-iOS.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = no.hyper.CompassTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D5B2E8B81C3A780C00C0327D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/CompassTests/Info-iOS.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = no.hyper.CompassTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
-			name = Debug;
+			name = Release;
 		};
-		D5DC59721C200D55003BD79B /* Release */ = {
+		D5C629521C3A7FAA007F7B7C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = "$(SRCROOT)/Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = no.hyper.CompassTests;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Compass/Info-Mac.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "no.hyper.Compass-Mac";
+				PRODUCT_NAME = Compass;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D5C629531C3A7FAA007F7B7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Compass/Info-Mac.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "no.hyper.Compass-Mac";
+				PRODUCT_NAME = Compass;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		D5C629551C3A7FAA007F7B7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/CompassTests/Info-Mac.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "no.hyper.Compass-MacTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D5C629561C3A7FAA007F7B7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/CompassTests/Info-Mac.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "no.hyper.Compass-MacTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D5DC59531C200D55003BD79B /* Build configuration list for PBXProject "Compass" */ = {
+		D5B2E8991C3A780C00C0327D /* Build configuration list for PBXProject "Compass" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D5DC596B1C200D55003BD79B /* Debug */,
-				D5DC596C1C200D55003BD79B /* Release */,
+				D5B2E8B11C3A780C00C0327D /* Debug */,
+				D5B2E8B21C3A780C00C0327D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D5DC596D1C200D55003BD79B /* Build configuration list for PBXNativeTarget "Compass-iOS" */ = {
+		D5B2E8B31C3A780C00C0327D /* Build configuration list for PBXNativeTarget "Compass-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D5DC596E1C200D55003BD79B /* Debug */,
-				D5DC596F1C200D55003BD79B /* Release */,
+				D5B2E8B41C3A780C00C0327D /* Debug */,
+				D5B2E8B51C3A780C00C0327D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D5DC59701C200D55003BD79B /* Build configuration list for PBXNativeTarget "Compass-iOS-Tests" */ = {
+		D5B2E8B61C3A780C00C0327D /* Build configuration list for PBXNativeTarget "Compass-iOS-Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D5DC59711C200D55003BD79B /* Debug */,
-				D5DC59721C200D55003BD79B /* Release */,
+				D5B2E8B71C3A780C00C0327D /* Debug */,
+				D5B2E8B81C3A780C00C0327D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5C629511C3A7FAA007F7B7C /* Build configuration list for PBXNativeTarget "Compass-Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5C629521C3A7FAA007F7B7C /* Debug */,
+				D5C629531C3A7FAA007F7B7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5C629541C3A7FAA007F7B7C /* Build configuration list for PBXNativeTarget "Compass-Mac-Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5C629551C3A7FAA007F7B7C /* Debug */,
+				D5C629561C3A7FAA007F7B7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D5DC59501C200D55003BD79B /* Project object */;
+	rootObject = D5B2E8961C3A780C00C0327D /* Project object */;
 }

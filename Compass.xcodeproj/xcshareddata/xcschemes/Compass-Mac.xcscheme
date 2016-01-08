@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D5B2E89E1C3A780C00C0327D"
+               BlueprintIdentifier = "D5C6293F1C3A7FAA007F7B7C"
                BuildableName = "Compass.framework"
-               BlueprintName = "Compass-iOS"
+               BlueprintName = "Compass-Mac"
                ReferencedContainer = "container:Compass.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D5B2E8A81C3A780C00C0327D"
-               BuildableName = "Compass-iOS-Tests.xctest"
-               BlueprintName = "Compass-iOS-Tests"
+               BlueprintIdentifier = "D5C629481C3A7FAA007F7B7C"
+               BuildableName = "Compass-Mac-Tests.xctest"
+               BlueprintName = "Compass-Mac-Tests"
                ReferencedContainer = "container:Compass.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -42,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D5B2E89E1C3A780C00C0327D"
+            BlueprintIdentifier = "D5C6293F1C3A7FAA007F7B7C"
             BuildableName = "Compass.framework"
-            BlueprintName = "Compass-iOS"
+            BlueprintName = "Compass-Mac"
             ReferencedContainer = "container:Compass.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -64,9 +64,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D5B2E89E1C3A780C00C0327D"
+            BlueprintIdentifier = "D5C6293F1C3A7FAA007F7B7C"
             BuildableName = "Compass.framework"
-            BlueprintName = "Compass-iOS"
+            BlueprintName = "Compass-Mac"
             ReferencedContainer = "container:Compass.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -82,9 +82,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D5B2E89E1C3A780C00C0327D"
+            BlueprintIdentifier = "D5C6293F1C3A7FAA007F7B7C"
             BuildableName = "Compass.framework"
-            BlueprintName = "Compass-iOS"
+            BlueprintName = "Compass-Mac"
             ReferencedContainer = "container:Compass.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
