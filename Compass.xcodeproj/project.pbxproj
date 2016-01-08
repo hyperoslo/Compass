@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		BDF7B4091C3FF40300576737 /* Compass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF7B4081C3FF40300576737 /* Compass.swift */; };
 		BDF7B40A1C3FF40300576737 /* Compass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF7B4081C3FF40300576737 /* Compass.swift */; };
-		BDF7B40C1C3FF40A00576737 /* Compass+Navigate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF7B40B1C3FF40A00576737 /* Compass+Navigate.swift */; };
-		BDF7B40E1C3FF41500576737 /* Compass+Navigate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF7B40D1C3FF41500576737 /* Compass+Navigate.swift */; };
+		BDF7B40C1C3FF40A00576737 /* Compass+Navigate-Mac.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF7B40B1C3FF40A00576737 /* Compass+Navigate-Mac.swift */; };
+		BDF7B40E1C3FF41500576737 /* Compass+Navigate-iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF7B40D1C3FF41500576737 /* Compass+Navigate-iOS.swift */; };
 		BDF7B4101C3FF43F00576737 /* TestCompass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF7B40F1C3FF43F00576737 /* TestCompass.swift */; };
 		BDF7B4111C3FF43F00576737 /* TestCompass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF7B40F1C3FF43F00576737 /* TestCompass.swift */; };
 		BDF7B4151C3FF51100576737 /* Sugar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDF7B4141C3FF51100576737 /* Sugar.framework */; };
@@ -38,8 +38,8 @@
 
 /* Begin PBXFileReference section */
 		BDF7B4081C3FF40300576737 /* Compass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compass.swift; sourceTree = "<group>"; };
-		BDF7B40B1C3FF40A00576737 /* Compass+Navigate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Compass+Navigate.swift"; sourceTree = "<group>"; };
-		BDF7B40D1C3FF41500576737 /* Compass+Navigate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Compass+Navigate.swift"; sourceTree = "<group>"; };
+		BDF7B40B1C3FF40A00576737 /* Compass+Navigate-Mac.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Compass+Navigate-Mac.swift"; sourceTree = "<group>"; };
+		BDF7B40D1C3FF41500576737 /* Compass+Navigate-iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Compass+Navigate-iOS.swift"; sourceTree = "<group>"; };
 		BDF7B40F1C3FF43F00576737 /* TestCompass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCompass.swift; sourceTree = "<group>"; };
 		BDF7B4141C3FF51100576737 /* Sugar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sugar.framework; path = Carthage/Build/Mac/Sugar.framework; sourceTree = "<group>"; };
 		BDF7B4161C3FF51800576737 /* Sugar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sugar.framework; path = Carthage/Build/iOS/Sugar.framework; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 		D5C6296A1C3A809D007F7B7C /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				BDF7B40D1C3FF41500576737 /* Compass+Navigate.swift */,
+				BDF7B40D1C3FF41500576737 /* Compass+Navigate-iOS.swift */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -142,7 +142,7 @@
 		D5C6296C1C3A809D007F7B7C /* Mac */ = {
 			isa = PBXGroup;
 			children = (
-				BDF7B40B1C3FF40A00576737 /* Compass+Navigate.swift */,
+				BDF7B40B1C3FF40A00576737 /* Compass+Navigate-Mac.swift */,
 			);
 			path = Mac;
 			sourceTree = "<group>";
@@ -397,7 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDF7B4091C3FF40300576737 /* Compass.swift in Sources */,
-				BDF7B40E1C3FF41500576737 /* Compass+Navigate.swift in Sources */,
+				BDF7B40E1C3FF41500576737 /* Compass+Navigate-iOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,7 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDF7B40A1C3FF40300576737 /* Compass.swift in Sources */,
-				BDF7B40C1C3FF40A00576737 /* Compass+Navigate.swift in Sources */,
+				BDF7B40C1C3FF40A00576737 /* Compass+Navigate-Mac.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
