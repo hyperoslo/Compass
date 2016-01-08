@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
 
-  s.ios.source_files = 'Source/**/*'
-  s.osx.source_files = 'Source/**/*'
+  s.ios.source_files = 'Sources/**/*'
+  s.osx.source_files = 'Sources/**/*'
   s.dependency 'Sugar'
 end
