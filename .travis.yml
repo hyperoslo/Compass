@@ -5,8 +5,10 @@ before_install:
 - brew update
 - brew install carthage
 - if brew outdated | grep -qx xctool; then brew upgrade xctool; fi
-- carthage update --platform iOS
+- carthage update --platform iOS, Mac
 
 script:
 - xctool clean build -project Compass.xcodeproj -scheme Compass-iOS -sdk iphonesimulator
 - xctool test -project Compass.xcodeproj -scheme Compass-iOS -sdk iphonesimulator
+- xctool clean build -project Compass.xcodeproj -scheme Compass-Mac -sdk macosx
+- xctool test -project Compass.xcodeproj -scheme Compass-Mac -sdk macosx
