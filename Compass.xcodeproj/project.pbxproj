@@ -17,6 +17,9 @@
 		BDF7B4171C3FF51800576737 /* Sugar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDF7B4161C3FF51800576737 /* Sugar.framework */; };
 		D5A2A7931C4CEB1C00B51356 /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2A7921C4CEB1C00B51356 /* Routable.swift */; };
 		D5A2A7941C4CEB1C00B51356 /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2A7921C4CEB1C00B51356 /* Routable.swift */; };
+		D5A2A7971C4CEB7C00B51356 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2A7961C4CEB7C00B51356 /* Router.swift */; };
+		D5A2A7981C4CEB7C00B51356 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2A7961C4CEB7C00B51356 /* Router.swift */; };
+		D5A2A79A1C4CEDDA00B51356 /* TestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2A7991C4CEDDA00B51356 /* TestRouter.swift */; };
 		D5B2E8AA1C3A780C00C0327D /* Compass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B2E89F1C3A780C00C0327D /* Compass.framework */; };
 		D5C6294A1C3A7FAA007F7B7C /* Compass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C629401C3A7FAA007F7B7C /* Compass.framework */; };
 /* End PBXBuildFile section */
@@ -46,6 +49,8 @@
 		BDF7B4141C3FF51100576737 /* Sugar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sugar.framework; path = Carthage/Build/Mac/Sugar.framework; sourceTree = "<group>"; };
 		BDF7B4161C3FF51800576737 /* Sugar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sugar.framework; path = Carthage/Build/iOS/Sugar.framework; sourceTree = "<group>"; };
 		D5A2A7921C4CEB1C00B51356 /* Routable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
+		D5A2A7961C4CEB7C00B51356 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		D5A2A7991C4CEDDA00B51356 /* TestRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestRouter.swift; path = Sources/iOS/TestRouter.swift; sourceTree = SOURCE_ROOT; };
 		D5B2E89F1C3A780C00C0327D /* Compass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Compass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5B2E8A91C3A780C00C0327D /* Compass-iOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Compass-iOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C629401C3A7FAA007F7B7C /* Compass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Compass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +144,7 @@
 			children = (
 				D5A2A7921C4CEB1C00B51356 /* Routable.swift */,
 				BDF7B40D1C3FF41500576737 /* Compass+Navigate.swift */,
+				D5A2A7961C4CEB7C00B51356 /* Router.swift */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -174,6 +180,7 @@
 		D5C629921C3A8BDA007F7B7C /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				D5A2A7991C4CEDDA00B51356 /* TestRouter.swift */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -400,6 +407,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5A2A7971C4CEB7C00B51356 /* Router.swift in Sources */,
 				BDF7B4091C3FF40300576737 /* Compass.swift in Sources */,
 				D5A2A7931C4CEB1C00B51356 /* Routable.swift in Sources */,
 				BDF7B40E1C3FF41500576737 /* Compass+Navigate.swift in Sources */,
@@ -410,6 +418,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5A2A79A1C4CEDDA00B51356 /* TestRouter.swift in Sources */,
 				BDF7B4101C3FF43F00576737 /* TestCompass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,6 +427,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5A2A7981C4CEB7C00B51356 /* Router.swift in Sources */,
 				BDF7B40A1C3FF40300576737 /* Compass.swift in Sources */,
 				D5A2A7941C4CEB1C00B51356 /* Routable.swift in Sources */,
 				BDF7B40C1C3FF40A00576737 /* Compass+Navigate.swift in Sources */,
