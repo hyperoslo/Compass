@@ -72,7 +72,46 @@ Preferably you would add your own global function that you use for internal navi
 
 ## Compass life hacks
 
-##### Tip 1. NavigationHandler.swift
+##### Tip 1. Router
+We also have some conventional tools for you that could be used to organize your
+route handling code and avoid huge `switch` cases.
+
+- Implement `Routable` protocol to keep your single route navigation code
+in one place:
+```swift
+struct ProfileRoute: Routable {
+  func resolve(arguments: [String: String], navigationController: UINavigationController) {
+    guard let username = arguments["username"] else { return }
+
+    let profileController = profileController(title: username)
+    navigationController?.pushViewController(profileController, animated: true)
+  }
+}
+```
+
+- Create a `Router` instance and register your routes:
+```swift
+let router = Router()
+router.routes = [
+  "profile:{username}" : ProfileRoute(),
+  // "login:{username}" : LoginRoute()
+]
+```
+
+- Parse URL with **Compass** and navigate to the route with a help of your
+`Router` instance.
+```swift
+func application(app: UIApplication,
+  openURL url: NSURL,
+  options: [String : AnyObject]) -> Bool {
+    return Compass.parse(url) { route, arguments in
+      router.navigate(route, arguments: arguments,
+        navigationController: navigationController)
+    }
+}
+```
+
+##### Tip 2. Navigation handler
 You could have multiple handlers depending on if a user is logged in or not.
 ```swift
 struct NavigationHandler {
@@ -102,7 +141,24 @@ struct NavigationHandler {
 }
 ```
 
-##### Tip 2. Compass.swift
+If you use `Router`-based approach you could set up 2 routers depending on the
+auth state.
+```swift
+let routerPreLogin = Router()
+routerPreLogin.routes = [
+  "profile:{username}" : ProfileRoute()
+]
+
+let routerPostLogin = Router()
+routerPostLogin.routes = [
+  "login:{username}" : LoginRoute()
+]
+
+let router = isLoggedIn ? routerPostLogin : routerPreLogin
+router.navigate(route, arguments: arguments, navigationController: navigationController)
+```
+
+##### Tip 3. Global function
 Add your own global function to easily navigate internally
 ``` swift
 import Compass
