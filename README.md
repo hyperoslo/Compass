@@ -94,7 +94,7 @@ struct ProfileRoute: Routable {
 let router = Router()
 router.routes = [
   "profile:{username}" : ProfileRoute(),
-  // "login:{username}" : LoginRoute()
+  // "logout" : LogoutRoute()
 ]
 ```
 
