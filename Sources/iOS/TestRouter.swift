@@ -6,7 +6,7 @@ class TestRoute: Routable {
 
   var resolved = false
 
-  func resolve(arguments: [String: String], navigationController: UINavigationController) {
+  func resolve(arguments: [String: String], navigationController: UINavigationController?) {
     resolved = true
   }
 }
