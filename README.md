@@ -80,11 +80,11 @@ route handling code and avoid huge `switch` cases.
 in one place:
 ```swift
 struct ProfileRoute: Routable {
-  func resolve(arguments: [String: String], navigationController: UINavigationController?) {
+  func resolve(arguments: [String: String], currentController: UIViewController) {
     guard let username = arguments["username"] else { return }
 
     let profileController = profileController(title: username)
-    navigationController?.pushViewController(profileController, animated: true)
+    currentController.navigationController?.pushViewController(profileController, animated: true)
   }
 }
 ```

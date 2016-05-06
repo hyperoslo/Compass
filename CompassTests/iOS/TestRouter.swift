@@ -6,7 +6,7 @@ class TestRoute: Routable {
 
   var resolved = false
 
-  func resolve(arguments: [String: String], navigationController: UINavigationController?) {
+  func resolve(arguments: [String: String], currentController controller: UIViewController) {
     resolved = true
   }
 }
@@ -14,7 +14,7 @@ class TestRoute: Routable {
 class TestRouter: XCTestCase {
 
   var router: Router!
-  var navigationController = UINavigationController()
+  var controller = UIViewController()
   var route: TestRoute!
 
   override func setUp() {
@@ -24,13 +24,13 @@ class TestRouter: XCTestCase {
 
   func testNavigateIfRouteRegistered() {
     router.routes["test"] = route
-    router.navigate("test", arguments: [:], navigationController: navigationController)
+    router.navigate("test", arguments: [:], from: controller)
 
     XCTAssertTrue(route.resolved)
   }
 
   func testNavigateIfRouteNotRegistered() {
-    router.navigate("test", arguments: [:], navigationController: navigationController)
+    router.navigate("test", arguments: [:], from: controller)
 
     XCTAssertFalse(route.resolved)
   }
