@@ -12,9 +12,9 @@ public struct Compass {
 
   public static var routes = [String]()
 
-  public typealias ParseCompletion = (route: String, arguments: [String : String], query : [String : AnyObject]) -> Void
+  public typealias ParseCompletion = (route: String, arguments: [String : String], fragments : [String : AnyObject]) -> Void
 
-  public static func parse(url: NSURL, query: [String : AnyObject] = [:], completion: ParseCompletion) -> Bool {
+  public static func parse(url: NSURL, fragments: [String : AnyObject] = [:], completion: ParseCompletion) -> Bool {
     var result = false
     let path = url.absoluteString.substringFromIndex(scheme.endIndex)
 
@@ -36,7 +36,7 @@ public struct Compass {
               ? pathArguments[index] : nil
           }
 
-          completion(route: route, arguments: arguments, query: query)
+          completion(route: route, arguments: arguments, fragments: fragments)
 
           result = true
           break
@@ -59,7 +59,7 @@ public struct Compass {
       }
     }
 
-    completion(route: route, arguments: arguments, query: [:])
+    completion(route: route, arguments: arguments, fragments: [:])
 
     return true
   }
