@@ -5,6 +5,8 @@ public struct Compass {
 
   private static var internalScheme = ""
 
+  public static var delimiter: String = ":"
+
   public static var scheme: String {
     set { Compass.internalScheme = newValue }
     get { return "\(Compass.internalScheme)://" }
@@ -51,8 +53,8 @@ public struct Compass {
   }
 
   static func findMatch(routeString: String, pathString: String) -> (route: String, arguments: [String: String])? {
-    let routes = routeString.split(":")
-    let paths = pathString.split(":")
+    let routes = routeString.split(delimiter)
+    let paths = pathString.split(delimiter)
 
     var arguments: [String: String] = [:]
 
