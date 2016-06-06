@@ -25,6 +25,8 @@ public struct Compass {
 
     let results = routes.flatMap {
       return findMatch($0, pathString: path)
+    }.sort {
+      return $0.matchCount > $1.matchCount
     }
 
     if let result = results.first {
@@ -52,26 +54,33 @@ public struct Compass {
     return true
   }
 
-  static func findMatch(routeString: String, pathString: String) -> (route: String, arguments: [String: String])? {
+  static func findMatch(routeString: String, pathString: String)
+    -> (route: String, arguments: [String: String], matchCount: Int)? {
+
     let routes = routeString.split(delimiter)
     let paths = pathString.split(delimiter)
 
     var arguments: [String: String] = [:]
+
+    var matchCount = 0
 
     for (route, path) in zip(routes, paths) {
       if route.hasPrefix("{") {
         let key = route.replace("{", with: "").replace("}", with: "")
         arguments[key] = path
 
+        matchCount += 1
         continue
       }
 
       if route != path {
         return nil
       }
+
+      matchCount += 1
     }
     
-    return (route: routeString, arguments: arguments)
+    return (route: routeString, arguments: arguments, matchCount: matchCount)
   }
 }
 
