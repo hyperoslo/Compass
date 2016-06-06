@@ -12,30 +12,31 @@ public struct Compass {
 
   public static var routes = [String]()
 
-  public typealias ParseCompletion = (route: String, arguments: [String : String]) -> Void
+  public typealias ParseCompletion = (route: String, arguments: [String : String], fragments : [String : AnyObject]) -> Void
 
-  public static func parse(url: NSURL, completion: ParseCompletion) -> Bool {
+  public static func parse(url: NSURL, fragments: [String : AnyObject] = [:], completion: ParseCompletion) -> Bool {
     var result = false
-    let query = url.absoluteString.substringFromIndex(scheme.endIndex)
+    let path = url.absoluteString.substringFromIndex(scheme.endIndex)
 
-    guard !(query.containsString("?") || query.containsString("#"))
+    guard !(path.containsString("?") || path.containsString("#"))
       else { return parseAsURL(url, completion: completion) }
 
     for route in routes.sort({ $0 < $1 }) {
       guard let prefix = route.split("{").first else { continue }
 
-      if query.hasPrefix(prefix) || prefix.hasPrefix(query) {
-        let queryArguments = query.replace(prefix, with: "").split(":")
+      if path.hasPrefix(prefix) || prefix.hasPrefix(path) {
+        let pathArguments = path.replace(prefix, with: "").split(":")
         let routeArguments = route.split(":").filter { $0.containsString("{") }
 
         var arguments = [String : String]()
 
-        if queryArguments.count == routeArguments.count {
+        if pathArguments.count == routeArguments.count {
           for (index, key) in routeArguments.enumerate() {
-            arguments[String(key.characters.dropFirst().dropLast())] = index <= queryArguments.count && "\(query):" != prefix
-              ? queryArguments[index] : nil
+            arguments[String(key.characters.dropFirst().dropLast())] = index <= pathArguments.count && "\(path):" != prefix
+              ? pathArguments[index] : nil
           }
-          completion(route: route, arguments: arguments)
+
+          completion(route: route, arguments: arguments, fragments: fragments)
 
           result = true
           break
@@ -58,7 +59,7 @@ public struct Compass {
       }
     }
 
-    completion(route: route, arguments: arguments)
+    completion(route: route, arguments: arguments, fragments: [:])
 
     return true
   }

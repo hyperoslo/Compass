@@ -6,9 +6,9 @@ public struct Router {
 
   public init() {}
 
-  public func navigate(route: String, arguments: [String: String], from controller: UIViewController) {
+  public func navigate(route: String, arguments: [String: String], fragments: [String : AnyObject] = [:], from controller: UIViewController) {
     guard let route = routes[route] else { return }
 
-    route.resolve(arguments, currentController: controller)
+    route.resolve(arguments, fragments: fragments, currentController: controller)
   }
 }
