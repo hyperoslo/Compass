@@ -34,6 +34,21 @@ class TestCompass: XCTestCase {
     self.waitForExpectationsWithTimeout(4.0, handler:nil)
   }
 
+  func testParseFragments() {
+    let expectation = self.expectationWithDescription("Parse arguments")
+    let url = NSURL(string: "compassTests://profile:testUser")!
+
+    Compass.parse(url, fragments: ["meta" : "foo"]) { route, arguments, fragments in
+      XCTAssertEqual("profile:{user}", route)
+      XCTAssertEqual(arguments["user"], "testUser")
+      XCTAssertEqual("foo" , fragments["meta"] as? String)
+
+      expectation.fulfill()
+    }
+
+    self.waitForExpectationsWithTimeout(4.0, handler:nil)
+  }
+
   func testParseMultipleArguments() {
     let expectation = self.expectationWithDescription("Parse multiple arguments")
     let url = NSURL(string: "compassTests://user:list:1:admin")!
