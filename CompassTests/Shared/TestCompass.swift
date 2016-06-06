@@ -6,7 +6,14 @@ class TestCompass: XCTestCase {
 
   override func setUp() {
     Compass.scheme = "compassTests"
-    Compass.routes = ["profile:{user}", "login", "callback", "user:list:{userId}:{kind}", "{appId}:user:list:{userId}:{kind}"]
+    Compass.routes = [
+      "profile:{user}",
+      "login",
+      "callback",
+      "user:list",
+      "user:list:{userId}:{kind}",
+      "{appId}:user:list:{userId}:{kind}"
+    ]
   }
 
   func testScheme() {
@@ -15,7 +22,7 @@ class TestCompass: XCTestCase {
 
   func testRoutes() {
     XCTAssert(!Compass.routes.isEmpty)
-    XCTAssert(Compass.routes.count == 5)
+    XCTAssert(Compass.routes.count == 6)
     XCTAssertEqual(Compass.routes[0], "profile:{user}")
     XCTAssertEqual(Compass.routes[1], "login")
   }
@@ -42,6 +49,20 @@ class TestCompass: XCTestCase {
       XCTAssertEqual("profile:{user}", route)
       XCTAssertEqual(arguments["user"], "testUser")
       XCTAssertEqual("foo" , fragments["meta"] as? String)
+
+      expectation.fulfill()
+    }
+
+    self.waitForExpectationsWithTimeout(4.0, handler:nil)
+  }
+
+  func testParseRouteSamePrefix() {
+    let expectation = self.expectationWithDescription("Parse route having same prefix")
+    let url = NSURL(string: "compassTests://user:list")!
+
+    Compass.parse(url) { route, arguments, _ in
+      XCTAssertEqual("user:list", route)
+      XCTAssert(arguments.isEmpty)
 
       expectation.fulfill()
     }
