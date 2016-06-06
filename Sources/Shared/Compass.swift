@@ -15,36 +15,22 @@ public struct Compass {
   public typealias ParseCompletion = (route: String, arguments: [String : String], fragments : [String : AnyObject]) -> Void
 
   public static func parse(url: NSURL, fragments: [String : AnyObject] = [:], completion: ParseCompletion) -> Bool {
-    var result = false
+
     let path = url.absoluteString.substringFromIndex(scheme.endIndex)
 
     guard !(path.containsString("?") || path.containsString("#"))
       else { return parseAsURL(url, completion: completion) }
 
-    for route in routes.sort({ $0 < $1 }) {
-      guard let prefix = route.split("{").first else { continue }
-
-      if path.hasPrefix(prefix) || prefix.hasPrefix(path) {
-        let pathArguments = path.replace(prefix, with: "").split(":")
-        let routeArguments = route.split(":").filter { $0.containsString("{") }
-
-        var arguments = [String : String]()
-
-        if pathArguments.count == routeArguments.count {
-          for (index, key) in routeArguments.enumerate() {
-            arguments[String(key.characters.dropFirst().dropLast())] = index <= pathArguments.count && "\(path):" != prefix
-              ? pathArguments[index] : nil
-          }
-
-          completion(route: route, arguments: arguments, fragments: fragments)
-
-          result = true
-          break
-        }
-      }
+    let results = routes.flatMap {
+      return findMatch($0, pathString: path)
     }
 
-    return result
+    if let result = results.first {
+      completion(route: result.route, arguments: result.arguments, fragments: fragments)
+      return true
+    }
+
+    return false
   }
 
   static func parseAsURL(url: NSURL, completion: ParseCompletion) -> Bool {
@@ -62,6 +48,28 @@ public struct Compass {
     completion(route: route, arguments: arguments, fragments: [:])
 
     return true
+  }
+
+  static func findMatch(routeString: String, pathString: String) -> (route: String, arguments: [String: String])? {
+    let routes = routeString.split(":")
+    let paths = pathString.split(":")
+
+    var arguments: [String: String] = [:]
+
+    for (route, path) in zip(routes, paths) {
+      if route.hasPrefix("{") {
+        let key = route.replace("{", with: "").replace("}", with: "")
+        arguments[key] = path
+
+        continue
+      }
+
+      if route != path {
+        return nil
+      }
+    }
+    
+    return (route: routeString, arguments: arguments)
   }
 }
 
