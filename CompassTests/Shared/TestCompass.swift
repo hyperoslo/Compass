@@ -8,6 +8,7 @@ class TestCompass: XCTestCase {
     Compass.scheme = "compassTests"
     Compass.routes = [
       "profile:{user}",
+      "profile:admin",
       "login",
       "callback",
       "user:list:{userId}:{kind}",
@@ -22,7 +23,7 @@ class TestCompass: XCTestCase {
 
   func testRoutes() {
     XCTAssert(!Compass.routes.isEmpty)
-    XCTAssert(Compass.routes.count == 6)
+    XCTAssert(Compass.routes.count == 7)
   }
 
   func testParseArguments() {
@@ -47,6 +48,34 @@ class TestCompass: XCTestCase {
       XCTAssertEqual("profile:{user}", route)
       XCTAssertEqual(arguments["user"], "testUser")
       XCTAssertEqual("foo" , fragments["meta"] as? String)
+
+      expectation.fulfill()
+    }
+
+    self.waitForExpectationsWithTimeout(4.0, handler:nil)
+  }
+
+  func testParseRouteConcreateMatchCount() {
+    let expectation = self.expectationWithDescription("Parse route having concrete match count")
+    let url = NSURL(string: "compassTests://profile:admin")!
+
+    Compass.parse(url) { route, arguments, _ in
+      XCTAssertEqual("profile:admin", route)
+      XCTAssert(arguments.isEmpty)
+
+      expectation.fulfill()
+    }
+
+    self.waitForExpectationsWithTimeout(4.0, handler:nil)
+  }
+
+  func testParseRouteWildcardMatchCount() {
+    let expectation = self.expectationWithDescription("Parse route having wildcard match count")
+    let url = NSURL(string: "compassTests://profile:jack")!
+
+    Compass.parse(url) { route, arguments, _ in
+      XCTAssertEqual("profile:{user}", route)
+      XCTAssertEqual(arguments["user"], "jack")
 
       expectation.fulfill()
     }
@@ -92,20 +121,6 @@ class TestCompass: XCTestCase {
       XCTAssertEqual(arguments["appId"], "12")
       XCTAssertEqual(arguments["userId"], "1")
       XCTAssertEqual(arguments["kind"], "admin")
-
-      expectation.fulfill()
-    }
-
-    self.waitForExpectationsWithTimeout(4.0, handler:nil)
-  }
-
-  func testParseOptionalArguments() {
-    let expectation = self.expectationWithDescription("Parse optional arguments")
-    let url = NSURL(string: "compassTests://profile")!
-
-    Compass.parse(url) { route, arguments, _ in
-      XCTAssertEqual("profile:{user}", route)
-      XCTAssert(arguments.isEmpty)
 
       expectation.fulfill()
     }

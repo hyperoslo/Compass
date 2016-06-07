@@ -3,7 +3,8 @@ import Sugar
 
 public struct Compass {
 
-  typealias Result = (route: String, arguments: [String: String], matchCount: Int)
+  typealias Result = (route: String, arguments: [String: String],
+    concreteMatchCount: Int, wildcardMatchCount: Int)
 
   private static var internalScheme = ""
 
@@ -27,8 +28,12 @@ public struct Compass {
 
     let results: [Result] = routes.flatMap {
       return findMatch($0, pathString: path)
-    }.sort {
-      return $0.matchCount > $1.matchCount
+    }.sort { (r1: Result, r2: Result) in
+      if r1.concreteMatchCount == r2.concreteMatchCount {
+        return r1.wildcardMatchCount > r2.wildcardMatchCount
+      }
+
+      return r1.concreteMatchCount > r2.concreteMatchCount
     }
 
     if let result = results.first {
@@ -62,27 +67,30 @@ public struct Compass {
     let routes = routeString.split(delimiter)
     let paths = pathString.split(delimiter)
 
-    var arguments: [String: String] = [:]
+    guard routes.count == paths.count else { return nil }
 
-    var matchCount = 0
+    var arguments: [String: String] = [:]
+    var concreteMatchCount = 0
+    var wildcardMatchCount = 0
 
     for (route, path) in zip(routes, paths) {
       if route.hasPrefix("{") {
         let key = route.replace("{", with: "").replace("}", with: "")
         arguments[key] = path
 
-        matchCount += 1
+        wildcardMatchCount += 1
         continue
       }
 
-      if route != path {
+      if route == path {
+        concreteMatchCount += 1
+      } else {
         return nil
       }
-
-      matchCount += 1
     }
     
-    return (route: routeString, arguments: arguments, matchCount: matchCount)
+    return (route: routeString, arguments: arguments,
+            concreteMatchCount: concreteMatchCount, wildcardMatchCount: wildcardMatchCount)
   }
 }
 
