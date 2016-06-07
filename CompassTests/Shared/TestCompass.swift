@@ -10,10 +10,10 @@ class TestCompass: XCTestCase {
       "profile:{user}",
       "login",
       "callback",
-      "user:list",
       "user:list:{userId}:{kind}",
+      "user:list",
       "{appId}:user:list:{userId}:{kind}"
-    ]
+    ].shuffle()
   }
 
   func testScheme() {
@@ -23,8 +23,6 @@ class TestCompass: XCTestCase {
   func testRoutes() {
     XCTAssert(!Compass.routes.isEmpty)
     XCTAssert(Compass.routes.count == 6)
-    XCTAssertEqual(Compass.routes[0], "profile:{user}")
-    XCTAssertEqual(Compass.routes[1], "login")
   }
 
   func testParseArguments() {
