@@ -3,6 +3,8 @@ import Sugar
 
 public struct Compass {
 
+  typealias Result = (route: String, arguments: [String: String], matchCount: Int)
+
   private static var internalScheme = ""
 
   public static var delimiter: String = ":"
@@ -23,7 +25,7 @@ public struct Compass {
     guard !(path.containsString("?") || path.containsString("#"))
       else { return parseAsURL(url, completion: completion) }
 
-    let results = routes.flatMap {
+    let results: [Result] = routes.flatMap {
       return findMatch($0, pathString: path)
     }.sort {
       return $0.matchCount > $1.matchCount
@@ -55,7 +57,7 @@ public struct Compass {
   }
 
   static func findMatch(routeString: String, pathString: String)
-    -> (route: String, arguments: [String: String], matchCount: Int)? {
+    -> Result? {
 
     let routes = routeString.split(delimiter)
     let paths = pathString.split(delimiter)
