@@ -4,6 +4,7 @@
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/cocoapods/l/Compass.svg?style=flat)](http://cocoadocs.org/docsets/Compass)
 [![Platform](https://img.shields.io/cocoapods/p/Compass.svg?style=flat)](http://cocoadocs.org/docsets/Compass)
+[![CI Status](http://img.shields.io/travis/hyperoslo/Compass.svg?style=flat)](https://travis-ci.org/hyperoslo/Compass)
 
 Compass helps you setup a central navigation system for your application.
 This has many benefits, one of them being that controllers can now be
@@ -19,8 +20,6 @@ anywhere, but remember, with great power comes great responsibility.
 #### Step 1
 First you need to register a URL scheme for your application
 <img src="https://raw.githubusercontent.com/hyperoslo/Compass/master/Images/setup-url-scheme.png">
-
-[![CI Status](http://img.shields.io/travis/hyperoslo/Compass.svg?style=flat)](https://travis-ci.org/hyperoslo/Compass)
 
 #### Step 2
 Now you need to configure Compass to use that URL scheme, a good place
