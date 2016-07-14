@@ -47,13 +47,12 @@ public struct Compass {
   static func parseAsURL(url: NSURL, completion: ParseCompletion) -> Bool {
     guard let route = url.host else { return false }
 
+    let urlComponents = NSURLComponents(URL: url, resolvingAgainstBaseURL: false)
+
     var arguments = [String : String]()
 
-    [url.fragment, url.query].forEach {
-      $0?.split("&").forEach {
-        let pair = $0.split("=")
-        arguments[pair[0]] = pair[1]
-      }
+    urlComponents?.queryItems?.forEach { queryItem in
+        arguments[queryItem.name] = queryItem.value
     }
 
     completion(route: route, arguments: arguments, fragments: [:])
