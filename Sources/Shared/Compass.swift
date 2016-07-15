@@ -17,7 +17,7 @@ public struct Compass {
 
   public static var routes = [String]()
 
-  public typealias ParseCompletion = (route: String, arguments: [String : String], fragments : [String : AnyObject]) -> Void
+  public typealias ParseCompletion = (route: String, arguments: [String : String], fragments: [String : AnyObject]) -> Void
 
   public static func parse(url: NSURL, fragments: [String : AnyObject] = [:], completion: ParseCompletion) -> Bool {
 
@@ -55,6 +55,10 @@ public struct Compass {
         arguments[queryItem.name] = queryItem.value
     }
 
+    if let fragment = urlComponents?.fragment {
+        arguments = fragment.queryParameters()
+    }
+
     completion(route: route, arguments: arguments, fragments: [:])
 
     return true
@@ -87,9 +91,30 @@ public struct Compass {
         return nil
       }
     }
-    
+
     return (route: routeString, arguments: arguments,
             concreteMatchCount: concreteMatchCount, wildcardMatchCount: wildcardMatchCount)
   }
 }
 
+private extension String {
+
+    func queryParameters() -> [String: String] {
+        var parameters = [String: String]()
+
+        let separatorCharacters = NSCharacterSet(charactersInString: "&;")
+        self.componentsSeparatedByCharactersInSet(separatorCharacters).forEach { (pair) in
+
+            if let equalSeparator = pair.rangeOfString("=") {
+                let name = pair.substringToIndex(equalSeparator.startIndex)
+                let value = pair.substringFromIndex(equalSeparator.startIndex.advancedBy(1))
+                let cleaned = value.stringByRemovingPercentEncoding ?? value
+
+                parameters[name] = cleaned
+            }
+        }
+
+        return parameters
+    }
+
+}
