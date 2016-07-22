@@ -159,6 +159,40 @@ class TestCompass: XCTestCase {
     self.waitForExpectationsWithTimeout(4.0, handler:nil)
   }
 
+  func testParseRegularURLWithFragmentsAndGoogleOAuth2AccessToken() {
+    let expectation = self.expectationWithDescription("Parse URL with fragments and Google OAuth 2.0 access token format")
+    let url = NSURL(string: "compassTests://callback/#access_token=ya29.Ci8nA1pNVMFffHkS5-sXooNGvTB9q8QPtoM56sWpipRyjhwwEiKyZxvRQTR8saqWzQ&token_type=Bearer&expires_in=3600")!
+
+    Compass.parse(url) { route, arguments, _ in
+      XCTAssertEqual(route, "callback")
+      XCTAssertEqual(arguments.count, 3)
+      XCTAssertEqual(arguments["access_token"], "ya29.Ci8nA1pNVMFffHkS5-sXooNGvTB9q8QPtoM56sWpipRyjhwwEiKyZxvRQTR8saqWzQ")
+      XCTAssertEqual(arguments["expires_in"], "3600")
+      XCTAssertEqual(arguments["token_type"], "Bearer")
+
+      expectation.fulfill()
+    }
+
+    self.waitForExpectationsWithTimeout(4.0, handler:nil)
+  }
+
+  func testParseRegularURLWithFragmentsAndAlternativeAccessToken() {
+    let expectation = self.expectationWithDescription("Parse URL with fragments and alternative access token format")
+    let url = NSURL(string: "compassTests://callback/#access_token=ya29.Ci8nA1pNVMFffHkS5-sXooNGvTB9q8QPtoM56sWpipRyjhwwEiKyZxvRQTR8saqWzQ=&token_type=Bearer&expires_in=3600")!
+
+    Compass.parse(url) { route, arguments, _ in
+      XCTAssertEqual(route, "callback")
+      XCTAssertEqual(arguments.count, 3)
+      XCTAssertEqual(arguments["access_token"], "ya29.Ci8nA1pNVMFffHkS5-sXooNGvTB9q8QPtoM56sWpipRyjhwwEiKyZxvRQTR8saqWzQ=")
+      XCTAssertEqual(arguments["expires_in"], "3600")
+      XCTAssertEqual(arguments["token_type"], "Bearer")
+
+      expectation.fulfill()
+    }
+
+    self.waitForExpectationsWithTimeout(4.0, handler:nil)
+  }
+
   func testParseRegularURLWithSlashQuery() {
     let expectation = self.expectationWithDescription("Parse URL with slash query")
     let url = NSURL(string: "compassTests://callback/?access_token=Yo0OMrVZbRWNmgA6BT99hyuTUTNRGvqEEAQyeN1eslclzhFD0M8AidB4Z7Vs2NU8WoSNW0vYb961O38l&token_type=Bearer&expires_in=3600")!
@@ -176,6 +210,40 @@ class TestCompass: XCTestCase {
     self.waitForExpectationsWithTimeout(4.0, handler:nil)
   }
 
+  func testParseRegularURLWithSlashQueryAndGoogleOAuth2AccessToken() {
+    let expectation = self.expectationWithDescription("Parse URL with slash query and Google OAuth 2.0 access token format")
+    let url = NSURL(string: "compassTests://callback/?access_token=ya29.Ci8nA1pNVMFffHkS5-sXooNGvTB9q8QPtoM56sWpipRyjhwwEiKyZxvRQTR8saqWzQ&token_type=Bearer&expires_in=3600")!
+
+    Compass.parse(url) { route, arguments, _ in
+      XCTAssertEqual(route, "callback")
+      XCTAssertEqual(arguments.count, 3)
+      XCTAssertEqual(arguments["access_token"], "ya29.Ci8nA1pNVMFffHkS5-sXooNGvTB9q8QPtoM56sWpipRyjhwwEiKyZxvRQTR8saqWzQ")
+      XCTAssertEqual(arguments["expires_in"], "3600")
+      XCTAssertEqual(arguments["token_type"], "Bearer")
+
+      expectation.fulfill()
+    }
+
+    self.waitForExpectationsWithTimeout(4.0, handler:nil)
+  }
+
+  func testParseRegularURLWithSlashQueryAndAlternativeAccessToken() {
+    let expectation = self.expectationWithDescription("Parse URL with slash query and alternative access token format")
+    let url = NSURL(string: "compassTests://callback/?access_token=ya29.Ci8nA1pNVMFffHkS5-sXooNGvTB9q8QPtoM56sWpipRyjhwwEiKyZxvRQTR8saqWzQ=&token_type=Bearer&expires_in=3600")!
+
+    Compass.parse(url) { route, arguments, _ in
+      XCTAssertEqual(route, "callback")
+      XCTAssertEqual(arguments.count, 3)
+      XCTAssertEqual(arguments["access_token"], "ya29.Ci8nA1pNVMFffHkS5-sXooNGvTB9q8QPtoM56sWpipRyjhwwEiKyZxvRQTR8saqWzQ=")
+      XCTAssertEqual(arguments["expires_in"], "3600")
+      XCTAssertEqual(arguments["token_type"], "Bearer")
+
+      expectation.fulfill()
+    }
+
+    self.waitForExpectationsWithTimeout(4.0, handler:nil)
+  }
+
   func testParseRegularURLWithQuery() {
     let expectation = self.expectationWithDescription("Parse URL with query")
     let url = NSURL(string: "compassTests://callback?access_token=Yo0OMrVZbRWNmgA6BT99hyuTUTNRGvqEEAQyeN1eslclzhFD0M8AidB4Z7Vs2NU8WoSNW0vYb961O38l&token_type=Bearer&expires_in=3600")!
@@ -184,6 +252,40 @@ class TestCompass: XCTestCase {
       XCTAssertEqual(route, "callback")
       XCTAssertEqual(arguments.count, 3)
       XCTAssertEqual(arguments["access_token"], "Yo0OMrVZbRWNmgA6BT99hyuTUTNRGvqEEAQyeN1eslclzhFD0M8AidB4Z7Vs2NU8WoSNW0vYb961O38l")
+      XCTAssertEqual(arguments["expires_in"], "3600")
+      XCTAssertEqual(arguments["token_type"], "Bearer")
+
+      expectation.fulfill()
+    }
+
+    self.waitForExpectationsWithTimeout(4.0, handler:nil)
+  }
+
+  func testParseRegularURLWithQueryAndGoogleOAuth2AccessToken() {
+    let expectation = self.expectationWithDescription("Parse URL with query and Google OAuth 2.0 access token format")
+    let url = NSURL(string: "compassTests://callback?access_token=ya29.Ci8nA1pNVMFffHkS5-sXooNGvTB9q8QPtoM56sWpipRyjhwwEiKyZxvRQTR8saqWzQ&token_type=Bearer&expires_in=3600")!
+
+    Compass.parse(url) { route, arguments, _ in
+      XCTAssertEqual(route, "callback")
+      XCTAssertEqual(arguments.count, 3)
+      XCTAssertEqual(arguments["access_token"], "ya29.Ci8nA1pNVMFffHkS5-sXooNGvTB9q8QPtoM56sWpipRyjhwwEiKyZxvRQTR8saqWzQ")
+      XCTAssertEqual(arguments["expires_in"], "3600")
+      XCTAssertEqual(arguments["token_type"], "Bearer")
+
+      expectation.fulfill()
+    }
+
+    self.waitForExpectationsWithTimeout(4.0, handler:nil)
+  }
+
+  func testParseRegularURLWithQueryAndAlternativeAccessToken() {
+    let expectation = self.expectationWithDescription("Parse URL with query and alternative access token format")
+    let url = NSURL(string: "compassTests://callback?access_token=ya29.Ci8nA1pNVMFffHkS5-sXooNGvTB9q8QPtoM56sWpipRyjhwwEiKyZxvRQTR8saqWzQ=&token_type=Bearer&expires_in=3600")!
+
+    Compass.parse(url) { route, arguments, _ in
+      XCTAssertEqual(route, "callback")
+      XCTAssertEqual(arguments.count, 3)
+      XCTAssertEqual(arguments["access_token"], "ya29.Ci8nA1pNVMFffHkS5-sXooNGvTB9q8QPtoM56sWpipRyjhwwEiKyZxvRQTR8saqWzQ=")
       XCTAssertEqual(arguments["expires_in"], "3600")
       XCTAssertEqual(arguments["token_type"], "Bearer")
 
