@@ -14,8 +14,12 @@ class TestRoute: Routable {
 
 class ThrowableRoute: Routable {
 
+  enum Error: ErrorType {
+    case Unknown
+  }
+
   func navigate(to location: Location, from currentController: Controller) throws {
-    throw RouteError.NotFound
+    throw Error.Unknown
   }
 }
 

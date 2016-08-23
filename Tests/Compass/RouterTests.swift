@@ -32,4 +32,11 @@ class RouterTests: XCTestCase {
     XCTAssertFalse(route.resolved)
     XCTAssertTrue(errorRoute.error is RouteError)
   }
+
+  func testNavigateIfRouteThrowsError() {
+    router.routes["throw"] = ThrowableRoute()
+    router.navigate(to: Location(path: "throw"), from: controller)
+
+    XCTAssertTrue(errorRoute.error is ThrowableRoute.Error)
+  }
 }
