@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = "Compass"
   s.summary          = "Compass helps you setup a central navigation system for your iOS application."
-  s.version          = "3.0.0"
+  s.version          = "4.0.0"
   s.homepage         = "https://github.com/hyperoslo/Compass"
   s.license          = 'MIT'
   s.author           = { "Hyper Interaktiv AS" => "ios@hyper.no" }
@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
 
-  s.ios.source_files = 'Sources/{iOS,Shared}/**/*'
-  s.osx.source_files = 'Sources/{Mac,Shared}/**/*'
-  s.dependency 'Sugar'
+  s.ios.source_files = 'Sources/**/*'
+  s.osx.source_files = 'Sources/**/*'
+  s.frameworks = 'Foundation'
 end
