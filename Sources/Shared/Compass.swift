@@ -1,5 +1,4 @@
 import Foundation
-import Sugar
 
 public struct Route {
 
