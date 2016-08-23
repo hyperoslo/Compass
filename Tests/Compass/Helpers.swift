@@ -1,4 +1,18 @@
 import Foundation
+@testable import Compass
+
+// MARK: - Routes
+
+class TestRoute: Routable {
+
+  var resolved = false
+
+  func resolve(arguments: [String: String], fragments: [String : AnyObject] = [:], currentController controller: Controller) {
+    resolved = true
+  }
+}
+
+// MARK: - Shuffle
 
 extension CollectionType {
   /// Return a copy of `self` with its elements shuffled

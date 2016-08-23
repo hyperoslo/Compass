@@ -1,15 +1,6 @@
 import Foundation
 import XCTest
-import Compass
-
-class TestRoute: Routable {
-
-  var resolved = false
-
-  func resolve(arguments: [String: String], fragments: [String : AnyObject] = [:], currentController controller: Controller) {
-    resolved = true
-  }
-}
+@testable import Compass
 
 class RouterTests: XCTestCase {
 

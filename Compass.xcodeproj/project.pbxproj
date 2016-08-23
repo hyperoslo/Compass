@@ -17,12 +17,12 @@
 		D5361FFB1D6C7133003C3EE8 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FF21D6C7133003C3EE8 /* String+Extensions.swift */; };
 		D5361FFC1D6C7133003C3EE8 /* Compass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FF31D6C7133003C3EE8 /* Compass.swift */; };
 		D5361FFD1D6C7133003C3EE8 /* Compass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FF31D6C7133003C3EE8 /* Compass.swift */; };
-		D53620071D6C7189003C3EE8 /* CompassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FFE1D6C7181003C3EE8 /* CompassTests.swift */; };
-		D53620081D6C7189003C3EE8 /* Shuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FFF1D6C7181003C3EE8 /* Shuffle.swift */; };
-		D53620091D6C7189003C3EE8 /* RouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53620001D6C7181003C3EE8 /* RouterTests.swift */; };
-		D536200A1D6C718A003C3EE8 /* CompassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FFE1D6C7181003C3EE8 /* CompassTests.swift */; };
-		D536200B1D6C718A003C3EE8 /* Shuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FFF1D6C7181003C3EE8 /* Shuffle.swift */; };
-		D536200C1D6C718A003C3EE8 /* RouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53620001D6C7181003C3EE8 /* RouterTests.swift */; };
+		D53620251D6C749A003C3EE8 /* CompassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D536200F1D6C743A003C3EE8 /* CompassTests.swift */; };
+		D53620261D6C749A003C3EE8 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53620101D6C743A003C3EE8 /* Helpers.swift */; };
+		D53620271D6C749A003C3EE8 /* RouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53620111D6C743A003C3EE8 /* RouterTests.swift */; };
+		D53620281D6C749B003C3EE8 /* CompassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D536200F1D6C743A003C3EE8 /* CompassTests.swift */; };
+		D53620291D6C749B003C3EE8 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53620101D6C743A003C3EE8 /* Helpers.swift */; };
+		D536202A1D6C749B003C3EE8 /* RouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53620111D6C743A003C3EE8 /* RouterTests.swift */; };
 		D5B2E8AA1C3A780C00C0327D /* Compass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B2E89F1C3A780C00C0327D /* Compass.framework */; };
 		D5C6294A1C3A7FAA007F7B7C /* Compass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C629401C3A7FAA007F7B7C /* Compass.framework */; };
 /* End PBXBuildFile section */
@@ -50,17 +50,17 @@
 		D5361FF11D6C7133003C3EE8 /* TypeAlias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeAlias.swift; sourceTree = "<group>"; };
 		D5361FF21D6C7133003C3EE8 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		D5361FF31D6C7133003C3EE8 /* Compass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compass.swift; sourceTree = "<group>"; };
-		D5361FFE1D6C7181003C3EE8 /* CompassTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassTests.swift; sourceTree = "<group>"; };
-		D5361FFF1D6C7181003C3EE8 /* Shuffle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shuffle.swift; sourceTree = "<group>"; };
-		D53620001D6C7181003C3EE8 /* RouterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterTests.swift; sourceTree = "<group>"; };
+		D536200F1D6C743A003C3EE8 /* CompassTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassTests.swift; sourceTree = "<group>"; };
+		D53620101D6C743A003C3EE8 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		D53620111D6C743A003C3EE8 /* RouterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterTests.swift; sourceTree = "<group>"; };
+		D53620131D6C743A003C3EE8 /* Info-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
+		D53620141D6C743A003C3EE8 /* Info-Mac.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-Mac.plist"; sourceTree = "<group>"; };
+		D53620151D6C743A003C3EE8 /* Info-Tests-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-Tests-iOS.plist"; sourceTree = "<group>"; };
+		D53620161D6C743A003C3EE8 /* Info-Tests-Mac.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-Tests-Mac.plist"; sourceTree = "<group>"; };
 		D5B2E89F1C3A780C00C0327D /* Compass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Compass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5B2E8A91C3A780C00C0327D /* Compass-iOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Compass-iOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C629401C3A7FAA007F7B7C /* Compass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Compass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C629491C3A7FAA007F7B7C /* Compass-Mac-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Compass-Mac-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D5C6298B1C3A8BBD007F7B7C /* Info-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
-		D5C6298C1C3A8BBD007F7B7C /* Info-Mac.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-Mac.plist"; sourceTree = "<group>"; };
-		D5C629901C3A8BDA007F7B7C /* Info-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
-		D5C629911C3A8BDA007F7B7C /* Info-Mac.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-Mac.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +97,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D536200D1D6C743A003C3EE8 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				D536200E1D6C743A003C3EE8 /* Compass */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		D536200E1D6C743A003C3EE8 /* Compass */ = {
+			isa = PBXGroup;
+			children = (
+				D536200F1D6C743A003C3EE8 /* CompassTests.swift */,
+				D53620101D6C743A003C3EE8 /* Helpers.swift */,
+				D53620111D6C743A003C3EE8 /* RouterTests.swift */,
+			);
+			path = Compass;
+			sourceTree = "<group>";
+		};
+		D53620121D6C743A003C3EE8 /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				D53620131D6C743A003C3EE8 /* Info-iOS.plist */,
+				D53620141D6C743A003C3EE8 /* Info-Mac.plist */,
+				D53620151D6C743A003C3EE8 /* Info-Tests-iOS.plist */,
+				D53620161D6C743A003C3EE8 /* Info-Tests-Mac.plist */,
+			);
+			path = Project;
+			sourceTree = "<group>";
+		};
 		D5B2E8951C3A780C00C0327D = {
 			isa = PBXGroup;
 			children = (
+				D53620121D6C743A003C3EE8 /* Project */,
 				D5C629691C3A809D007F7B7C /* Sources */,
-				D5C6295C1C3A800E007F7B7C /* Compass */,
-				D5C6298F1C3A8BDA007F7B7C /* CompassTests */,
+				D536200D1D6C743A003C3EE8 /* Tests */,
 				D5B2E8A01C3A780C00C0327D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -118,15 +147,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D5C6295C1C3A800E007F7B7C /* Compass */ = {
-			isa = PBXGroup;
-			children = (
-				D5C6298B1C3A8BBD007F7B7C /* Info-iOS.plist */,
-				D5C6298C1C3A8BBD007F7B7C /* Info-Mac.plist */,
-			);
-			path = Compass;
-			sourceTree = "<group>";
-		};
 		D5C629691C3A809D007F7B7C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,18 +157,6 @@
 				D5361FF31D6C7133003C3EE8 /* Compass.swift */,
 			);
 			path = Sources;
-			sourceTree = "<group>";
-		};
-		D5C6298F1C3A8BDA007F7B7C /* CompassTests */ = {
-			isa = PBXGroup;
-			children = (
-				D5361FFE1D6C7181003C3EE8 /* CompassTests.swift */,
-				D5361FFF1D6C7181003C3EE8 /* Shuffle.swift */,
-				D53620001D6C7181003C3EE8 /* RouterTests.swift */,
-				D5C629901C3A8BDA007F7B7C /* Info-iOS.plist */,
-				D5C629911C3A8BDA007F7B7C /* Info-Mac.plist */,
-			);
-			path = CompassTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,9 +343,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D53620071D6C7189003C3EE8 /* CompassTests.swift in Sources */,
-				D53620081D6C7189003C3EE8 /* Shuffle.swift in Sources */,
-				D53620091D6C7189003C3EE8 /* RouterTests.swift in Sources */,
+				D53620251D6C749A003C3EE8 /* CompassTests.swift in Sources */,
+				D53620271D6C749A003C3EE8 /* RouterTests.swift in Sources */,
+				D53620261D6C749A003C3EE8 /* Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,9 +365,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D536200A1D6C718A003C3EE8 /* CompassTests.swift in Sources */,
-				D536200B1D6C718A003C3EE8 /* Shuffle.swift in Sources */,
-				D536200C1D6C718A003C3EE8 /* RouterTests.swift in Sources */,
+				D53620281D6C749B003C3EE8 /* CompassTests.swift in Sources */,
+				D536202A1D6C749B003C3EE8 /* RouterTests.swift in Sources */,
+				D53620291D6C749B003C3EE8 /* Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,11 +486,8 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Compass/Info-iOS.plist";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "$(SRCROOT)/Project/Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -501,11 +506,8 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Compass/Info-iOS.plist";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "$(SRCROOT)/Project/Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -519,11 +521,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/CompassTests/Info-iOS.plist";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "$(SRCROOT)/Project/Info-Tests-iOS.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = no.hyper.CompassTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -535,11 +534,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/CompassTests/Info-iOS.plist";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "$(SRCROOT)/Project/Info-Tests-iOS.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = no.hyper.CompassTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -556,12 +552,9 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "$(SRCROOT)/Compass/Info-Mac.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Project/Info-Mac.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
@@ -583,12 +576,9 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "$(SRCROOT)/Compass/Info-Mac.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Project/Info-Mac.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
@@ -604,11 +594,8 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/CompassTests/Info-Mac.plist";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "$(SRCROOT)/Project/Info-Tests-Mac.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "no.hyper.Compass-MacTests";
@@ -622,11 +609,8 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/CompassTests/Info-Mac.plist";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "$(SRCROOT)/Project/Info-Tests-Mac.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "no.hyper.Compass-MacTests";
