@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		D5361FF41D6C7133003C3EE8 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FEF1D6C7133003C3EE8 /* Router.swift */; };
 		D5361FF51D6C7133003C3EE8 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FEF1D6C7133003C3EE8 /* Router.swift */; };
-		D5361FF61D6C7133003C3EE8 /* Compass+Navigate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FF01D6C7133003C3EE8 /* Compass+Navigate.swift */; };
-		D5361FF71D6C7133003C3EE8 /* Compass+Navigate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FF01D6C7133003C3EE8 /* Compass+Navigate.swift */; };
 		D5361FF81D6C7133003C3EE8 /* TypeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FF11D6C7133003C3EE8 /* TypeAlias.swift */; };
 		D5361FF91D6C7133003C3EE8 /* TypeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FF11D6C7133003C3EE8 /* TypeAlias.swift */; };
 		D5361FFA1D6C7133003C3EE8 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FF21D6C7133003C3EE8 /* String+Extensions.swift */; };
@@ -23,6 +21,8 @@
 		D53620281D6C749B003C3EE8 /* CompassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D536200F1D6C743A003C3EE8 /* CompassTests.swift */; };
 		D53620291D6C749B003C3EE8 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53620101D6C743A003C3EE8 /* Helpers.swift */; };
 		D536202A1D6C749B003C3EE8 /* RouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53620111D6C743A003C3EE8 /* RouterTests.swift */; };
+		D536202C1D6C8532003C3EE8 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = D536202B1D6C8532003C3EE8 /* Location.swift */; };
+		D536202D1D6C8532003C3EE8 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = D536202B1D6C8532003C3EE8 /* Location.swift */; };
 		D5B2E8AA1C3A780C00C0327D /* Compass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B2E89F1C3A780C00C0327D /* Compass.framework */; };
 		D5C6294A1C3A7FAA007F7B7C /* Compass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C629401C3A7FAA007F7B7C /* Compass.framework */; };
 /* End PBXBuildFile section */
@@ -46,7 +46,6 @@
 
 /* Begin PBXFileReference section */
 		D5361FEF1D6C7133003C3EE8 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		D5361FF01D6C7133003C3EE8 /* Compass+Navigate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Compass+Navigate.swift"; sourceTree = "<group>"; };
 		D5361FF11D6C7133003C3EE8 /* TypeAlias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeAlias.swift; sourceTree = "<group>"; };
 		D5361FF21D6C7133003C3EE8 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		D5361FF31D6C7133003C3EE8 /* Compass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compass.swift; sourceTree = "<group>"; };
@@ -57,6 +56,7 @@
 		D53620141D6C743A003C3EE8 /* Info-Mac.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-Mac.plist"; sourceTree = "<group>"; };
 		D53620151D6C743A003C3EE8 /* Info-Tests-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-Tests-iOS.plist"; sourceTree = "<group>"; };
 		D53620161D6C743A003C3EE8 /* Info-Tests-Mac.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-Tests-Mac.plist"; sourceTree = "<group>"; };
+		D536202B1D6C8532003C3EE8 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		D5B2E89F1C3A780C00C0327D /* Compass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Compass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5B2E8A91C3A780C00C0327D /* Compass-iOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Compass-iOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C629401C3A7FAA007F7B7C /* Compass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Compass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,10 +151,10 @@
 			isa = PBXGroup;
 			children = (
 				D5361FEF1D6C7133003C3EE8 /* Router.swift */,
-				D5361FF01D6C7133003C3EE8 /* Compass+Navigate.swift */,
 				D5361FF11D6C7133003C3EE8 /* TypeAlias.swift */,
 				D5361FF21D6C7133003C3EE8 /* String+Extensions.swift */,
 				D5361FF31D6C7133003C3EE8 /* Compass.swift */,
+				D536202B1D6C8532003C3EE8 /* Location.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -335,7 +335,7 @@
 				D5361FFA1D6C7133003C3EE8 /* String+Extensions.swift in Sources */,
 				D5361FF81D6C7133003C3EE8 /* TypeAlias.swift in Sources */,
 				D5361FF41D6C7133003C3EE8 /* Router.swift in Sources */,
-				D5361FF61D6C7133003C3EE8 /* Compass+Navigate.swift in Sources */,
+				D536202C1D6C8532003C3EE8 /* Location.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,7 +357,7 @@
 				D5361FFB1D6C7133003C3EE8 /* String+Extensions.swift in Sources */,
 				D5361FF91D6C7133003C3EE8 /* TypeAlias.swift in Sources */,
 				D5361FF51D6C7133003C3EE8 /* Router.swift in Sources */,
-				D5361FF71D6C7133003C3EE8 /* Compass+Navigate.swift in Sources */,
+				D536202D1D6C8532003C3EE8 /* Location.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

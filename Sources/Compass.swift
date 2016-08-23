@@ -1,23 +1,14 @@
 import Foundation
 
-public struct Location {
-
-  public let path: String
-  public let arguments: [String: String]
-  public let fragments: [String: AnyObject]
-
-  public var scheme: String {
-    return Compass.scheme
-  }
-}
-
 public struct Compass {
 
-  typealias Result = (route: String, arguments: [String: String],
-    concreteMatchCount: Int, wildcardMatchCount: Int)
+  typealias Result = (
+    route: String,
+    arguments: [String: String],
+    concreteMatchCount: Int,
+    wildcardMatchCount: Int)
 
   private static var internalScheme = ""
-
   public static var delimiter: String = ":"
 
   public static var scheme: String {
@@ -28,7 +19,6 @@ public struct Compass {
   public static var routes = [String]()
 
   public static func parse(url: NSURL, fragments: [String : AnyObject] = [:]) -> Location? {
-
     let path = url.absoluteString.substringFromIndex(scheme.endIndex)
 
     guard !(path.containsString("?") || path.containsString("#")) else {
@@ -37,12 +27,12 @@ public struct Compass {
 
     let results: [Result] = routes.flatMap {
       return findMatch($0, pathString: path)
-    }.sort { (r1: Result, r2: Result) in
-      if r1.concreteMatchCount == r2.concreteMatchCount {
-        return r1.wildcardMatchCount > r2.wildcardMatchCount
-      }
+      }.sort { (r1: Result, r2: Result) in
+        if r1.concreteMatchCount == r2.concreteMatchCount {
+          return r1.wildcardMatchCount > r2.wildcardMatchCount
+        }
 
-      return r1.concreteMatchCount > r2.concreteMatchCount
+        return r1.concreteMatchCount > r2.concreteMatchCount
     }
 
     if let result = results.first {
@@ -56,7 +46,6 @@ public struct Compass {
     guard let route = url.host else { return nil }
 
     let urlComponents = NSURLComponents(URL: url, resolvingAgainstBaseURL: false)
-
     var arguments = [String : String]()
 
     urlComponents?.queryItems?.forEach { queryItem in
@@ -70,9 +59,7 @@ public struct Compass {
     return Location(path: route, arguments: arguments, fragments: fragments)
   }
 
-  static func findMatch(routeString: String, pathString: String)
-    -> Result? {
-
+  static func findMatch(routeString: String, pathString: String) -> Result? {
     let routes = routeString.split(delimiter)
     let paths = pathString.split(delimiter)
 
@@ -98,29 +85,17 @@ public struct Compass {
       }
     }
 
-    return (route: routeString, arguments: arguments,
-            concreteMatchCount: concreteMatchCount, wildcardMatchCount: wildcardMatchCount)
+    return (route: routeString,
+            arguments: arguments,
+            concreteMatchCount: concreteMatchCount,
+            wildcardMatchCount: wildcardMatchCount)
   }
 }
 
-private extension String {
+extension Compass {
 
-    func queryParameters() -> [String: String] {
-        var parameters = [String: String]()
-
-        let separatorCharacters = NSCharacterSet(charactersInString: "&;")
-        self.componentsSeparatedByCharactersInSet(separatorCharacters).forEach { (pair) in
-
-            if let equalSeparator = pair.rangeOfString("=") {
-                let name = pair.substringToIndex(equalSeparator.startIndex)
-                let value = pair.substringFromIndex(equalSeparator.startIndex.advancedBy(1))
-                let cleaned = value.stringByRemovingPercentEncoding ?? value
-
-                parameters[name] = cleaned
-            }
-        }
-
-        return parameters
-    }
-
+  public static func navigate(urn: String, scheme: String = Compass.scheme) {
+    guard let url = NSURL(string: "\(scheme)\(urn)") else { return }
+    openURL(url)
+  }
 }
