@@ -18,11 +18,11 @@ public struct Compass {
 
   public static var routes = [String]()
 
-  public static func parse(url: NSURL, fragments: [String : AnyObject] = [:]) -> Location? {
+  public static func parse(url: NSURL, fragments: [String : AnyObject] = [:], payload: Any? = nil) -> Location? {
     let path = url.absoluteString.substringFromIndex(scheme.endIndex)
 
     guard !(path.containsString("?") || path.containsString("#")) else {
-      return parseAsURL(url, fragments: fragments)
+      return parseAsURL(url, fragments: fragments, payload: payload)
     }
 
     let results: [Result] = routes.flatMap {
@@ -36,13 +36,13 @@ public struct Compass {
     }
 
     if let result = results.first {
-      return Location(path: result.route, arguments: result.arguments, fragments: fragments)
+      return Location(path: result.route, arguments: result.arguments, fragments: fragments, payload: payload)
     }
 
     return nil
   }
 
-  static func parseAsURL(url: NSURL, fragments: [String : AnyObject] = [:]) -> Location? {
+  static func parseAsURL(url: NSURL, fragments: [String : AnyObject] = [:], payload: Any? = nil) -> Location? {
     guard let route = url.host else { return nil }
 
     let urlComponents = NSURLComponents(URL: url, resolvingAgainstBaseURL: false)
@@ -56,7 +56,7 @@ public struct Compass {
       arguments = fragment.queryParameters()
     }
 
-    return Location(path: route, arguments: arguments, fragments: fragments)
+    return Location(path: route, arguments: arguments, fragments: fragments, payload: payload)
   }
 
   static func findMatch(routeString: String, pathString: String) -> Result? {
