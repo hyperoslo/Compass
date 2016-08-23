@@ -5,12 +5,13 @@ import XCTest
 class RouterTests: XCTestCase {
 
   var router: Router!
-  var controller = Controller()
   var route: TestRoute!
+  var controller: Controller!
 
   override func setUp() {
     router = Router()
     route = TestRoute()
+    controller = Controller()
   }
 
   func testNavigateIfRouteRegistered() {
