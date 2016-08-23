@@ -7,7 +7,7 @@ class TestRoute: Routable {
 
   var resolved = false
 
-  func resolve(arguments: [String: String], fragments: [String : AnyObject] = [:], currentController controller: Controller) {
+  func navigate(to location: Location, from currentController: Controller) {
     resolved = true
   }
 }

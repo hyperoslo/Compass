@@ -15,13 +15,13 @@ class RouterTests: XCTestCase {
 
   func testNavigateIfRouteRegistered() {
     router.routes["test"] = route
-    router.navigate("test", arguments: [:], from: controller)
+    router.navigate(to: Location(path: "test"), from: controller)
 
     XCTAssertTrue(route.resolved)
   }
 
   func testNavigateIfRouteNotRegistered() {
-    router.navigate("test", arguments: [:], from: controller)
+    router.navigate(to: Location(path: "test"), from: controller)
 
     XCTAssertFalse(route.resolved)
   }

@@ -8,7 +8,7 @@ public struct Location {
     return Compass.scheme
   }
 
-  public init(path: String, arguments: [String: String] = [:], fragments: [String: AnyObject]) {
+  public init(path: String, arguments: [String: String] = [:], fragments: [String: AnyObject] = [:]) {
     self.path = path
     self.arguments = arguments
     self.fragments = fragments
