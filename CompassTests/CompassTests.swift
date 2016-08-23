@@ -2,7 +2,7 @@ import Foundation
 import XCTest
 import Compass
 
-class TestCompass: XCTestCase {
+class CompassTests: XCTestCase {
 
   override func setUp() {
     Compass.scheme = "compassTests"

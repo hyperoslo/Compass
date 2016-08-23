@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BD93BC731C4D0CB5006D2D11 /* TestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD93BC721C4D0CB5006D2D11 /* TestRouter.swift */; };
-		BDF7B4101C3FF43F00576737 /* TestCompass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF7B40F1C3FF43F00576737 /* TestCompass.swift */; };
-		BDF7B4111C3FF43F00576737 /* TestCompass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF7B40F1C3FF43F00576737 /* TestCompass.swift */; };
-		D20D8C771D0708A800807EB1 /* Shuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20D8C761D0708A800807EB1 /* Shuffle.swift */; };
-		D20D8C781D0708A800807EB1 /* Shuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20D8C761D0708A800807EB1 /* Shuffle.swift */; };
 		D5361FF41D6C7133003C3EE8 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FEF1D6C7133003C3EE8 /* Router.swift */; };
 		D5361FF51D6C7133003C3EE8 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FEF1D6C7133003C3EE8 /* Router.swift */; };
 		D5361FF61D6C7133003C3EE8 /* Compass+Navigate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FF01D6C7133003C3EE8 /* Compass+Navigate.swift */; };
@@ -22,6 +17,12 @@
 		D5361FFB1D6C7133003C3EE8 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FF21D6C7133003C3EE8 /* String+Extensions.swift */; };
 		D5361FFC1D6C7133003C3EE8 /* Compass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FF31D6C7133003C3EE8 /* Compass.swift */; };
 		D5361FFD1D6C7133003C3EE8 /* Compass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FF31D6C7133003C3EE8 /* Compass.swift */; };
+		D53620071D6C7189003C3EE8 /* CompassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FFE1D6C7181003C3EE8 /* CompassTests.swift */; };
+		D53620081D6C7189003C3EE8 /* Shuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FFF1D6C7181003C3EE8 /* Shuffle.swift */; };
+		D53620091D6C7189003C3EE8 /* RouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53620001D6C7181003C3EE8 /* RouterTests.swift */; };
+		D536200A1D6C718A003C3EE8 /* CompassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FFE1D6C7181003C3EE8 /* CompassTests.swift */; };
+		D536200B1D6C718A003C3EE8 /* Shuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FFF1D6C7181003C3EE8 /* Shuffle.swift */; };
+		D536200C1D6C718A003C3EE8 /* RouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53620001D6C7181003C3EE8 /* RouterTests.swift */; };
 		D5B2E8AA1C3A780C00C0327D /* Compass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B2E89F1C3A780C00C0327D /* Compass.framework */; };
 		D5C6294A1C3A7FAA007F7B7C /* Compass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C629401C3A7FAA007F7B7C /* Compass.framework */; };
 /* End PBXBuildFile section */
@@ -44,14 +45,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BD93BC721C4D0CB5006D2D11 /* TestRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRouter.swift; sourceTree = "<group>"; };
-		BDF7B40F1C3FF43F00576737 /* TestCompass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCompass.swift; sourceTree = "<group>"; };
-		D20D8C761D0708A800807EB1 /* Shuffle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shuffle.swift; sourceTree = "<group>"; };
 		D5361FEF1D6C7133003C3EE8 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		D5361FF01D6C7133003C3EE8 /* Compass+Navigate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Compass+Navigate.swift"; sourceTree = "<group>"; };
 		D5361FF11D6C7133003C3EE8 /* TypeAlias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeAlias.swift; sourceTree = "<group>"; };
 		D5361FF21D6C7133003C3EE8 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		D5361FF31D6C7133003C3EE8 /* Compass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compass.swift; sourceTree = "<group>"; };
+		D5361FFE1D6C7181003C3EE8 /* CompassTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassTests.swift; sourceTree = "<group>"; };
+		D5361FFF1D6C7181003C3EE8 /* Shuffle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shuffle.swift; sourceTree = "<group>"; };
+		D53620001D6C7181003C3EE8 /* RouterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterTests.swift; sourceTree = "<group>"; };
 		D5B2E89F1C3A780C00C0327D /* Compass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Compass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5B2E8A91C3A780C00C0327D /* Compass-iOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Compass-iOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C629401C3A7FAA007F7B7C /* Compass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Compass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,37 +142,13 @@
 		D5C6298F1C3A8BDA007F7B7C /* CompassTests */ = {
 			isa = PBXGroup;
 			children = (
+				D5361FFE1D6C7181003C3EE8 /* CompassTests.swift */,
+				D5361FFF1D6C7181003C3EE8 /* Shuffle.swift */,
+				D53620001D6C7181003C3EE8 /* RouterTests.swift */,
 				D5C629901C3A8BDA007F7B7C /* Info-iOS.plist */,
 				D5C629911C3A8BDA007F7B7C /* Info-Mac.plist */,
-				D5C629921C3A8BDA007F7B7C /* iOS */,
-				D5C629941C3A8BDA007F7B7C /* Mac */,
-				D5C629961C3A8BDA007F7B7C /* Shared */,
 			);
 			path = CompassTests;
-			sourceTree = "<group>";
-		};
-		D5C629921C3A8BDA007F7B7C /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				BD93BC721C4D0CB5006D2D11 /* TestRouter.swift */,
-			);
-			path = iOS;
-			sourceTree = "<group>";
-		};
-		D5C629941C3A8BDA007F7B7C /* Mac */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Mac;
-			sourceTree = "<group>";
-		};
-		D5C629961C3A8BDA007F7B7C /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				BDF7B40F1C3FF43F00576737 /* TestCompass.swift */,
-				D20D8C761D0708A800807EB1 /* Shuffle.swift */,
-			);
-			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,9 +335,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD93BC731C4D0CB5006D2D11 /* TestRouter.swift in Sources */,
-				D20D8C771D0708A800807EB1 /* Shuffle.swift in Sources */,
-				BDF7B4101C3FF43F00576737 /* TestCompass.swift in Sources */,
+				D53620071D6C7189003C3EE8 /* CompassTests.swift in Sources */,
+				D53620081D6C7189003C3EE8 /* Shuffle.swift in Sources */,
+				D53620091D6C7189003C3EE8 /* RouterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,8 +357,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDF7B4111C3FF43F00576737 /* TestCompass.swift in Sources */,
-				D20D8C781D0708A800807EB1 /* Shuffle.swift in Sources */,
+				D536200A1D6C718A003C3EE8 /* CompassTests.swift in Sources */,
+				D536200B1D6C718A003C3EE8 /* Shuffle.swift in Sources */,
+				D536200C1D6C718A003C3EE8 /* RouterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

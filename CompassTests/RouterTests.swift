@@ -6,15 +6,15 @@ class TestRoute: Routable {
 
   var resolved = false
 
-  func resolve(arguments: [String: String], fragments: [String : AnyObject] = [:], currentController controller: UIViewController) {
+  func resolve(arguments: [String: String], fragments: [String : AnyObject] = [:], currentController controller: Controller) {
     resolved = true
   }
 }
 
-class TestRouter: XCTestCase {
+class RouterTests: XCTestCase {
 
   var router: Router!
-  var controller = UIViewController()
+  var controller = Controller()
   var route: TestRoute!
 
   override func setUp() {
