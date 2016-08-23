@@ -1,10 +1,14 @@
 import Foundation
 
-public struct Route {
+public struct Location {
 
-  public let identifier: String
+  public let path: String
   public let arguments: [String: String]
   public let fragments: [String: AnyObject]
+
+  public var scheme: String {
+    return Compass.scheme
+  }
 }
 
 public struct Compass {
@@ -23,7 +27,7 @@ public struct Compass {
 
   public static var routes = [String]()
 
-  public static func parse(url: NSURL, fragments: [String : AnyObject] = [:]) -> Route? {
+  public static func parse(url: NSURL, fragments: [String : AnyObject] = [:]) -> Location? {
 
     let path = url.absoluteString.substringFromIndex(scheme.endIndex)
 
@@ -42,13 +46,13 @@ public struct Compass {
     }
 
     if let result = results.first {
-      return Route(identifier: result.route, arguments: result.arguments, fragments: fragments)
+      return Location(path: result.route, arguments: result.arguments, fragments: fragments)
     }
 
     return nil
   }
 
-  static func parseAsURL(url: NSURL, fragments: [String : AnyObject] = [:]) -> Route? {
+  static func parseAsURL(url: NSURL, fragments: [String : AnyObject] = [:]) -> Location? {
     guard let route = url.host else { return nil }
 
     let urlComponents = NSURLComponents(URL: url, resolvingAgainstBaseURL: false)
@@ -63,7 +67,7 @@ public struct Compass {
       arguments = fragment.queryParameters()
     }
 
-    return Route(identifier: route, arguments: arguments, fragments: fragments)
+    return Location(path: route, arguments: arguments, fragments: fragments)
   }
 
   static func findMatch(routeString: String, pathString: String)
