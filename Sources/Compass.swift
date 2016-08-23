@@ -36,7 +36,10 @@ public struct Compass {
     }
 
     if let result = results.first {
-      return Location(path: result.route, arguments: result.arguments, fragments: fragments, payload: payload)
+      return Location(path: result.route,
+                      arguments: result.arguments,
+                      fragments: fragments,
+                      payload: payload)
     }
 
     return nil
@@ -56,7 +59,10 @@ public struct Compass {
       arguments = fragment.queryParameters()
     }
 
-    return Location(path: route, arguments: arguments, fragments: fragments, payload: payload)
+    return Location(path: route,
+                    arguments: arguments,
+                    fragments: fragments,
+                    payload: payload)
   }
 
   static func findMatch(routeString: String, pathString: String) -> Result? {
