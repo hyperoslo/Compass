@@ -1,6 +1,13 @@
 import Foundation
 import Sugar
 
+public struct Route {
+
+  public let route: String
+  public let arguments: [String: String]
+  public let fragments: [String: AnyObject]
+}
+
 public struct Compass {
 
   typealias Result = (route: String, arguments: [String: String],
@@ -17,14 +24,13 @@ public struct Compass {
 
   public static var routes = [String]()
 
-  public typealias ParseCompletion = (route: String, arguments: [String : String], fragments: [String : AnyObject]) -> Void
-
-  public static func parse(url: NSURL, fragments: [String : AnyObject] = [:], completion: ParseCompletion) -> Bool {
+  public static func parse(url: NSURL, fragments: [String : AnyObject] = [:]) -> Route? {
 
     let path = url.absoluteString.substringFromIndex(scheme.endIndex)
 
-    guard !(path.containsString("?") || path.containsString("#"))
-      else { return parseAsURL(url, completion: completion) }
+    guard !(path.containsString("?") || path.containsString("#")) else {
+      return parseAsURL(url, fragments: fragments)
+    }
 
     let results: [Result] = routes.flatMap {
       return findMatch($0, pathString: path)
@@ -37,31 +43,28 @@ public struct Compass {
     }
 
     if let result = results.first {
-      completion(route: result.route, arguments: result.arguments, fragments: fragments)
-      return true
+      return Route(route: result.route, arguments: result.arguments, fragments: fragments)
     }
 
-    return false
+    return nil
   }
 
-  static func parseAsURL(url: NSURL, completion: ParseCompletion) -> Bool {
-    guard let route = url.host else { return false }
+  static func parseAsURL(url: NSURL, fragments: [String : AnyObject] = [:]) -> Route? {
+    guard let route = url.host else { return nil }
 
     let urlComponents = NSURLComponents(URL: url, resolvingAgainstBaseURL: false)
 
     var arguments = [String : String]()
 
     urlComponents?.queryItems?.forEach { queryItem in
-        arguments[queryItem.name] = queryItem.value
+      arguments[queryItem.name] = queryItem.value
     }
 
     if let fragment = urlComponents?.fragment {
-        arguments = fragment.queryParameters()
+      arguments = fragment.queryParameters()
     }
 
-    completion(route: route, arguments: arguments, fragments: [:])
-
-    return true
+    return Route(route: route, arguments: arguments, fragments: fragments)
   }
 
   static func findMatch(routeString: String, pathString: String)
