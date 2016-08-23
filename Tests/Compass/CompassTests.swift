@@ -51,6 +51,22 @@ class CompassTests: XCTestCase {
     XCTAssertEqual("foo" , location.fragments["meta"] as? String)
   }
 
+  func testParsePayload() {
+    let url = NSURL(string: "compassTests://profile:testUser")!
+
+    typealias Payload = (firstName: String, lastName: String)
+
+    guard let location = Compass.parse(url, payload: Payload(firstName: "foo", lastName: "bar")) else {
+      XCTFail("Compass parsing failed")
+      return
+    }
+
+    XCTAssertEqual("profile:{user}", location.path)
+    XCTAssertEqual(location.arguments["user"], "testUser")
+    XCTAssertEqual("foo" , (location.payload as? Payload)?.firstName)
+    XCTAssertEqual("bar" , (location.payload as? Payload)?.lastName)
+  }
+
   func testParseRouteConcreateMatchCount() {
     let url = NSURL(string: "compassTests://profile:admin")!
 
