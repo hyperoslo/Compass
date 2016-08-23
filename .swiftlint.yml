@@ -1,6 +1,5 @@
 included:
   - Sources
-  - Tests
 excluded:
   - Carthage
   - Pods

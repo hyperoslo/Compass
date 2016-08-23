@@ -14,4 +14,3 @@ public struct Router: Routable {
     route.navigate(to: location, from: currentController)
   }
 }
-
