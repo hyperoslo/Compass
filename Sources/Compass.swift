@@ -2,7 +2,7 @@ import Foundation
 
 public struct Route {
 
-  public let route: String
+  public let identifier: String
   public let arguments: [String: String]
   public let fragments: [String: AnyObject]
 }
@@ -42,7 +42,7 @@ public struct Compass {
     }
 
     if let result = results.first {
-      return Route(route: result.route, arguments: result.arguments, fragments: fragments)
+      return Route(identifier: result.route, arguments: result.arguments, fragments: fragments)
     }
 
     return nil
@@ -63,7 +63,7 @@ public struct Compass {
       arguments = fragment.queryParameters()
     }
 
-    return Route(route: route, arguments: arguments, fragments: fragments)
+    return Route(identifier: route, arguments: arguments, fragments: fragments)
   }
 
   static func findMatch(routeString: String, pathString: String)
