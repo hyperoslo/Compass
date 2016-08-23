@@ -14,8 +14,6 @@
 		BDF7B40E1C3FF41500576737 /* Compass+Navigate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF7B40D1C3FF41500576737 /* Compass+Navigate.swift */; };
 		BDF7B4101C3FF43F00576737 /* TestCompass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF7B40F1C3FF43F00576737 /* TestCompass.swift */; };
 		BDF7B4111C3FF43F00576737 /* TestCompass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF7B40F1C3FF43F00576737 /* TestCompass.swift */; };
-		BDF7B4151C3FF51100576737 /* Sugar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDF7B4141C3FF51100576737 /* Sugar.framework */; };
-		BDF7B4171C3FF51800576737 /* Sugar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDF7B4161C3FF51800576737 /* Sugar.framework */; };
 		D20D8C771D0708A800807EB1 /* Shuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20D8C761D0708A800807EB1 /* Shuffle.swift */; };
 		D20D8C781D0708A800807EB1 /* Shuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20D8C761D0708A800807EB1 /* Shuffle.swift */; };
 		D5361FE11D6C6B7B003C3EE8 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FE01D6C6B7B003C3EE8 /* String+Extensions.swift */; };
@@ -49,8 +47,6 @@
 		BDF7B40B1C3FF40A00576737 /* Compass+Navigate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Compass+Navigate.swift"; sourceTree = "<group>"; };
 		BDF7B40D1C3FF41500576737 /* Compass+Navigate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Compass+Navigate.swift"; sourceTree = "<group>"; };
 		BDF7B40F1C3FF43F00576737 /* TestCompass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCompass.swift; sourceTree = "<group>"; };
-		BDF7B4141C3FF51100576737 /* Sugar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sugar.framework; path = Carthage/Build/Mac/Sugar.framework; sourceTree = "<group>"; };
-		BDF7B4161C3FF51800576737 /* Sugar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sugar.framework; path = Carthage/Build/iOS/Sugar.framework; sourceTree = "<group>"; };
 		D20D8C761D0708A800807EB1 /* Shuffle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shuffle.swift; sourceTree = "<group>"; };
 		D5361FE01D6C6B7B003C3EE8 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		D5A2A7921C4CEB1C00B51356 /* Routable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
@@ -70,7 +66,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDF7B4171C3FF51800576737 /* Sugar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +81,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDF7B4151C3FF51100576737 /* Sugar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,8 +98,6 @@
 		D5B2E8951C3A780C00C0327D = {
 			isa = PBXGroup;
 			children = (
-				BDF7B4161C3FF51800576737 /* Sugar.framework */,
-				BDF7B4141C3FF51100576737 /* Sugar.framework */,
 				D5C629691C3A809D007F7B7C /* Sources */,
 				D5C6295C1C3A800E007F7B7C /* Compass */,
 				D5C6298F1C3A8BDA007F7B7C /* CompassTests */,
@@ -251,7 +243,6 @@
 				D5B2E8A51C3A780C00C0327D /* Sources */,
 				D5B2E8A61C3A780C00C0327D /* Frameworks */,
 				D5B2E8A71C3A780C00C0327D /* Resources */,
-				D5C629731C3A86E3007F7B7C /* Copy frameworks with Carthage */,
 			);
 			buildRules = (
 			);
@@ -288,7 +279,6 @@
 				D5C629451C3A7FAA007F7B7C /* Sources */,
 				D5C629461C3A7FAA007F7B7C /* Frameworks */,
 				D5C629471C3A7FAA007F7B7C /* Resources */,
-				D5C629741C3A8717007F7B7C /* Copy frameworks with Carthage */,
 			);
 			buildRules = (
 			);
@@ -374,39 +364,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		D5C629731C3A86E3007F7B7C /* Copy frameworks with Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Sugar.framework",
-			);
-			name = "Copy frameworks with Carthage";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-		D5C629741C3A8717007F7B7C /* Copy frameworks with Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/Mac/Sugar.framework",
-			);
-			name = "Copy frameworks with Carthage";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D5B2E89A1C3A780C00C0327D /* Sources */ = {
