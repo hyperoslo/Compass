@@ -24,6 +24,7 @@ First you need to register a URL scheme for your application
 #### Step 2
 Now you need to configure Compass to use that URL scheme, a good place
 to do this is in your `AppDelegate`
+
 ```swift
 func application(application: UIApplication,
   didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -33,6 +34,7 @@ func application(application: UIApplication,
 ```
 #### Step 3
 Configure your application routes
+
 ```swift
 func application(application: UIApplication,
   didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -43,25 +45,30 @@ func application(application: UIApplication,
 ```
 #### Step 4
 Set up your application to respond to the URLs, this can be done in the `AppDelegate` but its up to you to find a more suitable place for it depending on the size of your implementation.
+
 ```swift
 func application(app: UIApplication,
   openURL url: NSURL,
   options: [String : AnyObject]) -> Bool {
-    return Compass.parse(url) { route, arguments in
-      switch route {
-        case "profile:{username}":
-          let profileController = profileController(title: arguments["{username}"])
-          self.navigationController?.pushViewController(profileController,
-            animated: true)
-        case "login:{username}":
-          let loginController = LoginController(title: arguments["{username}"])
-          self.navigationController?.pushViewController(loginController,
-            animated: true)
-        case "logout":
-          logout()
-        default: break
-      }
+    guard let location = Compass.parse(url) else {
+      return false
     }
+
+    let arguments = location.arguments
+
+    switch location.path {
+      case "profile:{username}":
+        let profileController = profileController(title: arguments["{username}"])
+        self.navigationController?.pushViewController(profileController, animated: true)
+      case "login:{username}":
+        let loginController = LoginController(title: arguments["{username}"])
+        self.navigationController?.pushViewController(loginController, animated: true)
+      case "logout":
+        logout()
+      default: break
+    }
+
+    return true
 }
 ```
 
@@ -79,8 +86,9 @@ route handling code and avoid huge `switch` cases.
 in one place:
 ```swift
 struct ProfileRoute: Routable {
-  func resolve(arguments: [String: String], currentController: UIViewController) {
-    guard let username = arguments["username"] else { return }
+
+  func navigate(to location: Location, from currentController: UIViewController) {
+    guard let username = location.arguments["username"] else { return }
 
     let profileController = profileController(title: username)
     currentController.navigationController?.pushViewController(profileController, animated: true)
@@ -103,10 +111,13 @@ router.routes = [
 func application(app: UIApplication,
   openURL url: NSURL,
   options: [String : AnyObject]) -> Bool {
-    return Compass.parse(url) { route, arguments in
-      router.navigate(route, arguments: arguments,
-        navigationController: navigationController)
+    guard let location = Compass.parse(url) else {
+      return false
     }
+
+    router.navigate(to: location, from: navigationController)
+
+    return true
 }
 ```
 
@@ -114,28 +125,25 @@ func application(app: UIApplication,
 You could have multiple handlers depending on if a user is logged in or not.
 ```swift
 struct NavigationHandler {
-  static func routePreLogin(route: String, arguments: [String: String],
-    navigationController: UINavigationController) {
-      switch route {
-      case "forgotpassword:{username}":
-        let forgotPasswordController = ForgotPasswordController(title: arguments["{username}"])
-        navigationController?.pushViewController(loginController,
-          animated: true)
-      default: break
-      }
+
+  static func routePreLogin(location: Location, navigationController: UINavigationController) {
+    switch location.path {
+    case "forgotpassword:{username}":
+      let controller = ForgotPasswordController(title: location.arguments["{username}"])
+      navigationController?.pushViewController(controller, animated: true)
+    default: break
+    }
   }
 
-  static func routePostLogin(route: String, arguments: [String: String],
-    navigationController: UINavigationController) {
-      switch route {
-      case "profile:{username}":
-        let profileController = ProfileController(title: arguments["{username}"])
-        navigationController?.pushViewController(profileController,
-          animated: true)
-      case "logout":
-        AppDelegate.logout()
-      default: break
-      }
+  static func routePostLogin(location: Location, navigationController: UINavigationController) {
+    switch location.path {
+    case "profile:{username}":
+      let controller = ProfileController(title: location.arguments["{username}"])
+      navigationController?.pushViewController(controller, animated: true)
+    case "logout":
+      AppDelegate.logout()
+    default: break
+    }
   }
 }
 ```
@@ -154,7 +162,7 @@ routerPostLogin.routes = [
 ]
 
 let router = isLoggedIn ? routerPostLogin : routerPreLogin
-router.navigate(route, arguments: arguments, navigationController: navigationController)
+router.navigate(to: location, from: navigationController)
 ```
 
 ##### Tip 3. Global function
