@@ -20,8 +20,8 @@
 		D5361FE51D6C6F1E003C3EE8 /* TypeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FE31D6C6F1E003C3EE8 /* TypeAlias.swift */; };
 		D5361FE71D6C7037003C3EE8 /* Compass+Navigate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FE61D6C7037003C3EE8 /* Compass+Navigate.swift */; };
 		D5361FE81D6C7037003C3EE8 /* Compass+Navigate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FE61D6C7037003C3EE8 /* Compass+Navigate.swift */; };
-		D5A2A7931C4CEB1C00B51356 /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2A7921C4CEB1C00B51356 /* Routable.swift */; };
-		D5A2A7971C4CEB7C00B51356 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2A7961C4CEB7C00B51356 /* Router.swift */; };
+		D5361FED1D6C7090003C3EE8 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FEC1D6C7090003C3EE8 /* Router.swift */; };
+		D5361FEE1D6C7090003C3EE8 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FEC1D6C7090003C3EE8 /* Router.swift */; };
 		D5B2E8AA1C3A780C00C0327D /* Compass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B2E89F1C3A780C00C0327D /* Compass.framework */; };
 		D5C6294A1C3A7FAA007F7B7C /* Compass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C629401C3A7FAA007F7B7C /* Compass.framework */; };
 /* End PBXBuildFile section */
@@ -51,8 +51,7 @@
 		D5361FE01D6C6B7B003C3EE8 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		D5361FE31D6C6F1E003C3EE8 /* TypeAlias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeAlias.swift; sourceTree = "<group>"; };
 		D5361FE61D6C7037003C3EE8 /* Compass+Navigate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Compass+Navigate.swift"; sourceTree = "<group>"; };
-		D5A2A7921C4CEB1C00B51356 /* Routable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
-		D5A2A7961C4CEB7C00B51356 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		D5361FEC1D6C7090003C3EE8 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		D5B2E89F1C3A780C00C0327D /* Compass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Compass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5B2E8A91C3A780C00C0327D /* Compass-iOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Compass-iOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C629401C3A7FAA007F7B7C /* Compass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Compass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,27 +129,9 @@
 		D5C629691C3A809D007F7B7C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				D5C6296A1C3A809D007F7B7C /* iOS */,
-				D5C6296C1C3A809D007F7B7C /* Mac */,
 				D5C6296E1C3A809D007F7B7C /* Shared */,
 			);
 			path = Sources;
-			sourceTree = "<group>";
-		};
-		D5C6296A1C3A809D007F7B7C /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				D5A2A7921C4CEB1C00B51356 /* Routable.swift */,
-				D5A2A7961C4CEB7C00B51356 /* Router.swift */,
-			);
-			path = iOS;
-			sourceTree = "<group>";
-		};
-		D5C6296C1C3A809D007F7B7C /* Mac */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Mac;
 			sourceTree = "<group>";
 		};
 		D5C6296E1C3A809D007F7B7C /* Shared */ = {
@@ -160,6 +141,7 @@
 				D5361FE01D6C6B7B003C3EE8 /* String+Extensions.swift */,
 				D5361FE31D6C6F1E003C3EE8 /* TypeAlias.swift */,
 				D5361FE61D6C7037003C3EE8 /* Compass+Navigate.swift */,
+				D5361FEC1D6C7090003C3EE8 /* Router.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -372,12 +354,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5361FED1D6C7090003C3EE8 /* Router.swift in Sources */,
 				D5361FE41D6C6F1E003C3EE8 /* TypeAlias.swift in Sources */,
 				D5361FE11D6C6B7B003C3EE8 /* String+Extensions.swift in Sources */,
 				D5361FE71D6C7037003C3EE8 /* Compass+Navigate.swift in Sources */,
-				D5A2A7971C4CEB7C00B51356 /* Router.swift in Sources */,
 				BDF7B4091C3FF40300576737 /* Compass.swift in Sources */,
-				D5A2A7931C4CEB1C00B51356 /* Routable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +380,7 @@
 				D5361FE21D6C6B7B003C3EE8 /* String+Extensions.swift in Sources */,
 				D5361FE51D6C6F1E003C3EE8 /* TypeAlias.swift in Sources */,
 				D5361FE81D6C7037003C3EE8 /* Compass+Navigate.swift in Sources */,
+				D5361FEE1D6C7090003C3EE8 /* Router.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
