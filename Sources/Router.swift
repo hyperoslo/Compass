@@ -1,3 +1,9 @@
+public enum RouteError: ErrorType {
+  case NotFound
+  case InvalidArguments(Location)
+  case InvalidPayload(Location)
+}
+
 public protocol Routable {
 
   func navigate(to location: Location, from currentController: Controller) throws
@@ -6,10 +12,6 @@ public protocol Routable {
 public protocol ErrorRoutable {
 
   func handle(routeError: ErrorType, from currentController: Controller)
-}
-
-public enum RouteError: ErrorType {
-  case NotFound
 }
 
 public struct Router: Routable {
