@@ -5,12 +5,17 @@ import XCTest
 class RouterTests: XCTestCase {
 
   var router: Router!
-  var controller = Controller()
   var route: TestRoute!
+  var controller: Controller!
+  var errorRoute: ErrorRoute!
 
   override func setUp() {
     router = Router()
     route = TestRoute()
+    controller = Controller()
+    errorRoute = ErrorRoute()
+
+    router.errorRoute = errorRoute
   }
 
   func testNavigateIfRouteRegistered() {
@@ -18,11 +23,20 @@ class RouterTests: XCTestCase {
     router.navigate(to: Location(path: "test"), from: controller)
 
     XCTAssertTrue(route.resolved)
+    XCTAssertNil(errorRoute.error)
   }
 
   func testNavigateIfRouteNotRegistered() {
     router.navigate(to: Location(path: "test"), from: controller)
 
     XCTAssertFalse(route.resolved)
+    XCTAssertTrue(errorRoute.error is RouteError)
+  }
+
+  func testNavigateIfRouteThrowsError() {
+    router.routes["throw"] = ThrowableRoute()
+    router.navigate(to: Location(path: "throw"), from: controller)
+
+    XCTAssertTrue(errorRoute.error is ThrowableRoute.Error)
   }
 }
