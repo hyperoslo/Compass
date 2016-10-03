@@ -8,7 +8,7 @@ public struct Compass {
     concreteMatchCount: Int,
     wildcardMatchCount: Int)
 
-  private static var internalScheme = ""
+  fileprivate static var internalScheme = ""
   public static var delimiter: String = ":"
 
   public static var scheme: String {
@@ -18,16 +18,16 @@ public struct Compass {
 
   public static var routes = [String]()
 
-  public static func parse(url: NSURL, payload: Any? = nil) -> Location? {
-    let path = url.absoluteString.substringFromIndex(scheme.endIndex)
+  public static func parse(_ url: URL, payload: Any? = nil) -> Location? {
+    let path = url.absoluteString.substring(from: scheme.endIndex)
 
-    guard !(path.containsString("?") || path.containsString("#")) else {
+    guard !(path.contains("?") || path.contains("#")) else {
       return parseAsURL(url, payload: payload)
     }
 
     let results: [Result] = routes.flatMap {
       return findMatch($0, pathString: path)
-      }.sort { (r1: Result, r2: Result) in
+      }.sorted { (r1: Result, r2: Result) in
         if r1.concreteMatchCount == r2.concreteMatchCount {
           return r1.wildcardMatchCount > r2.wildcardMatchCount
         }
@@ -42,10 +42,10 @@ public struct Compass {
     return nil
   }
 
-  static func parseAsURL(url: NSURL, payload: Any? = nil) -> Location? {
+  static func parseAsURL(_ url: URL, payload: Any? = nil) -> Location? {
     guard let route = url.host else { return nil }
 
-    let urlComponents = NSURLComponents(URL: url, resolvingAgainstBaseURL: false)
+    let urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)
     var arguments = [String : String]()
 
     urlComponents?.queryItems?.forEach { queryItem in
@@ -59,7 +59,7 @@ public struct Compass {
     return Location(path: route, arguments: arguments, payload: payload)
   }
 
-  static func findMatch(routeString: String, pathString: String) -> Result? {
+  static func findMatch(_ routeString: String, pathString: String) -> Result? {
     let routes = routeString.split(delimiter)
     let paths = pathString.split(delimiter)
 
@@ -94,8 +94,8 @@ public struct Compass {
 
 extension Compass {
 
-  public static func navigate(urn: String, scheme: String = Compass.scheme) {
-    guard let url = NSURL(string: "\(scheme)\(urn)") else { return }
+  public static func navigate(_ urn: String, scheme: String = Compass.scheme) {
+    guard let url = URL(string: "\(scheme)\(urn)") else { return }
     openURL(url)
   }
 }

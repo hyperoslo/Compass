@@ -37,6 +37,6 @@ class RouterTests: XCTestCase {
     router.routes["throw"] = ThrowableRoute()
     router.navigate(to: Location(path: "throw"), from: controller)
 
-    XCTAssertTrue(errorRoute.error is ThrowableRoute.Error)
+    XCTAssertTrue(errorRoute.error is ThrowableRoute.InternalError)
   }
 }

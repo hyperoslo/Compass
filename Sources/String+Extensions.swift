@@ -2,25 +2,25 @@ import Foundation
 
 extension String {
 
-  func split(delimiter: String) -> [String] {
-    let components = componentsSeparatedByString(delimiter)
+  func split(_ delimiter: String) -> [String] {
+    let components = self.components(separatedBy: delimiter)
     return components != [""] ? components : []
   }
 
-  func replace(string: String, with withString: String) -> String {
-    return stringByReplacingOccurrencesOfString(string, withString: withString)
+  func replace(_ string: String, with withString: String) -> String {
+    return replacingOccurrences(of: string, with: withString)
   }
 
   func queryParameters() -> [String: String] {
     var parameters = [String: String]()
 
-    let separatorCharacters = NSCharacterSet(charactersInString: "&;")
-    self.componentsSeparatedByCharactersInSet(separatorCharacters).forEach { (pair) in
+    let separatorCharacters = CharacterSet(charactersIn: "&;")
+    self.components(separatedBy: separatorCharacters).forEach { (pair) in
 
-      if let equalSeparator = pair.rangeOfString("=") {
-        let name = pair.substringToIndex(equalSeparator.startIndex)
-        let value = pair.substringFromIndex(equalSeparator.startIndex.advancedBy(1))
-        let cleaned = value.stringByRemovingPercentEncoding ?? value
+      if let equalSeparator = pair.range(of: "=") {
+        let name = pair.substring(to: equalSeparator.lowerBound)
+        let value = pair.substring(from: pair.index(equalSeparator.lowerBound, offsetBy: 1))
+        let cleaned = value.removingPercentEncoding ?? value
 
         parameters[name] = cleaned
       }
