@@ -7,13 +7,13 @@
 #if os(OSX)
   public typealias Controller = NSViewController
 
-  func openURL(URL: NSURL) {
-    NSWorkspace.sharedWorkspace().openURL(URL)
+  func openURL(_ url: URL) {
+    NSWorkspace.shared().open(url)
   }
 #else
   public typealias Controller = UIViewController
 
-  func openURL(_ URL: Foundation.URL) {
-    UIApplication.shared.openURL(URL)
+  func openURL(_ url: Foundation.URL) {
+    UIApplication.shared.openURL(url)
   }
 #endif
