@@ -13,7 +13,7 @@
 #else
   public typealias Controller = UIViewController
 
-  func open(url: Foundation.URL) {
+  func open(url: URL) {
     UIApplication.shared.openURL(url)
   }
 #endif
