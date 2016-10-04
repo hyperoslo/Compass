@@ -27,8 +27,8 @@ class ErrorRoute: ErrorRoutable {
 
   var error: Error?
 
-  func handle(_ routeError: Error, from currentController: Controller) {
-    error = routeError
+  func handle(routeError error: Error, from currentController: Controller) {
+    self.error = error
   }
 }
 

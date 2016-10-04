@@ -94,8 +94,8 @@ public struct Compass {
 
 extension Compass {
 
-  public static func navigate(_ urn: String, scheme: String = Compass.scheme) {
+  public static func navigate(to urn: String, scheme: String = Compass.scheme) {
     guard let url = URL(string: "\(scheme)\(urn)") else { return }
-    openURL(url)
+    open(url: url)
   }
 }
