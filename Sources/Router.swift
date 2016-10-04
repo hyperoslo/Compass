@@ -11,7 +11,7 @@ public protocol Routable {
 
 public protocol ErrorRoutable {
 
-  func handle(_ routeError: Error, from currentController: Controller)
+  func handle(routeError error: Error, from currentController: Controller)
 }
 
 public struct Router: Routable {
@@ -23,14 +23,14 @@ public struct Router: Routable {
 
   public func navigate(to location: Location, from currentController: Controller) {
     guard let route = routes[location.path] else {
-      errorRoute?.handle(RouteError.notFound, from: currentController)
+      errorRoute?.handle(routeError: RouteError.notFound, from: currentController)
       return
     }
 
     do {
       try route.navigate(to: location, from: currentController)
     } catch {
-      errorRoute?.handle(error, from: currentController)
+      errorRoute?.handle(routeError: error, from: currentController)
     }
   }
 }
