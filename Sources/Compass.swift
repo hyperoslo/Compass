@@ -18,7 +18,7 @@ public struct Compass {
 
   public static var routes = [String]()
 
-  public static func parse(_ url: URL, payload: Any? = nil) -> Location? {
+  public static func parse(url: URL, payload: Any? = nil) -> Location? {
     let path = url.absoluteString.substring(from: scheme.endIndex)
 
     guard !(path.contains("?") || path.contains("#")) else {
