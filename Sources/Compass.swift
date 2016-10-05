@@ -22,11 +22,11 @@ public struct Compass {
     let path = url.absoluteString.substring(from: scheme.endIndex)
 
     guard !(path.contains("?") || path.contains("#")) else {
-      return parseAsUrl(url, payload: payload)
+      return parseComponents(url: url, payload: payload)
     }
 
     let results: [Result] = routes.flatMap {
-      return findMatch($0, pathString: path)
+      return findMatch(routeString: $0, pathString: path)
     }.sorted { (r1: Result, r2: Result) in
       if r1.concreteMatchCount == r2.concreteMatchCount {
         return r1.wildcardMatchCount > r2.wildcardMatchCount
@@ -42,7 +42,7 @@ public struct Compass {
     return nil
   }
 
-  static func parseAsUrl(_ url: URL, payload: Any? = nil) -> Location? {
+  static func parseComponents(url: URL, payload: Any? = nil) -> Location? {
     guard let route = url.host else { return nil }
 
     let urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)
@@ -59,7 +59,7 @@ public struct Compass {
     return Location(path: route, arguments: arguments, payload: payload)
   }
 
-  static func findMatch(_ routeString: String, pathString: String) -> Result? {
+  static func findMatch(routeString: String, pathString: String) -> Result? {
     let routes = routeString.split(delimiter)
     let paths = pathString.split(delimiter)
 
