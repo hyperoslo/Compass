@@ -7,10 +7,6 @@ extension String {
     return components != [""] ? components : []
   }
 
-  func replace(_ string: String, with withString: String) -> String {
-    return replacingOccurrences(of: string, with: withString)
-  }
-
   func queryParameters() -> [String: String] {
     var parameters = [String: String]()
 

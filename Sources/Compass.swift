@@ -71,7 +71,8 @@ public struct Compass {
 
     for (route, path) in zip(routes, paths) {
       if route.hasPrefix("{") {
-        let key = route.replace("{", with: "").replace("}", with: "")
+        let key = route.replacingOccurrences(of: "{", with: "")
+                       .replacingOccurrences(of: "}", with: "")
         arguments[key] = path
 
         wildcardMatchCount += 1
