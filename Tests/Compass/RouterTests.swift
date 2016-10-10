@@ -6,13 +6,13 @@ class RouterTests: XCTestCase {
 
   var router: Router!
   var route: TestRoute!
-  var controller: Controller!
+  var controller: CurrentController!
   var errorRoute: ErrorRoute!
 
   override func setUp() {
     router = Router()
     route = TestRoute()
-    controller = Controller()
+    controller = CurrentController()
     errorRoute = ErrorRoute()
 
     router.errorRoute = errorRoute
