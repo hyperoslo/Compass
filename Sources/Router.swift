@@ -6,12 +6,12 @@ public enum RouteError: Error {
 
 public protocol Routable {
 
-  func navigate(to location: Location, from currentController: Controller) throws
+  func navigate(to location: Location, from currentController: CurrentController) throws
 }
 
 public protocol ErrorRoutable {
 
-  func handle(routeError error: Error, from currentController: Controller)
+  func handle(routeError error: Error, from currentController: CurrentController)
 }
 
 public struct Router: Routable {
@@ -21,7 +21,7 @@ public struct Router: Routable {
 
   public init() {}
 
-  public func navigate(to location: Location, from currentController: Controller) {
+  public func navigate(to location: Location, from currentController: CurrentController) {
     guard let route = routes[location.path] else {
       errorRoute?.handle(routeError: RouteError.notFound, from: currentController)
       return
