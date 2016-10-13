@@ -7,53 +7,45 @@ class TestRoute: Routable {
 
   var resolved = false
 
-  func navigate(to location: Location, from currentController: Controller) throws {
+  func navigate(to location: Location, from currentController: CurrentController) throws {
     resolved = true
   }
 }
 
 class ThrowableRoute: Routable {
 
-  enum Error: ErrorType {
+  enum InternalError: Error {
     case Unknown
   }
 
-  func navigate(to location: Location, from currentController: Controller) throws {
-    throw Error.Unknown
+  func navigate(to location: Location, from currentController: CurrentController) throws {
+    throw InternalError.Unknown
   }
 }
 
 class ErrorRoute: ErrorRoutable {
 
-  var error: ErrorType?
+  var error: Error?
 
-  func handle(routeError: ErrorType, from currentController: Controller) {
-    error = routeError
+  func handle(routeError error: Error, from currentController: CurrentController) {
+    self.error = error
   }
 }
 
 // MARK: - Shuffle
 
-extension CollectionType {
+extension Array {
   /// Return a copy of `self` with its elements shuffled
-  func shuffle() -> [Generator.Element] {
+  func shuffle() -> [Element] {
     var list = Array(self)
-    list.shuffleInPlace()
+
+    for i in 0..<list.count - 1 {
+      let j = Int(arc4random_uniform(UInt32(list.count - i))) + i
+      guard i != j else { continue }
+      (list[i], list[j]) = (list[j], list[i])
+    }
+
     return list
   }
 }
 
-extension MutableCollectionType where Index == Int {
-  /// Shuffle the elements of `self` in-place.
-  mutating func shuffleInPlace() {
-    // empty and single-element collections don't shuffle
-    if count < 2 { return }
-
-    for i in 0..<count - 1 {
-      let j = Int(arc4random_uniform(UInt32(count - i))) + i
-      guard i != j else { continue }
-      (self[i], self[j]) = (self[j], self[i])
-      // instead of swap(&self[i], &self[j])
-    }
-  }
-}

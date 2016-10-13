@@ -8,7 +8,7 @@ public struct Compass {
     concreteMatchCount: Int,
     wildcardMatchCount: Int)
 
-  private static var internalScheme = ""
+  fileprivate static var internalScheme = ""
   public static var delimiter: String = ":"
 
   public static var scheme: String {
@@ -18,21 +18,21 @@ public struct Compass {
 
   public static var routes = [String]()
 
-  public static func parse(url: NSURL, payload: Any? = nil) -> Location? {
-    let path = url.absoluteString.substringFromIndex(scheme.endIndex)
+  public static func parse(url: URL, payload: Any? = nil) -> Location? {
+    let path = url.absoluteString.substring(from: scheme.endIndex)
 
-    guard !(path.containsString("?") || path.containsString("#")) else {
-      return parseAsURL(url, payload: payload)
+    guard !(path.contains("?") || path.contains("#")) else {
+      return parseComponents(url: url, payload: payload)
     }
 
     let results: [Result] = routes.flatMap {
-      return findMatch($0, pathString: path)
-      }.sort { (r1: Result, r2: Result) in
-        if r1.concreteMatchCount == r2.concreteMatchCount {
-          return r1.wildcardMatchCount > r2.wildcardMatchCount
-        }
+      return findMatch(routeString: $0, pathString: path)
+    }.sorted { (r1: Result, r2: Result) in
+      if r1.concreteMatchCount == r2.concreteMatchCount {
+        return r1.wildcardMatchCount > r2.wildcardMatchCount
+      }
 
-        return r1.concreteMatchCount > r2.concreteMatchCount
+      return r1.concreteMatchCount > r2.concreteMatchCount
     }
 
     if let result = results.first {
@@ -42,10 +42,10 @@ public struct Compass {
     return nil
   }
 
-  static func parseAsURL(url: NSURL, payload: Any? = nil) -> Location? {
+  static func parseComponents(url: URL, payload: Any? = nil) -> Location? {
     guard let route = url.host else { return nil }
 
-    let urlComponents = NSURLComponents(URL: url, resolvingAgainstBaseURL: false)
+    let urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)
     var arguments = [String : String]()
 
     urlComponents?.queryItems?.forEach { queryItem in
@@ -71,7 +71,8 @@ public struct Compass {
 
     for (route, path) in zip(routes, paths) {
       if route.hasPrefix("{") {
-        let key = route.replace("{", with: "").replace("}", with: "")
+        let key = route.replacingOccurrences(of: "{", with: "")
+                       .replacingOccurrences(of: "}", with: "")
         arguments[key] = path
 
         wildcardMatchCount += 1
@@ -94,8 +95,8 @@ public struct Compass {
 
 extension Compass {
 
-  public static func navigate(urn: String, scheme: String = Compass.scheme) {
-    guard let url = NSURL(string: "\(scheme)\(urn)") else { return }
-    openURL(url)
+  public static func navigate(to urn: String, scheme: String = Compass.scheme) {
+    guard let url = URL(string: "\(scheme)\(urn)") else { return }
+    open(url: url)
   }
 }

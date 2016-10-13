@@ -6,13 +6,13 @@ class RouterTests: XCTestCase {
 
   var router: Router!
   var route: TestRoute!
-  var controller: Controller!
+  var controller: CurrentController!
   var errorRoute: ErrorRoute!
 
   override func setUp() {
     router = Router()
     route = TestRoute()
-    controller = Controller()
+    controller = CurrentController()
     errorRoute = ErrorRoute()
 
     router.errorRoute = errorRoute
@@ -37,6 +37,6 @@ class RouterTests: XCTestCase {
     router.routes["throw"] = ThrowableRoute()
     router.navigate(to: Location(path: "throw"), from: controller)
 
-    XCTAssertTrue(errorRoute.error is ThrowableRoute.Error)
+    XCTAssertTrue(errorRoute.error is ThrowableRoute.InternalError)
   }
 }

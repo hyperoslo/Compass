@@ -5,15 +5,15 @@
 #endif
 
 #if os(OSX)
-  public typealias Controller = NSViewController
+  public typealias CurrentController = NSViewController
 
-  func openURL(URL: NSURL) {
-    NSWorkspace.sharedWorkspace().openURL(URL)
+  func open(url: URL) {
+    NSWorkspace.shared().open(url)
   }
 #else
-  public typealias Controller = UIViewController
+  public typealias CurrentController = UIViewController
 
-  func openURL(URL: NSURL) {
-    UIApplication.sharedApplication().openURL(URL)
+  func open(url: URL) {
+    UIApplication.shared.openURL(url)
   }
 #endif

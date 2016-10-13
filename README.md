@@ -5,6 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/Compass.svg?style=flat)](http://cocoadocs.org/docsets/Compass)
 [![Platform](https://img.shields.io/cocoapods/p/Compass.svg?style=flat)](http://cocoadocs.org/docsets/Compass)
 [![CI Status](http://img.shields.io/travis/hyperoslo/Compass.svg?style=flat)](https://travis-ci.org/hyperoslo/Compass)
+![Swift](https://img.shields.io/badge/%20in-swift%203.0-orange.svg)
 
 Compass helps you setup a central navigation system for your application.
 This has many benefits, one of them being that controllers can now be
