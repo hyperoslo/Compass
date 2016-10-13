@@ -27,49 +27,49 @@ Now you need to configure Compass to use that URL scheme, a good place
 to do this is in your `AppDelegate`
 
 ```swift
-func application(application: UIApplication,
-  didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    Compass.scheme = "compass"
-    return true
+func application(_ application: UIApplication,
+                 didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+  Compass.scheme = "compass"
+  return true
 }
 ```
 #### Step 3
 Configure your application routes
 
 ```swift
-func application(application: UIApplication,
-  didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    Compass.scheme = "compass"
-    Compass.routes = ["profile:{username}", "login:{username}", "logout"]
-    return true
+func application(_ application: UIApplication,
+                 didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+  Compass.scheme = "compass"
+  Compass.routes = ["profile:{username}", "login:{username}", "logout"]
+  return true
 }
 ```
 #### Step 4
 Set up your application to respond to the URLs, this can be done in the `AppDelegate` but its up to you to find a more suitable place for it depending on the size of your implementation.
 
 ```swift
-func application(app: UIApplication,
-  openURL url: NSURL,
-  options: [String : AnyObject]) -> Bool {
-    guard let location = Compass.parse(url) else {
-      return false
-    }
+func application(_ app: UIApplication,
+                 open url: URL,
+                 options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
+  guard let location = Compass.parse(url) else {
+    return false
+  }
 
-    let arguments = location.arguments
+  let arguments = location.arguments
 
-    switch location.path {
-      case "profile:{username}":
-        let profileController = profileController(title: arguments["{username}"])
-        self.navigationController?.pushViewController(profileController, animated: true)
-      case "login:{username}":
-        let loginController = LoginController(title: arguments["{username}"])
-        self.navigationController?.pushViewController(loginController, animated: true)
-      case "logout":
-        logout()
-      default: break
-    }
+  switch location.path {
+    case "profile:{username}":
+      let profileController = profileController(title: arguments["{username}"])
+      self.navigationController?.pushViewController(profileController, animated: true)
+    case "login:{username}":
+      let loginController = LoginController(title: arguments["{username}"])
+      self.navigationController?.pushViewController(loginController, animated: true)
+    case "logout":
+      logout()
+    default: break
+  }
 
-    return true
+  return true
 }
 ```
 
@@ -109,16 +109,16 @@ router.routes = [
 - Parse URL with **Compass** and navigate to the route with a help of your
 `Router` instance.
 ```swift
-func application(app: UIApplication,
-  openURL url: NSURL,
-  options: [String : AnyObject]) -> Bool {
-    guard let location = Compass.parse(url) else {
-      return false
-    }
+func application(_ app: UIApplication,
+                 open url: URL,
+                 options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
+  guard let location = Compass.parse(url) else {
+    return false
+  }
 
-    router.navigate(to: location, from: navigationController)
+  router.navigate(to: location, from: navigationController)
 
-    return true
+  return true
 }
 ```
 
@@ -172,9 +172,9 @@ Add your own global function to easily navigate internally
 import Compass
 
 public func navigate(urn: String) {
-  let stringURL = "\(Compass.scheme)\(urn)"
+  let stringUrl = "\(Compass.scheme)\(urn)"
   guard let appDelegate = UIApplication.sharedApplication().delegate as? ApplicationDelegate,
-    url = NSURL(string: stringURL) else { return }
+    url = URL(string: stringUrl) else { return }
 
   appDelegate.handleURL(url)
 }
