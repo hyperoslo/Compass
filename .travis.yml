@@ -10,3 +10,5 @@ script:
   - xcodebuild test -project Compass.xcodeproj -scheme Compass-Mac -sdk macosx
 notifications:
   email: false
+after_success:
+- bash <(curl -s https://codecov.io/bash)
