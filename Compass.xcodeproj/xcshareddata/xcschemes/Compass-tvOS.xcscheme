@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FDD723341DCA20BC00D722E4"
-               BuildableName = "Compass-tvOS.framework"
+               BuildableName = "Compass.framework"
                BlueprintName = "Compass-tvOS"
                ReferencedContainer = "container:Compass.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FDD723341DCA20BC00D722E4"
-            BuildableName = "Compass-tvOS.framework"
+            BuildableName = "Compass.framework"
             BlueprintName = "Compass-tvOS"
             ReferencedContainer = "container:Compass.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FDD723341DCA20BC00D722E4"
-            BuildableName = "Compass-tvOS.framework"
+            BuildableName = "Compass.framework"
             BlueprintName = "Compass-tvOS"
             ReferencedContainer = "container:Compass.xcodeproj">
          </BuildableReference>
