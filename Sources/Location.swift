@@ -10,7 +10,13 @@ public struct Location {
 
   public init(path: String, arguments: [String: String] = [:], payload: Any? = nil) {
     self.path = path
-    self.arguments = arguments
     self.payload = payload
+
+    var decodedArguments = [String: String]()
+    arguments.forEach { (key, value) in
+      decodedArguments[key] = value.compass_decoded()
+    }
+
+    self.arguments = decodedArguments
   }
 }
