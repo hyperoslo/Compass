@@ -5,7 +5,7 @@ public struct Location {
   public let payload: Any?
 
   public var scheme: String {
-    return Compass.scheme
+    return Navigator.scheme
   }
 
   public init(path: String, arguments: [String: String] = [:], payload: Any? = nil) {
