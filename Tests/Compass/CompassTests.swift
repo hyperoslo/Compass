@@ -11,6 +11,7 @@ class CompassTests: XCTestCase {
       "profile:admin",
       "login",
       "callback",
+      "organization:{name}:{type}",
       "user:list:{userId}:{kind}",
       "user:list",
       "{appId}:user:list:{userId}:{kind}"
@@ -23,7 +24,7 @@ class CompassTests: XCTestCase {
 
   func testRoutes() {
     XCTAssert(!Compass.routes.isEmpty)
-    XCTAssert(Compass.routes.count == 7)
+    XCTAssert(Compass.routes.count == 8)
   }
 
   func testParseArguments() {
@@ -262,5 +263,20 @@ class CompassTests: XCTestCase {
     XCTAssertEqual(location.arguments["access_token"], "ya29.Ci8nA1pNVMFffHkS5-sXooNGvTB9q8QPtoM56sWpipRyjhwwEiKyZxvRQTR8saqWzQ=")
     XCTAssertEqual(location.arguments["expires_in"], "3600")
     XCTAssertEqual(location.arguments["token_type"], "Bearer")
+  }
+
+  func testEncodedURN() {
+    let urn = "organization:hyper oslo:simply awesome"
+    let url = Compass.compassURL(urn: urn)
+
+    XCTAssertNotNil(url)
+
+    guard let location = Compass.parse(url: url!) else {
+      XCTFail("Compass parsing failed")
+      return
+    }
+
+    XCTAssertEqual(location.arguments["name"], "hyper oslo")
+    XCTAssertEqual(location.arguments["type"], "simply awesome")
   }
 }
