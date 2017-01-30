@@ -5,8 +5,8 @@ import Compass
 class CompassTests: XCTestCase {
 
   override func setUp() {
-    Compass.scheme = "compassTests"
-    Compass.routes = [
+    Navigator.scheme = "compassTests"
+    Navigator.routes = [
       "profile:{user}",
       "profile:admin",
       "login",
@@ -19,18 +19,18 @@ class CompassTests: XCTestCase {
   }
 
   func testScheme() {
-    XCTAssertEqual(Compass.scheme, "compassTests://")
+    XCTAssertEqual(Navigator.scheme, "compassTests://")
   }
 
   func testRoutes() {
-    XCTAssert(!Compass.routes.isEmpty)
-    XCTAssert(Compass.routes.count == 8)
+    XCTAssert(!Navigator.routes.isEmpty)
+    XCTAssert(Navigator.routes.count == 8)
   }
 
   func testParseArguments() {
     let url = URL(string: "compassTests://profile:testUser")!
 
-    guard let location = Compass.parse(url: url) else {
+    guard let location = Navigator.parse(url: url) else {
       XCTFail("Compass parsing failed")
       return
     }
@@ -44,7 +44,7 @@ class CompassTests: XCTestCase {
 
     typealias Payload = (firstName: String, lastName: String)
 
-    guard let location = Compass.parse(url: url, payload: Payload(firstName: "foo", lastName: "bar")) else {
+    guard let location = Navigator.parse(url: url, payload: Payload(firstName: "foo", lastName: "bar")) else {
       XCTFail("Compass parsing failed")
       return
     }
@@ -58,7 +58,7 @@ class CompassTests: XCTestCase {
   func testParseRouteConcreateMatchCount() {
     let url = URL(string: "compassTests://profile:admin")!
 
-    guard let location = Compass.parse(url: url) else {
+    guard let location = Navigator.parse(url: url) else {
       XCTFail("Compass parsing failed")
       return
     }
@@ -70,7 +70,7 @@ class CompassTests: XCTestCase {
   func testParseRouteWildcardMatchCount() {
     let url = URL(string: "compassTests://profile:jack")!
 
-    guard let location = Compass.parse(url: url) else {
+    guard let location = Navigator.parse(url: url) else {
       XCTFail("Compass parsing failed")
       return
     }
@@ -82,7 +82,7 @@ class CompassTests: XCTestCase {
   func testParseRouteSamePrefix() {
     let url = URL(string: "compassTests://user:list")!
 
-    guard let location = Compass.parse(url: url) else {
+    guard let location = Navigator.parse(url: url) else {
       XCTFail("Compass parsing failed")
       return
     }
@@ -94,7 +94,7 @@ class CompassTests: XCTestCase {
   func testParseMultipleArguments() {
     let url = URL(string: "compassTests://user:list:1:admin")!
 
-    guard let location = Compass.parse(url: url) else {
+    guard let location = Navigator.parse(url: url) else {
       XCTFail("Compass parsing failed")
       return
     }
@@ -107,7 +107,7 @@ class CompassTests: XCTestCase {
   func testParseMultipleArgumentsWithFirstWildcard() {
     let url = URL(string: "compassTests://12:user:list:1:admin")!
 
-    guard let location = Compass.parse(url: url) else {
+    guard let location = Navigator.parse(url: url) else {
       XCTFail("Compass parsing failed")
       return
     }
@@ -121,7 +121,7 @@ class CompassTests: XCTestCase {
   func testParseWithoutArguments() {
     let url = URL(string: "compassTests://login")!
 
-    guard let location = Compass.parse(url: url) else {
+    guard let location = Navigator.parse(url: url) else {
       XCTFail("Compass parsing failed")
       return
     }
@@ -133,7 +133,7 @@ class CompassTests: XCTestCase {
   func testParseRegularURLWithFragments() {
     let url = URL(string: "compassTests://callback/#access_token=IjvcgrkQk1p7TyJxKa26rzM1wBMFZW6XoHK4t5Gkt1xQLTN8l7ppR0H3EZXpoP0uLAN49oCDqTHsvnEV&token_type=Bearer&expires_in=3600")!
 
-    guard let location = Compass.parse(url: url) else {
+    guard let location = Navigator.parse(url: url) else {
       XCTFail("Compass parsing failed")
       return
     }
@@ -148,7 +148,7 @@ class CompassTests: XCTestCase {
   func testParseRegularURLWithFragmentsAndGoogleOAuth2AccessToken() {
     let url = URL(string: "compassTests://callback/#access_token=ya29.Ci8nA1pNVMFffHkS5-sXooNGvTB9q8QPtoM56sWpipRyjhwwEiKyZxvRQTR8saqWzQ&token_type=Bearer&expires_in=3600")!
 
-    guard let location = Compass.parse(url: url) else {
+    guard let location = Navigator.parse(url: url) else {
       XCTFail("Compass parsing failed")
       return
     }
@@ -163,7 +163,7 @@ class CompassTests: XCTestCase {
   func testParseRegularURLWithFragmentsAndAlternativeAccessToken() {
     let url = URL(string: "compassTests://callback/#access_token=ya29.Ci8nA1pNVMFffHkS5-sXooNGvTB9q8QPtoM56sWpipRyjhwwEiKyZxvRQTR8saqWzQ=&token_type=Bearer&expires_in=3600")!
 
-    guard let location = Compass.parse(url: url) else {
+    guard let location = Navigator.parse(url: url) else {
       XCTFail("Compass parsing failed")
       return
     }
@@ -178,7 +178,7 @@ class CompassTests: XCTestCase {
   func testParseRegularURLWithSlashQuery() {
     let url = URL(string: "compassTests://callback/?access_token=Yo0OMrVZbRWNmgA6BT99hyuTUTNRGvqEEAQyeN1eslclzhFD0M8AidB4Z7Vs2NU8WoSNW0vYb961O38l&token_type=Bearer&expires_in=3600")!
 
-    guard let location = Compass.parse(url: url) else {
+    guard let location = Navigator.parse(url: url) else {
       XCTFail("Compass parsing failed")
       return
     }
@@ -193,7 +193,7 @@ class CompassTests: XCTestCase {
   func testParseRegularURLWithSlashQueryAndGoogleOAuth2AccessToken() {
     let url = URL(string: "compassTests://callback/?access_token=ya29.Ci8nA1pNVMFffHkS5-sXooNGvTB9q8QPtoM56sWpipRyjhwwEiKyZxvRQTR8saqWzQ&token_type=Bearer&expires_in=3600")!
 
-    guard let location = Compass.parse(url: url) else {
+    guard let location = Navigator.parse(url: url) else {
       XCTFail("Compass parsing failed")
       return
     }
@@ -208,7 +208,7 @@ class CompassTests: XCTestCase {
   func testParseRegularURLWithSlashQueryAndAlternativeAccessToken() {
     let url = URL(string: "compassTests://callback/?access_token=ya29.Ci8nA1pNVMFffHkS5-sXooNGvTB9q8QPtoM56sWpipRyjhwwEiKyZxvRQTR8saqWzQ=&token_type=Bearer&expires_in=3600")!
 
-    guard let location = Compass.parse(url: url) else {
+    guard let location = Navigator.parse(url: url) else {
       XCTFail("Compass parsing failed")
       return
     }
@@ -223,7 +223,7 @@ class CompassTests: XCTestCase {
   func testParseRegularURLWithQuery() {
     let url = URL(string: "compassTests://callback?access_token=Yo0OMrVZbRWNmgA6BT99hyuTUTNRGvqEEAQyeN1eslclzhFD0M8AidB4Z7Vs2NU8WoSNW0vYb961O38l&token_type=Bearer&expires_in=3600")!
 
-    guard let location = Compass.parse(url: url) else {
+    guard let location = Navigator.parse(url: url) else {
       XCTFail("Compass parsing failed")
       return
     }
@@ -238,7 +238,7 @@ class CompassTests: XCTestCase {
   func testParseRegularURLWithQueryAndGoogleOAuth2AccessToken() {
     let url = URL(string: "compassTests://callback?access_token=ya29.Ci8nA1pNVMFffHkS5-sXooNGvTB9q8QPtoM56sWpipRyjhwwEiKyZxvRQTR8saqWzQ&token_type=Bearer&expires_in=3600")!
 
-    guard let location = Compass.parse(url: url) else {
+    guard let location = Navigator.parse(url: url) else {
       XCTFail("Compass parsing failed")
       return
     }
@@ -253,7 +253,7 @@ class CompassTests: XCTestCase {
   func testParseRegularURLWithQueryAndAlternativeAccessToken() {
     let url = URL(string: "compassTests://callback?access_token=ya29.Ci8nA1pNVMFffHkS5-sXooNGvTB9q8QPtoM56sWpipRyjhwwEiKyZxvRQTR8saqWzQ=&token_type=Bearer&expires_in=3600")!
 
-    guard let location = Compass.parse(url: url) else {
+    guard let location = Navigator.parse(url: url) else {
       XCTFail("Compass parsing failed")
       return
     }
@@ -267,11 +267,11 @@ class CompassTests: XCTestCase {
 
   func testEncodedURN() {
     let urn = "organization:hyper oslo:simply awesome"
-    let url = Compass.compassURL(urn: urn)
+    let url = Navigator.compassURL(urn: urn)
 
     XCTAssertNotNil(url)
 
-    guard let location = Compass.parse(url: url!) else {
+    guard let location = Navigator.parse(url: url!) else {
       XCTFail("Compass parsing failed")
       return
     }

@@ -13,8 +13,8 @@
 		D5361FF91D6C7133003C3EE8 /* TypeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FF11D6C7133003C3EE8 /* TypeAlias.swift */; };
 		D5361FFA1D6C7133003C3EE8 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FF21D6C7133003C3EE8 /* String+Extensions.swift */; };
 		D5361FFB1D6C7133003C3EE8 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FF21D6C7133003C3EE8 /* String+Extensions.swift */; };
-		D5361FFC1D6C7133003C3EE8 /* Compass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FF31D6C7133003C3EE8 /* Compass.swift */; };
-		D5361FFD1D6C7133003C3EE8 /* Compass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FF31D6C7133003C3EE8 /* Compass.swift */; };
+		D5361FFC1D6C7133003C3EE8 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FF31D6C7133003C3EE8 /* Navigator.swift */; };
+		D5361FFD1D6C7133003C3EE8 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FF31D6C7133003C3EE8 /* Navigator.swift */; };
 		D53620251D6C749A003C3EE8 /* CompassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D536200F1D6C743A003C3EE8 /* CompassTests.swift */; };
 		D53620261D6C749A003C3EE8 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53620101D6C743A003C3EE8 /* Helpers.swift */; };
 		D53620271D6C749A003C3EE8 /* RouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53620111D6C743A003C3EE8 /* RouterTests.swift */; };
@@ -25,7 +25,7 @@
 		D536202D1D6C8532003C3EE8 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = D536202B1D6C8532003C3EE8 /* Location.swift */; };
 		D5B2E8AA1C3A780C00C0327D /* Compass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B2E89F1C3A780C00C0327D /* Compass.framework */; };
 		D5C6294A1C3A7FAA007F7B7C /* Compass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C629401C3A7FAA007F7B7C /* Compass.framework */; };
-		FDD723361DCA20BC00D722E4 /* Compass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FF31D6C7133003C3EE8 /* Compass.swift */; };
+		FDD723361DCA20BC00D722E4 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FF31D6C7133003C3EE8 /* Navigator.swift */; };
 		FDD723371DCA20BC00D722E4 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FF21D6C7133003C3EE8 /* String+Extensions.swift */; };
 		FDD723381DCA20BC00D722E4 /* TypeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FF11D6C7133003C3EE8 /* TypeAlias.swift */; };
 		FDD723391DCA20BC00D722E4 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5361FEF1D6C7133003C3EE8 /* Router.swift */; };
@@ -53,7 +53,7 @@
 		D5361FEF1D6C7133003C3EE8 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		D5361FF11D6C7133003C3EE8 /* TypeAlias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeAlias.swift; sourceTree = "<group>"; };
 		D5361FF21D6C7133003C3EE8 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
-		D5361FF31D6C7133003C3EE8 /* Compass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compass.swift; sourceTree = "<group>"; };
+		D5361FF31D6C7133003C3EE8 /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		D536200F1D6C743A003C3EE8 /* CompassTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassTests.swift; sourceTree = "<group>"; };
 		D53620101D6C743A003C3EE8 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		D53620111D6C743A003C3EE8 /* RouterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterTests.swift; sourceTree = "<group>"; };
@@ -169,7 +169,7 @@
 				D5361FEF1D6C7133003C3EE8 /* Router.swift */,
 				D5361FF11D6C7133003C3EE8 /* TypeAlias.swift */,
 				D5361FF21D6C7133003C3EE8 /* String+Extensions.swift */,
-				D5361FF31D6C7133003C3EE8 /* Compass.swift */,
+				D5361FF31D6C7133003C3EE8 /* Navigator.swift */,
 				D536202B1D6C8532003C3EE8 /* Location.swift */,
 			);
 			path = Sources;
@@ -299,7 +299,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Hyper Interaktiv AS";
 				TargetAttributes = {
 					D5B2E89E1C3A780C00C0327D = {
@@ -382,7 +382,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5361FFC1D6C7133003C3EE8 /* Compass.swift in Sources */,
+				D5361FFC1D6C7133003C3EE8 /* Navigator.swift in Sources */,
 				D5361FFA1D6C7133003C3EE8 /* String+Extensions.swift in Sources */,
 				D5361FF81D6C7133003C3EE8 /* TypeAlias.swift in Sources */,
 				D5361FF41D6C7133003C3EE8 /* Router.swift in Sources */,
@@ -404,7 +404,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5361FFD1D6C7133003C3EE8 /* Compass.swift in Sources */,
+				D5361FFD1D6C7133003C3EE8 /* Navigator.swift in Sources */,
 				D5361FFB1D6C7133003C3EE8 /* String+Extensions.swift in Sources */,
 				D5361FF91D6C7133003C3EE8 /* TypeAlias.swift in Sources */,
 				D5361FF51D6C7133003C3EE8 /* Router.swift in Sources */,
@@ -426,7 +426,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDD723361DCA20BC00D722E4 /* Compass.swift in Sources */,
+				FDD723361DCA20BC00D722E4 /* Navigator.swift in Sources */,
 				FDD723371DCA20BC00D722E4 /* String+Extensions.swift in Sources */,
 				FDD723381DCA20BC00D722E4 /* TypeAlias.swift in Sources */,
 				FDD723391DCA20BC00D722E4 /* Router.swift in Sources */,
@@ -463,8 +463,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -512,8 +514,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -534,6 +538,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -545,6 +550,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -566,6 +572,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -694,6 +701,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -717,6 +725,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;

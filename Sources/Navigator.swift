@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Compass {
+public struct Navigator {
 
   typealias Result = (
     route: String,
@@ -12,8 +12,8 @@ public struct Compass {
   public static var delimiter: String = ":"
 
   public static var scheme: String {
-    set { Compass.internalScheme = newValue }
-    get { return "\(Compass.internalScheme)://" }
+    set { Navigator.internalScheme = newValue }
+    get { return "\(Navigator.internalScheme)://" }
   }
 
   public static var routes = [String]()
@@ -93,13 +93,13 @@ public struct Compass {
   }
 }
 
-extension Compass {
+extension Navigator {
 
-  public static func compassURL(urn: String, scheme: String = Compass.scheme) -> URL? {
+  public static func compassURL(urn: String, scheme: String = Navigator.scheme) -> URL? {
     return URL(string: "\(scheme)\(urn.compass_encoded())")
   }
 
-  public static func navigate(to urn: String, scheme: String = Compass.scheme) {
+  public static func navigate(to urn: String, scheme: String = Navigator.scheme) {
     guard let url = compassURL(urn: urn, scheme: scheme) else { return }
     open(url: url)
   }
