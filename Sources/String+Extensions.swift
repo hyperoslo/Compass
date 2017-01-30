@@ -24,4 +24,12 @@ extension String {
 
     return parameters
   }
+
+  func compass_encoded() -> String {
+    return addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? self
+  }
+
+  func compass_decoded() -> String {
+    return removingPercentEncoding ?? self
+  }
 }
