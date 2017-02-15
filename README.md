@@ -29,7 +29,7 @@ to do this is in your `AppDelegate`
 ```swift
 func application(_ application: UIApplication,
                  didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-  Compass.scheme = "compass"
+  Navigator.scheme = "compass"
   return true
 }
 ```
@@ -39,8 +39,8 @@ Configure your application routes
 ```swift
 func application(_ application: UIApplication,
                  didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-  Compass.scheme = "compass"
-  Compass.routes = ["profile:{username}", "login:{username}", "logout"]
+  Navigator.scheme = "compass"
+  Navigator.routes = ["profile:{username}", "login:{username}", "logout"]
   return true
 }
 ```
@@ -51,7 +51,7 @@ Set up your application to respond to the URLs, this can be done in the `AppDele
 func application(_ app: UIApplication,
                  open url: URL,
                  options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
-  guard let location = Compass.parse(url) else {
+  guard let location = Navigator.parse(url) else {
     return false
   }
 
@@ -112,7 +112,7 @@ router.routes = [
 func application(_ app: UIApplication,
                  open url: URL,
                  options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
-  guard let location = Compass.parse(url) else {
+  guard let location = Navigator.parse(url) else {
     return false
   }
 
@@ -172,7 +172,7 @@ Add your own global function to easily navigate internally
 import Compass
 
 public func navigate(urn: String) {
-  let stringUrl = "\(Compass.scheme)\(urn)"
+  let stringUrl = "\(Navigator.scheme)\(urn)"
   guard let appDelegate = UIApplication.sharedApplication().delegate as? ApplicationDelegate,
     url = URL(string: stringUrl) else { return }
 
