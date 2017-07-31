@@ -2,14 +2,6 @@ import Foundation
 
 /// The Navigator is used to parse Location from url, and navigate
 public struct Navigator {
-
-  /// The Result used in the findMatch function
-  typealias Result = (
-    route: String,
-    arguments: [String: String],
-    concreteMatchCount: Int,
-    wildcardMatchCount: Int)
-
   fileprivate static var internalScheme = ""
 
   /// The delimiter used to split parts within url, default to :
@@ -73,7 +65,7 @@ public struct Navigator {
   ///   - url: The url to be parsed
   ///   - payload: The optional payload if you want to send in app objects
   /// - Returns: The Location that can be used
-  static func parseComponents(url: URL, payload: Any? = nil) -> Location? {
+  fileprivate static func parseComponents(url: URL, payload: Any? = nil) -> Location? {
     guard let route = url.host else { return nil }
 
     let urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)
@@ -90,13 +82,20 @@ public struct Navigator {
     return Location(path: route, arguments: arguments, payload: payload)
   }
 
+  /// The Result used in the findMatch function
+  fileprivate typealias Result = (
+    route: String,
+    arguments: [String: String],
+    concreteMatchCount: Int,
+    wildcardMatchCount: Int)
+
   /// Find the best match registed route for a certain route string
   ///
   /// - Parameters:
   ///   - routeString: The registered route string
   ///   - pathString: The path extracted from the requested url
   /// - Returns: The Result on how this pathString matches
-  static func findMatch(routeString: String, pathString: String) -> Result? {
+  fileprivate static func findMatch(routeString: String, pathString: String) -> Result? {
     let routes = routeString.split(delimiter)
     let paths = pathString.split(delimiter)
 
