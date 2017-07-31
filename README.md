@@ -97,7 +97,7 @@ struct ProfileRoute: Routable {
 }
 ```
 
-- Create a `Router` instance and register your routes
+- Create a `Router` instance and register your routes. Think of `Router` as a composite `Routable`
 ```swift
 let router = Router()
 router.routes = [
@@ -122,53 +122,27 @@ func application(_ app: UIApplication,
 }
 ```
 
-### Tip 2. Navigation handler
-You could have multiple handlers depending on if a user is logged in or not.
+### Tip 2. Multiple routers
+You could set up multiple routers depending on app states. For example, you could have 2 routers for pre and post login
+
 ```swift
-struct NavigationHandler {
-
-  static func routePreLogin(location: Location, navigationController: UINavigationController) {
-    switch location.path {
-    case "forgotpassword:{username}":
-      let controller = ForgotPasswordController(title: location.arguments["{username}"])
-      navigationController?.pushViewController(controller, animated: true)
-    default: break
-    }
-  }
-
-  static func routePostLogin(location: Location, navigationController: UINavigationController) {
-    switch location.path {
-    case "profile:{username}":
-      let controller = ProfileController(title: location.arguments["{username}"])
-      navigationController?.pushViewController(controller, animated: true)
-    case "logout":
-      AppDelegate.logout()
-    default: break
-    }
-  }
-}
-```
-
-If you use `Router`-based approach you could set up 2 routers depending on the
-auth state.
-```swift
-let routerPreLogin = Router()
-routerPreLogin.routes = [
+let preLoginRouter = Router()
+preLoginRouter.routes = [
   "profile:{username}" : ProfileRoute()
 ]
 
-let routerPostLogin = Router()
-routerPostLogin.routes = [
+let postLoginRouter = Router()
+postLoginRouter.routes = [
   "login:{username}" : LoginRoute()
 ]
 
-let router = isLoggedIn ? routerPostLogin : routerPreLogin
+let router = hasLoggedIn ? postLoginRouter : preLoginRouter
 router.navigate(to: location, from: navigationController)
 ```
 
-### Tip 3. Global function
+### Tip 3. Free function
 
-In cases you want to perform navigation based on user actions or app events, you can define your own global function to easily navigate internally
+In cases you want to perform navigation based on user actions or app events, you can define your own free function to easily navigate internally
 ``` swift
 import Compass
 
