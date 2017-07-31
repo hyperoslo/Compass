@@ -112,6 +112,11 @@ router.routes = [
 func application(_ app: UIApplication,
                  open url: URL,
                  options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
+  
+  return handle(url)
+}
+
+func handle(_ url: URL) -> Bool {
   guard let location = Navigator.parse(url) else {
     return false
   }
@@ -151,7 +156,7 @@ public func navigate(urn: String) {
   guard let appDelegate = UIApplication.sharedApplication().delegate as? ApplicationDelegate,
     url = URL(string: stringUrl) else { return }
 
-  appDelegate.handleURL(url)
+  appDelegate.handle(url)
 }
 ```
 
