@@ -79,7 +79,7 @@ Preferably you would add your own global function that you use for internal navi
 
 ## Compass life hacks
 
-##### Tip 1. Router
+### Tip 1. Router
 We also have some conventional tools for you that could be used to organize your
 route handling code and avoid huge `switch` cases.
 
@@ -88,21 +88,21 @@ in one place:
 ```swift
 struct ProfileRoute: Routable {
 
-  func navigate(to location: Location, from currentController: UIViewController) {
+  func navigate(to location: Location, from currentController: CurrentController) throws {
     guard let username = location.arguments["username"] else { return }
 
-    let profileController = profileController(title: username)
+    let profileController = ProfileController(title: username)
     currentController.navigationController?.pushViewController(profileController, animated: true)
   }
 }
 ```
 
-- Create a `Router` instance and register your routes:
+- Create a `Router` instance and register your routes
 ```swift
 let router = Router()
 router.routes = [
-  "profile:{username}" : ProfileRoute(),
-  // "logout" : LogoutRoute()
+  "profile:{username}": ProfileRoute(),
+  "logout": LogoutRoute()
 ]
 ```
 
@@ -122,7 +122,7 @@ func application(_ app: UIApplication,
 }
 ```
 
-##### Tip 2. Navigation handler
+### Tip 2. Navigation handler
 You could have multiple handlers depending on if a user is logged in or not.
 ```swift
 struct NavigationHandler {
@@ -166,8 +166,9 @@ let router = isLoggedIn ? routerPostLogin : routerPreLogin
 router.navigate(to: location, from: navigationController)
 ```
 
-##### Tip 3. Global function
-Add your own global function to easily navigate internally
+### Tip 3. Global function
+
+In cases you want to perform navigation based on user actions or app events, you can define your own global function to easily navigate internally
 ``` swift
 import Compass
 
