@@ -1,6 +1,6 @@
 import Foundation
 import XCTest
-@testable import Compass
+import Compass
 
 class CompassTests: XCTestCase {
 
