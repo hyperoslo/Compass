@@ -2,11 +2,18 @@ import Foundation
 
 extension String {
 
+  /// Safely split components based on delimiter
+  ///
+  /// - Parameter delimiter: The delimiter
+  /// - Returns: An array of parts
   func split(_ delimiter: String) -> [String] {
     let components = self.components(separatedBy: delimiter)
     return components != [""] ? components : []
   }
 
+  /// Get query parameters if any
+  ///
+  /// - Returns: A map of query key and content
   func queryParameters() -> [String: String] {
     var parameters = [String: String]()
 
@@ -25,10 +32,17 @@ extension String {
     return parameters
   }
 
+  /// Route string must be percent encoded to be registered in Compass route list
+  ///
+  /// - Returns: The percented encoded string
   func compass_encoded() -> String {
     return addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? self
   }
 
+
+  /// Perform percent decoding to be in a user readable Location
+  ///
+  /// - Returns: The percented decoded string
   func compass_decoded() -> String {
     return removingPercentEncoding ?? self
   }
