@@ -1,6 +1,6 @@
 import Foundation
 import XCTest
-import Compass
+@testable import Compass
 
 class CompassTests: XCTestCase {
 
@@ -267,11 +267,8 @@ class CompassTests: XCTestCase {
 
   func testEncodedURN() {
     let urn = "organization:hyper oslo:simply awesome"
-    let url = Navigator.compassURL(urn: urn)
 
-    XCTAssertNotNil(url)
-
-    guard let location = Navigator.parse(url: url!) else {
+    guard let location = Navigator.parse(urn: urn) else {
       XCTFail("Compass parsing failed")
       return
     }
