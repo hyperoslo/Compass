@@ -4,11 +4,12 @@ struct PercentEncoder {
 
   /// Perform url encoding
   ///
+  /// - Parameter allowedCharacters: Won't encode allowed characters
   /// - Parameter string: The source string
   /// - Returns: The encoded string
-  static func encode(string: String, allowed: String) -> String {
+  static func encode(string: String, allowedCharacters: String) -> String {
     var set = CharacterSet.urlPathAllowed
-    allowed.unicodeScalars.forEach {
+    allowedCharacters.unicodeScalars.forEach {
       set.insert($0)
     }
 
