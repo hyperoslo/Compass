@@ -16,6 +16,9 @@ public struct Navigator {
   /// A list of route strings
   public static var routes = [String]()
 
+  /// Handle the location request
+  public static var handle: ((Location) -> Void)?
+
   /// Parse Location from url
   ///
   /// - Parameters:
@@ -114,5 +117,47 @@ public struct Navigator {
             arguments: arguments,
             concreteMatchCount: concreteMatchCount,
             wildcardMatchCount: wildcardMatchCount)
+  }
+}
+
+public extension Navigator {
+
+  /// Navigate using urn
+  ///
+  /// - Parameters:
+  ///   - urn: The urn
+  ///   - payload: Optional payload
+  /// - Throws: RouteError if the routing fails
+  public static func navigate(urn: String, payload: Any? = nil) throws {
+    let encodedUrn = PercentEncoder.encode(string: urn, allowedCharacters: delimiter)
+    guard let url =  URL(string: "\(scheme)\(encodedUrn)") else {
+      throw RouteError.notFound
+    }
+
+    try navigate(url: url, payload: payload)
+  }
+
+  /// Navigate using url
+  ///
+  /// - Parameters:
+  ///   - urn: The url
+  ///   - payload: Optional payload
+  /// - Throws: RouteError if the routing fails
+  public static func navigate(url: URL, payload: Any? = nil) throws {
+    guard let location = parse(url: url, payload: payload) else {
+      throw RouteError.notFound
+    }
+
+    try navigate(location: location)
+  }
+
+  /// Navigate using location
+  ///
+  /// - Parameters:
+  ///   - urn: The urn
+  ///   - payload: Optional payload
+  /// - Throws: RouteError if the routing fails
+  public static func navigate(location: Location) throws {
+    handle?(location)
   }
 }
