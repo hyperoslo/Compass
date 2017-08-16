@@ -1,6 +1,6 @@
 import Foundation
 
-struct Utilities {
+struct PercentEncoder {
 
   /// Perform url encoding
   ///
