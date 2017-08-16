@@ -16,18 +16,6 @@ public struct Navigator {
   /// A list of route strings
   public static var routes = [String]()
 
-  /// Parse Location from urn
-  ///
-  /// - Parameter urn: Safely construct url from urn, perform percent encoding
-  /// - Returns: The Location that can be used
-  public static func parse(urn: String) -> Location? {
-    guard let url =  URL(string: "\(scheme)\(urn.compass_encoded())") else {
-      return nil
-    }
-
-    return parse(url: url)
-  }
-
   /// Parse Location from url
   ///
   /// - Parameters:

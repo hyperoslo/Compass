@@ -18,7 +18,7 @@ public struct Location {
 
     var decodedArguments = [String: String]()
     arguments.forEach { (key, value) in
-      decodedArguments[key] = value.compass_decoded()
+      decodedArguments[key] = PercentEncoder.decode(string: value)
     }
 
     self.arguments = decodedArguments
