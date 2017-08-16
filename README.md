@@ -19,12 +19,13 @@ anywhere, but remember, with great power comes great responsibility.
 ## Setup
 
 #### Step 1
-First you need to register a URL scheme for your application
+First you need to register a URL scheme for your application.
+
 <img src="https://raw.githubusercontent.com/hyperoslo/Compass/master/Images/setup-url-scheme.png">
 
 #### Step 2
 Now you need to configure Compass to use that URL scheme, a good place
-to do this is in your `AppDelegate`. Then configure all the routes you wish you support
+to do this is in your `AppDelegate`. Then configure all the routes you wish you support.
 
 ```swift
 func application(_ application: UIApplication,
@@ -141,7 +142,7 @@ func handle(_ url: URL) -> Bool {
 ```
 
 ### Tip 2. Multiple routers
-You could set up multiple routers depending on app states. For example, you could have 2 routers for pre and post login
+You could set up multiple routers depending on app states. For example, you could have 2 routers for pre and post login.
 
 ```swift
 let preLoginRouter = Router()
