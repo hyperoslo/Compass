@@ -19,22 +19,13 @@ anywhere, but remember, with great power comes great responsibility.
 ## Setup
 
 #### Step 1
-First you need to register a URL scheme for your application
+First you need to register a URL scheme for your application.
+
 <img src="https://raw.githubusercontent.com/hyperoslo/Compass/master/Images/setup-url-scheme.png">
 
 #### Step 2
 Now you need to configure Compass to use that URL scheme, a good place
-to do this is in your `AppDelegate`
-
-```swift
-func application(_ application: UIApplication,
-                 didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-  Navigator.scheme = "compass"
-  return true
-}
-```
-#### Step 3
-Configure your application routes
+to do this is in your `AppDelegate`. Then configure all the routes you wish you support.
 
 ```swift
 func application(_ application: UIApplication,
@@ -44,38 +35,61 @@ func application(_ application: UIApplication,
   return true
 }
 ```
+
+#### Step 3
+
+Register your location request handler
+
+
+```swift
+Navigator.handle = { [weak self] location in
+  let arguments = location.arguments
+
+  let rootController = self?.window.rootViewController as? UINavigationController
+
+  switch location.path {
+    case "profile:{username}":
+      let profileController = ProfileController(title: arguments["username"])
+      rootController?.pushViewController(profileController, animated: true)
+    case "login:{username}":
+      let loginController = LoginController(title: arguments["username"])
+      rootController?.pushViewController(loginController, animated: true)
+    case "logout":
+      self?.clearLoginSession()
+      self?.switchToLoginScreen()
+    default: 
+      break
+  }
+}
+```
+
 #### Step 4
-Set up your application to respond to the URLs, this can be done in the `AppDelegate` but its up to you to find a more suitable place for it depending on the size of your implementation.
+
+Anywhere in your application, you can just use `Navigator` to navigate
+
+```swift
+@IBOutlet func logoutButtonTouched() {
+  Navigator.navigate(urn: "logout")
+}
+```
+
+#### Step 5
+Optional. If you want to support deep linking,  set up your application to respond to the URLs. Setting it up this way would mean that
+you could open any view from a push notification depending on the contents of the payload.
 
 ```swift
 func application(_ app: UIApplication,
                  open url: URL,
                  options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
-  guard let location = Navigator.parse(url) else {
-    return false
-  }
-
-  let arguments = location.arguments
-
-  switch location.path {
-    case "profile:{username}":
-      let profileController = profileController(title: arguments["{username}"])
-      self.navigationController?.pushViewController(profileController, animated: true)
-    case "login:{username}":
-      let loginController = LoginController(title: arguments["{username}"])
-      self.navigationController?.pushViewController(loginController, animated: true)
-    case "logout":
-      logout()
-    default: break
+  do {
+    try Navigator.navigate(url: url)
+  } catch {
+    // Handle error
   }
 
   return true
 }
 ```
-
-Setting it up this way would mean that
-you could open any view from a push notification depending on the contents of the payload.
-Preferably you would add your own global function that you use for internal navigation.
 
 ## Compass life hacks
 
@@ -128,7 +142,7 @@ func handle(_ url: URL) -> Bool {
 ```
 
 ### Tip 2. Multiple routers
-You could set up multiple routers depending on app states. For example, you could have 2 routers for pre and post login
+You could set up multiple routers depending on app states. For example, you could have 2 routers for pre and post login.
 
 ```swift
 let preLoginRouter = Router()
@@ -143,21 +157,6 @@ postLoginRouter.routes = [
 
 let router = hasLoggedIn ? postLoginRouter : preLoginRouter
 router.navigate(to: location, from: navigationController)
-```
-
-### Tip 3. Free function
-
-In cases you want to perform navigation based on user actions or app events, you can define your own free function to easily navigate internally
-``` swift
-import Compass
-
-public func navigate(urn: String) {
-  let stringUrl = "\(Navigator.scheme)\(urn)"
-  guard let appDelegate = UIApplication.sharedApplication().delegate as? ApplicationDelegate,
-    url = URL(string: stringUrl) else { return }
-
-  appDelegate.handle(url)
-}
 ```
 
 ## Installation
