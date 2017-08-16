@@ -264,16 +264,4 @@ class CompassTests: XCTestCase {
     XCTAssertEqual(location.arguments["expires_in"], "3600")
     XCTAssertEqual(location.arguments["token_type"], "Bearer")
   }
-
-  func testEncodedURN() {
-    let urn = "organization:hyper oslo:simply awesome"
-
-    guard let location = Navigator.parse(urn: urn) else {
-      XCTFail("Compass parsing failed")
-      return
-    }
-
-    XCTAssertEqual(location.arguments["name"], "hyper oslo")
-    XCTAssertEqual(location.arguments["type"], "simply awesome")
-  }
 }

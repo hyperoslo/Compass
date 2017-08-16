@@ -31,19 +31,4 @@ extension String {
 
     return parameters
   }
-
-  /// Route string must be percent encoded to be registered in Compass route list
-  ///
-  /// - Returns: The percented encoded string
-  func compass_encoded() -> String {
-    return addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? self
-  }
-
-
-  /// Perform percent decoding to be in a user readable Location
-  ///
-  /// - Returns: The percented decoded string
-  func compass_decoded() -> String {
-    return removingPercentEncoding ?? self
-  }
 }
