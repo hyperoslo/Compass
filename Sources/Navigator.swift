@@ -1,8 +1,4 @@
-#if os(OSX)
-  import Cocoa
-#else
-  import UIKit
-#endif
+import Foundation
 
 /// The Navigator is used to parse Location from url, and navigate
 public struct Navigator {
