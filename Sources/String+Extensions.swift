@@ -21,8 +21,8 @@ extension String {
     self.components(separatedBy: separatorCharacters).forEach { (pair) in
 
       if let equalSeparator = pair.range(of: "=") {
-        let name = pair.substring(to: equalSeparator.lowerBound)
-        let value = pair.substring(from: pair.index(equalSeparator.lowerBound, offsetBy: 1))
+        let name = String(pair.prefix(upTo: equalSeparator.lowerBound))
+        let value = String(pair.suffix(from: pair.index(equalSeparator.lowerBound, offsetBy: 1)))
         let cleaned = value.removingPercentEncoding ?? value
 
         parameters[name] = cleaned

@@ -26,7 +26,7 @@ public struct Navigator {
   ///   - payload: The optional payload if you want to send in app objects
   /// - Returns: The Location that can be used
   public static func parse(url: URL, payload: Any? = nil) -> Location? {
-    let path = url.absoluteString.substring(from: scheme.endIndex)
+    let path = String(url.absoluteString.suffix(from: scheme.endIndex))
 
     guard !(path.contains("?") || path.contains("#")) else {
       return parseComponents(url: url, payload: payload)
