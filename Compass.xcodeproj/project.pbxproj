@@ -73,8 +73,8 @@
 		D5B2E8A91C3A780C00C0327D /* Compass-iOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Compass-iOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C629401C3A7FAA007F7B7C /* Compass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Compass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C629491C3A7FAA007F7B7C /* Compass-Mac-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Compass-Mac-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5D70EA31F9DD13C0018736F /* Info-tvOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
 		FDD723411DCA20BC00D722E4 /* Compass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Compass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FDD723421DCA20BC00D722E4 /* Info-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-tvOS.plist"; path = "/Users/ferruggp/workspace/Compass/Project/Info-tvOS.plist"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,9 +140,9 @@
 		D53620121D6C743A003C3EE8 /* Project */ = {
 			isa = PBXGroup;
 			children = (
+				D5D70EA31F9DD13C0018736F /* Info-tvOS.plist */,
 				D53620131D6C743A003C3EE8 /* Info-iOS.plist */,
 				D53620141D6C743A003C3EE8 /* Info-Mac.plist */,
-				FDD723421DCA20BC00D722E4 /* Info-tvOS.plist */,
 				D53620151D6C743A003C3EE8 /* Info-Tests-iOS.plist */,
 				D53620161D6C743A003C3EE8 /* Info-Tests-Mac.plist */,
 			);

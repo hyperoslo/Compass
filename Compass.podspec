@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = "Compass"
   s.summary          = "Compass helps you setup a central navigation system for your iOS application."
-  s.version          = "5.1.0"
+  s.version          = "6.0.0"
   s.homepage         = "https://github.com/hyperoslo/Compass"
   s.license          = 'MIT'
   s.author           = { "Hyper Interaktiv AS" => "ios@hyper.no" }
