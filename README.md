@@ -16,6 +16,12 @@ concerns become clearer. The outcome is that your application will become
 more modular by default. Anything could potentially be presented from
 anywhere, but remember, with great power comes great responsibility.
 
+## Getting Started
+
+Below are tutorials on how to use Compass
+
+- [URL Routing with Compass](https://github.com/onmyway133/blog/issues/110): basic introduction to Compass, how to use Router and multiple use cases for deep linking, push notifications
+
 ## Setup
 
 #### Step 1
