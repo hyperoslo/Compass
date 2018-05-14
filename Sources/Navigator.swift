@@ -32,7 +32,7 @@ public struct Navigator {
       return parseComponents(url: url, payload: payload)
     }
 
-    let results: [Result] = routes.flatMap {
+    let results: [Result] = routes.compactMap {
       return findMatch(routeString: $0, pathString: path)
     }.sorted { (r1: Result, r2: Result) in
       if r1.concreteMatchCount == r2.concreteMatchCount {
