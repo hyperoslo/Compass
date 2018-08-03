@@ -20,7 +20,7 @@ anywhere, but remember, with great power comes great responsibility.
 
 Below are tutorials on how to use Compass
 
-- [URL Routing with Compass](https://github.com/onmyway133/blog/issues/110): basic introduction to Compass, how to use Router and multiple use cases for deep linking, push notifications
+- [URL Routing in iOS apps: Compass Beginner Guide](https://medium.com/flawless-app-stories/url-routing-with-compass-d59c0061e7e2): basic introduction to Compass, how to use Router and multiple use cases for deep linking, push notifications
 
 ## Setup
 
