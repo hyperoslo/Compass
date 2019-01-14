@@ -1,3 +1,5 @@
+⚠️ DEPRECATED, NO LONGER MAINTAINED
+
 ![Compass logo](https://raw.githubusercontent.com/hyperoslo/Compass/master/Images/logo_v1.png)
 
 [![Version](https://img.shields.io/cocoapods/v/Compass.svg?style=flat)](http://cocoadocs.org/docsets/Compass)
